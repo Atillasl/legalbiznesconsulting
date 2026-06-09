@@ -1,0 +1,148 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact",
+    "consultation": "Consultation"
+  },
+  "home": {
+    "hero": {
+      "titleBefore": "Secure",
+      "titleAccent1": "business",
+      "titleMiddle": "with",
+      "titleAccent2": "legal",
+      "titleAfter": "and digital support",
+      "description": "We protect your business interests with a modern legal and technology framework.",
+      "cta": {
+        "onlineApp": "Online Application",
+        "ourServices": "Our Services"
+      }
+    },
+    "departments": {
+      "title": "Our Expertise Areas",
+      "subtitle": "Professional legal and IT services for every phase of your business.",
+      "legal": {
+        "title": "Legal Consulting",
+        "desc": "Corporate law, contract work, tax and dispute support designed to keep your business compliant."
+      },
+      "tech": {
+        "title": "Technology Services",
+        "desc": "Modern web, mobile, and software support tailored to your growth and compliance needs."
+      }
+    },
+    "highlights": {
+      "subtitle": "Our Services",
+      "title": "Trusted legal and digital support",
+      "description": "We support your business with legal compliance, contract management, and secure digital transformation.",
+      "cards": {
+        "compliance": {
+          "title": "Compliance & Risk",
+          "desc": "Structured plans that reduce legal, contract and tax exposure."
+        },
+        "contracts": {
+          "title": "Contract Support",
+          "desc": "We draft and review agreements with strong protection for your business."
+        },
+        "digital": {
+          "title": "Digital Transformation",
+          "desc": "Build secure web and app solutions while keeping legal safeguards in place."
+        },
+        "growth": {
+          "title": "Strategic Growth",
+          "desc": "Legal and tech strategies designed for sustainable business expansion."
+        }
+      },
+      "cardBadge1": "Trusted Legal",
+      "cardTitle1": "Client-Centered Security",
+      "cardDesc1": "A legal approach that protects your business operations and future.",
+      "cardBadge2": "Digital Confidence",
+      "cardTitle2": "Tech-Led Support",
+      "cardDesc2": "Combining legal requirements with technology standards for every project."
+    },
+    "testimonials": {
+      "title": "Client Feedback",
+      "placeholder": "TestimonialsSlider component will appear here"
+    },
+    "contactPlaceholder": {
+      "title": "Get in Touch",
+      "placeholder": "ContactForm component will appear here"
+    }
+  },
+  "blog": {
+    "badge": "LBC Insights",
+    "title": "Articles & Legal Commentary",
+    "description": "Professional guides to strengthen your business from both legal and digital perspectives.",
+    "categories": {
+      "all": "All Posts",
+      "startup": "Startup Law",
+      "cyber": "Cybersecurity / IP",
+      "corporate": "Corporate Law"
+    },
+    "searchPlaceholder": "Search blog articles...",
+    "readMore": "Read article",
+    "noResults": "No articles matched the selected filters."
+  },
+  "contact": {
+    "badge": "Contact Us",
+    "title": "Inquiry & Consultation",
+    "subtitle": "Reach out directly for legal issues or digital transformation projects. Our team is ready to help.",
+    "info": {
+      "title": "Our Corporate Office",
+      "phone": "Phone",
+      "email": "Email",
+      "addressTitle": "Address",
+      "address": "Baku, Azadliq Avenue 124, Azerbaijan",
+      "hoursTitle": "Working Hours",
+      "hoursWeekdays": "Monday - Friday: 09:00 - 18:00",
+      "hoursWeekend": "Saturday and Sunday: Closed",
+      "disclaimer": "Inquiries are handled confidentially and are not shared with third parties."
+    }
+  },
+  "footer": {
+    "titles": {
+      "legal": "Legal Services",
+      "tech": "Technology Services",
+      "links": "Quick Links"
+    },
+    "services": {
+      "corporate": "Corporate Law",
+      "contract": "Contract Law",
+      "property": "Property & Contracts",
+      "tax": "Tax Advisory"
+    },
+    "tech": {
+      "web": "Web Development",
+      "app": "Mobile Apps",
+      "consulting": "Technology Consulting"
+    },
+    "description": "Your partner in legal business and digital strategy, protecting and growing your company.",
+    "quickSummary": {
+      "legal": "Expert legal guidance for business risk control.",
+      "tech": "Legal support that keeps tech projects compliant and secure."
+    },
+    "allRightsReserved": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "services": {
+    "subtitle": "Our Services",
+    "title": "Professional Solutions for Your Business",
+    "description": "We strengthen your business with legal and digital support for every project.",
+    "tabs": {
+      "all": "All",
+      "legal": "Legal Consulting",
+      "tech": "Technology & IT"
+    },
+    "ctaTitle": "Need custom solutions for your business?",
+    "ctaDesc": "Don’t settle for standard packages. We can build a fully tailored legal or technical strategy for your company.",
+    "ctaBtn": "Schedule a Consultation",
+    "readMore": "Read more"
+  },
+  "home_title": "Home",
+  "home_description": "Professional support for legal and IT business services.",
+  "services_title": "Our Services",
+  "contact_title": "Contact Us",
+  "blog_title": "Blog",
+  "service_detail_title": "Service Details"
+}

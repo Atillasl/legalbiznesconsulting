@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "home": "Ana Səhifə",
+    "services": "Xidmətlər",
+    "blog": "Blog",
+    "contact": "Əlaqə",
+    "consultation": "Konsultasiya"
+  },
+  "home": {
+    "hero": {
+      "titleBefore": "Biznesiniz üçün",
+      "titleAccent1": "Etibarlı",
+      "titleMiddle": "və",
+      "titleAccent2": "Uzunmüddətli",
+      "titleAfter": "Hüquqi Müdafiə",
+      "description": "Məqsədimiz müştərilərimizə yalnız hüquqi xidmət göstərmək deyil, həm də onların biznes və şəxsi maraqlarının təhlükəsiz qorunmasını təmin etməkdir.",
+      "cta": {
+        "onlineApp": "Onlayn Müraciət",
+        "ourServices": "Xidmətlərimiz"
+      }
+    },
+    "highlights": {
+      "subtitle": "Xidmətlərimiz",
+      "title": "Hüquqi və rəqəmsal dəstək",
+      "description": "Hüquq, vergi, müqavilə və rəqəmsal transformasiya üzrə biznesinizi tam dəstəkləyən həllər.",
+      "cards": {
+        "compliance": {
+          "title": "Uyğunluq və Risk İdarəçiliyi",
+          "desc": "Qanunvericilik, müqavilə və vergi risklərini azaldan strukturlaşdırılmış planlar."
+        },
+        "contracts": {
+          "title": "Müqavilə Dəstəyi",
+          "desc": "Yerli və beynəlxalq müqavilələri hazırlayır, riskləri və qorunmanı gücləndiririk."
+        },
+        "digital": {
+          "title": "Rəqəmsal Transformasiya",
+          "desc": "Web, mobil və proqram həlləri ilə biznesinizi təhlükəsiz və rəqəmsal olaraq inkişaf etdiririk."
+        },
+        "growth": {
+          "title": "Strateji İnkişaf",
+          "desc": "Hüquqi və texnoloji strategiyalarla şirkətiniz üçün sabit və davamlı böyümə yaradırıq."
+        }
+      },
+      "cardBadge1": "Etibarlı Hüquq",
+      "cardTitle1": "Müştəri Mərkəzli Təhlükəsizlik",
+      "cardDesc1": "Biznesinizi operativ risklərdən qoruyan və gələcəyə uyğunlaşdıran hüquqi yanaşma.",
+      "cardBadge2": "Rəqəmsal Güvənlik",
+      "cardTitle2": "Texnologiyaya əsaslanan dəstək",
+      "cardDesc2": "Web və tətbiq layihələrində hüquqi tələbləri texnoloji standartlarla birləşdiririk."
+    },
+    "departments": {
+      "title": "Fəaliyyət Sahələrimiz",
+      "subtitle": "Geniş spektrli peşəkar xidmət qollarımız ile biznesinizi rəqəmsal və hüquqi olaraq tam təmin edirik.",
+      "legal": {
+        "title": "Hüquqi Konsaltinq",
+        "desc": "Korporativ hüquq, müqavilələr, vergi, miqrasiya və məhkəmə təmsilçiliyi daxil olmaqla bütün hüquqi proseslərin idarə olunması."
+      },
+      "tech": {
+        "title": "Texnologiya və İT Xidmətləri",
+        "desc": "Müasir standartlara uyğun Web saytların, mobil tətbiqlərin (App) hazırlanması, sistem inteqrasiyası və texnoloji hüquq dəstəyi."
+      }
+    },
+    "testimonials": {
+      "title": "Müştəri Rəyləri",
+      "placeholder": "TestimonialsSlider Komponenti bura gələcək"
+    },
+    "contactPlaceholder": {
+      "title": "Bizimlə Əlaqə",
+      "placeholder": "ContactForm Komponenti bura gələcək"
+    }
+  },
+  "blog": {
+    "badge": "LBC Analitika",
+    "title": "Məqalələr & Hüquqi Rəylər",
+    "description": "Biznesinizi həm qanunvericilik, həm də rəqəmsal texnologiya tərəfdən gücləndirəcək peşəkar bələdçilər.",
+    "categories": {
+      "all": "Bütün Yazılar",
+      "startup": "Startap Hüququ",
+      "cyber": "Kibertəhlükəsizlik / IP",
+      "corporate": "Korporativ Hüquq"
+    },
+    "searchPlaceholder": "Məqalələrdə axtar...",
+    "readMore": "Məqaləni oxu",
+    "noResults": "Seçilmiş kriteriyalara uyğun heç bir məqalə tapılmadı."
+  },
+  "contact": {
+    "badge": "Bizimlə Əlaqə",
+    "title": "Müraciət və Konsultasiya",
+    "subtitle": "Hüquqi məsələlər və ya rəqəmsal transformasiya layihələriniz üçün birbaşa bizimlə əlaqə qurun. Komandamız sizə kömək etməyə hazırdır.",
+    "info": {
+      "title": "Korporativ Ofisimiz",
+      "phone": "Telefon",
+      "email": "E-poçt",
+      "addressTitle": "Ünvan",
+      "address": "Bakı şəhəri, Azadlıq prospekti 124, Azərbaycan",
+      "hoursTitle": "İş Saatları",
+      "hoursWeekdays": "Bazar ertəsi - Cümə: 09:00 - 18:00",
+      "hoursWeekend": "Şənbə və Bazar: Bağlıdır",
+      "disclaimer": "Müraciətlər qanunvericiliyə uyğun olaraq tam məxfi saxlanılır və üçüncü tərəflərlə paylaşılmır."
+    },
+    "form": {
+      "title": "Onlayn Məsləhət Formu",
+      "successTitle": "Müraciətiniz Qəbul Olundu!",
+      "successDesc": "Mesajınız uğurla qeydə alındı. Peşəkar ekspertlərimiz qısa zamanda sizinlə əlaqə saxlayacaqlar.",
+      "labels": {
+        "name": "Adınız və Soyadınız",
+        "email": "E-poçt Ünvanınız",
+        "phone": "Telefon Nömrəniz",
+        "subject": "Müraciət Mövzusu",
+        "message": "Mesajınız"
+      },
+      "placeholders": {
+        "name": "Məs. Elnur Əliyev",
+        "email": "Məs. elnur@example.com",
+        "phone": "Məs. +994 50 000 00 00",
+        "subject": "Məs. Müqavilə auditi",
+        "message": "Müraciətiniz barədə ətraflı məlumat qeyd edin..."
+      },
+      "submitBtn": "Müraciəti Göndərin",
+      "errors": {
+        "nameRequired": "Ad və soyad qeyd olunmalıdır.",
+        "emailRequired": "E-poçt ünvanı qeyd olunmalıdır.",
+        "emailInvalid": "Düzgün bir e-poçt ünvanı daxil edin.",
+        "messageRequired": "Müraciət mətni boş buraxıla bilməz."
+      }
+    }
+  },
+  "footer": {
+    "titles": {
+      "legal": "Hüquqi Xidmətlər",
+      "tech": "Texnologiya Xidmətləri",
+      "links": "Sürətli Keçidlər"
+    },
+    "services": {
+      "corporate": "Korporativ Hüquq",
+      "contract": "Müqavilə Hüququ",
+      "property": "Əmlak və Müqavilələr",
+      "tax": "Vergi Məsləhəti"
+    },
+    "tech": {
+      "web": "Web İnkişafı",
+      "app": "Mobil Tətbiqlər",
+      "consulting": "Texnologiya Konsaltinqi"
+    },
+    "description": "Biz biznes hüququ və texnologiya sahəsində etibarlı tərəfdaşınızıq, layihənizi qorumaq və böyütmək üçün çalışırıq.",
+    "quickSummary": {
+      "legal": "Qanuni risklərin qarşısını alan mütəxəssis yanaşma.",
+      "tech": "Texniki layihələr üçün hüquqi və funksiya dəstəyi."
+    },
+    "allRightsReserved": "Bütün hüquqlar qorunur.",
+    "privacy": "Məxfilik",
+    "terms": "Qaydalar"
+  },
+  "services": {
+    "subtitle": "Xidmətlərimiz",
+    "title": "Biznesiniz üçün Peşəkar Həllər",
+    "description": "Hüquqi və texnoloji dəstək ilə biznesinizi daha güclü və rəqabətli edirik.",
+    "tabs": {
+      "all": "Hamısı",
+      "legal": "Hüquqi Konsaltinq",
+      "tech": "Texnologiya və İT"
+    },
+    "ctaTitle": "Biznesiniz üçün xüsusi həllərə ehtiyacınız var?",
+    "ctaDesc": "Standart paketlərlə kifayətlənməyin. Şirkətiniz üçün fərdi hüquqi və texnoloji strategiya hazırlaya bilərik.",
+    "ctaBtn": "Konsultasiya alın",
+    "readMore": "Ətraflı oxu",
+    "detailPage": {
+      "backToHome": "Əsas səhifəyə qayıt",
+      "aboutTitle": "Xidmət barədə ətraflı",
+      "benefitsTitle": "Bu Xidmətin Sizə Qazandıracağı Üstünlüklər",
+      "processTitle": "Proses Necə İşləyir?",
+      "ctaTitle": "Peşəkar Yardım Lazımdır?",
+      "ctaDesc": "Mütəxəssislərimizlə elə indi əlaqə saxlayaraq layihəniz və ya probleminiz üçün fərdi həll yolu tapın.",
+      "ctaBtn": "Ödənişsiz Konsultasiya Al"
+    },
+    "details": {
+      "corporate": {
+        "title": "Corporate Law",
+        "category": "Hüquqi Konsaltinq",
+        "longDesc": "Müasir biznes mühitində şirketlərin qanunvericiliyə tam uyğun fəaliyyət göstərməsi...",
+        "benefits": [
+          "Maliyyə və hüquqi risklərin sıfıra endirilməsi",
+          "Təsisçilər və investorlar arasında şəffaf müqavilə münasibətləri"
+        ],
+        "process": [
+          { "step": "01", "title": "İlkin Konsultasiya", "desc": "Biznesinizin strukturunu və ehtiyaclarını analiz edirik." }
+        ]
+      }
+    }
+  }
+}
