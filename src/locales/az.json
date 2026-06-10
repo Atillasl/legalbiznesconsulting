@@ -48,6 +48,149 @@
       "cardTitle2": "Texnologiyaya əsaslanan dəstək",
       "cardDesc2": "Web və tətbiq layihələrində hüquqi tələbləri texnoloji standartlarla birləşdiririk."
     },
+    "premium": {
+      "hero": {
+        "badge": "Premium məsləhət",
+        "title": "Bazar liderləri üçün hüquqi strategiya.",
+        "description": "Biz bizneslərə sürətli inkişaf üçün uyğunlaşmış hüquqi çərçivələr ilə bazara çıxmaq və uyğunluq əldə etməkdə yardım edirik.",
+        "cta": {
+          "primary": "Konsultasiya sifariş et",
+          "secondary": "Bacarıqları araşdır"
+        },
+        "proofs": {
+          "trust": {
+            "tag": "Liderlər tərəfindən seçilir",
+            "title": "Biznes aydınlığı ilə hüquqi planlama",
+            "desc": "Hüquqi yol xəritənizi bazar və tənzimləmə məqsədləri ilə uyğunlaşdıran strukturlaşdırılmış proqramlar."
+          },
+          "alignment": {
+            "tag": "Uyğunlaşma təmin olunur",
+            "title": "Böyüməni dəstəkləyən risk nəzarəti",
+            "desc": "Daha sürətli qərarvermə üçün praktik uyğunluq və müqavilə rəhbərliyi."
+          }
+        },
+        "panelTitle": "Əsas strateji fokus",
+        "panelItems": {
+          "regulatory": {
+            "label": "Tənzimləmə hazırlığı",
+            "detail": "İcazə, lisenziya və bazara giriş üçün aydın meyarlar."
+          },
+          "governance": {
+            "label": "İdarəetmə strukturu",
+            "detail": "İcra komandaları üçün hazırlanmış praktik siyasətlər və iş axınları."
+          },
+          "digital": {
+            "label": "Rəqəmsal əməliyyatlar",
+            "detail": "Müasir texnoloji məhsullar üçün müqavilələr və məlumat nəzarəti."
+          }
+        }
+      },
+      "trust": {
+        "badge": "Sübut edilmiş nəticələr",
+        "title": "Sürətlə inkişaf edən bizneslər üçün ölçülə bilən nəticələr.",
+        "description": "Əsas diqqətimiz kommersiya aydınlığı, müqavilə təminatı və tənzimləmə inamına yönəlib.",
+        "metrics": {
+          "retainers": {
+            "label": "Davamlı xidmətlər",
+            "value": "25+"
+          },
+          "launches": {
+            "label": "Dəstəklənən bazar çıxışları",
+            "value": "18"
+          },
+          "governance": {
+            "label": "İdarəetmə proqramları",
+            "value": "14"
+          },
+          "crossBorder": {
+            "label": "Ölkələrarası layihələr",
+            "value": "10"
+          }
+        }
+      },
+      "capabilities": {
+        "badge": "Konsentrə edilmiş ekspertiza",
+        "title": "Tənzimlənən inkişaf üçün praktik hüquqi xidmətlər.",
+        "description": "Müqavilələrdən uyğunluğa və rəqəmsal siyasətlərə qədər, komandaların kompromissiz sürətlə hərəkət etməsinə kömək edirik.",
+        "cards": {
+          "regulatory": {
+            "title": "Tənzimləmə proqramları",
+            "description": "Lisenziya, icazə və davamlı uyğunluq üçün son nöqtə dəstəyi."
+          },
+          "governance": {
+            "title": "İdarəetmə və müqavilələr",
+            "description": "Biznes strategiyasına uyğunlaşdırılmış siyasətlər, idarə heyəti materialları və müqavilə strukturları."
+          },
+          "digital": {
+            "title": "Rəqəmsal risk və məlumat",
+            "description": "Rəqəmsal məhsul çatdırılmasında şərtlər, məxfilik və əməliyyat sərhədləri."
+          }
+        }
+      },
+      "impact": {
+        "badge": "Biznes təsiri",
+        "title": "Hüquqi iş maneələri aradan qaldırır və çatdırılmanı sürətləndirir.",
+        "description": "Yanaşmamız hüquqi mürəkkəbliyi aydın icra planına çevirir.",
+        "cards": {
+          "clarity": {
+            "title": "Daha sürətli aydınlıq",
+            "desc": "Liderlər üçün uyğunluq seçimlərini asanlaşdıran hesabatlar və yol xəritələri."
+          },
+          "alignment": {
+            "title": "Paydaş uyğunluğu",
+            "desc": "Təsisçilər, investorlar və əməliyyat komandaları üçün vahid hüquqi mətn."
+          },
+          "execution": {
+            "title": "Hazır icra",
+            "desc": "Məsləhətdən həyata keçirməyə keçən praktik nəticələr."
+          }
+        },
+        "learnMore": "Tam təklifə bax"
+      },
+      "caseStudy": {
+        "badge": "Seçilmiş nəticə",
+        "title": "Texnologiya şirkəti tam hüquqi nəzarətlə tənzimlənən bazara çıxdı.",
+        "description": "LBC uyğunluq proqramı, müqavilə çərçivəsi və bazara çıxış planı hazırladı ki, risk azalsın və genişlənmə dəstəklənsin.",
+        "points": [
+          "Yeni bazarlar üçün tənzimləyici yanaşma ilə bazara çıxış yol xəritəsi hazırladı.",
+          "Müqavilə və idarəetmə strukturlarını dörd həftə ərzində təqdim etdi.",
+          "İcra üçün hazır uyğunluq paneli ilə sürətli qərarverməni təmin etdi."
+        ],
+        "clientInsight": "Müştəri rəyi",
+        "quote": "“LBC bizə uyğunsuzluq qeyri-müəyyənliyindən 6 həftədən az müddətdə bazara çıxışa hazır əməliyyat modelinə keçməyə kömək etdi.”",
+        "quoteAuthor": "— Regional fintech platformasının əməliyyat direktorundan",
+        "resultTag": "Nəticə",
+        "resultTitle": "Bazar çıxışı uyğunluğu müştərinin proqnozundan 40% daha sürətli tamamlandı."
+      },
+      "why": {
+        "badge": "Niyə LBC",
+        "title": "Qlobal intizamlı butik tərəfdaş.",
+        "description": "Biz strateji qərarları və bazar genişlənməsini dəstəkləmək üçün hüquqi dəqiqlik, rəqəmsal informasiya və biznes analizini birləşdiririk.",
+        "items": {
+          "executive": {
+            "title": "İcra səviyyəli məsləhət",
+            "description": "Hüquqi anlayışlar peşəkar konsaltinq komandaları səviyyəsində təqdim olunur."
+          },
+          "speed": {
+            "title": "Sürətli və qərarlı çatdırılma",
+            "description": "Uğurdan əvvəl aydınlıq tələb edən komandalar üçün praktik icra dəstəyi."
+          },
+          "crossBorder": {
+            "title": "Ölkələrarası hazırlıq",
+            "description": "Bazarlar boyunca tənzimləmə, korporativ və rəqəmsal əməliyyatlar üçün məsləhətlər."
+          },
+          "clientFocus": {
+            "title": "Premium müştəri diqqəti",
+            "description": "Standart hüquqi şablonlar deyil, idarə heyəti prioritetlərinə görə qurulur."
+          }
+        }
+      },
+      "cta": {
+        "badge": "İnamla başla",
+        "title": "LBC ilə 15 dəqiqəlik məsləhət zəngi sifariş et.",
+        "button": "Konsultasiya sifariş et"
+      }
+    },
     "departments": {
       "title": "Fəaliyyət Sahələrimiz",
       "subtitle": "Geniş spektrli peşəkar xidmət qollarımız ile biznesinizi rəqəmsal və hüquqi olaraq tam təmin edirik.",

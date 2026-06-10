@@ -1,6 +1,7 @@
-import { useParams, Link } from 'react-router-dom'
+﻿import { useParams, Link } from 'react-router-dom'
 import Button from '../components/ui/Button'
 import { useLanguage } from '../hooks/useLanguage'
+import { techImages } from '../assets'
 import { 
   FiArrowLeft, FiCheckCircle, FiBriefcase, 
   FiGlobe, FiSmartphone, FiCornerDownRight 
@@ -10,7 +11,10 @@ export default function ServiceDetail() {
   const { serviceId } = useParams()
   const { t } = useLanguage()
 
-  // İkonlar dildən asılı olmadığı üçün lokal map obyekti daxilində saxlanılır
+  // decorative image
+  const bannerImage = techImages[1]
+
+  // Ä°konlar dildÉ™n asÄ±lÄ± olmadÄ±ÄŸÄ± Ã¼Ã§Ã¼n lokal map obyekti daxilindÉ™ saxlanÄ±lÄ±r
   const serviceIcons = {
     "corporate": <FiBriefcase />,
     "contract": <FiBriefcase />,
@@ -18,7 +22,7 @@ export default function ServiceDetail() {
     "app-dev": <FiSmartphone />
   }
 
-  // Əgər gələn serviceId JSON daxilində yoxdursa, korporativ bölməni default seçirik
+  // ÆgÉ™r gÉ™lÉ™n serviceId JSON daxilindÉ™ yoxdursa, korporativ bÃ¶lmÉ™ni default seÃ§irik
   const activeId = t(`services.details.${serviceId}.title`) ? serviceId : 'corporate'
 
   const itemKey = `services.details.${activeId}`
@@ -44,17 +48,21 @@ export default function ServiceDetail() {
             <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
               {t(`${itemKey}.title`)}
             </h1>
+            {/* Banner image under title */}
+            <div className="mt-6 w-full">
+              <img src={bannerImage} alt="service-banner" className="mx-auto w-full max-w-4xl rounded-2xl object-cover h-44" loading="lazy" />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ƏSAS KONTENT */}
+      {/* ÆSAS KONTENT */}
       <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-3 items-start">
           
-          {/* Sol Tərəf: Geniş İzah və Üstünlüklər */}
+          {/* Sol TÉ™rÉ™f: GeniÅŸ Ä°zah vÉ™ ÃœstÃ¼nlÃ¼klÉ™r */}
           <div className="md:col-span-2 space-y-10">
-            {/* Təsvir */}
+            {/* TÉ™svir */}
             <div className="rounded-3xl bg-slate-50 p-8 border border-slate-100 shadow-sm dark:bg-slate-900 dark:border-slate-800">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#00969A]/10 text-2xl text-[#00969A] mb-5 dark:bg-[#00969A]/20">
                 {serviceIcons[activeId] || <FiBriefcase />}
@@ -65,7 +73,7 @@ export default function ServiceDetail() {
               </p>
             </div>
 
-            {/* Üstünlüklər (Benefits) */}
+            {/* ÃœstÃ¼nlÃ¼klÉ™r (Benefits) */}
             <div className="rounded-3xl bg-slate-50 p-8 border border-slate-100 shadow-sm dark:bg-slate-900 dark:border-slate-800">
               <h2 className="text-xl font-bold mb-6">{t('services.detailPage.benefitsTitle')}</h2>
               <ul className="space-y-4">
@@ -79,9 +87,9 @@ export default function ServiceDetail() {
             </div>
           </div>
 
-          {/* Sağ Tərəf: İş Prosesi və Sürətli Müraciət */}
+          {/* SaÄŸ TÉ™rÉ™f: Ä°ÅŸ Prosesi vÉ™ SÃ¼rÉ™tli MÃ¼raciÉ™t */}
           <div className="space-y-6">
-            {/* İş Prosesi (Step-by-Step) */}
+            {/* Ä°ÅŸ Prosesi (Step-by-Step) */}
             <div className="rounded-3xl bg-slate-50 p-6 border border-slate-100 shadow-sm dark:bg-slate-900 dark:border-slate-800">
               <h3 className="text-base font-bold mb-6 flex items-center gap-2">
                 <FiCornerDownRight className="text-[#00969A]" /> {t('services.detailPage.processTitle')}
@@ -101,7 +109,7 @@ export default function ServiceDetail() {
               </div>
             </div>
 
-            {/* CTA Kartı */}
+            {/* CTA KartÄ± */}
             <div className="rounded-3xl bg-gradient-to-br from-[#00969A] to-[#007A7E] p-6 text-white text-center shadow-lg shadow-[#00969A]/10">
               <h3 className="text-base font-bold">{t('services.detailPage.ctaTitle')}</h3>
               <p className="text-xs text-white/80 mt-2 leading-relaxed">

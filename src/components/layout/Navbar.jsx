@@ -45,6 +45,7 @@ export default function Navbar() {
   ]
 
   const languages = LANGUAGES
+  const currentLanguage = languages.find((lang) => lang.code === currentLang) ?? languages[0]
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-slate-200/50 bg-[#f7f3ee]/90 backdrop-blur-md transition-all dark:border-slate-800/80 dark:bg-[#161412]/90">
@@ -144,10 +145,10 @@ export default function Navbar() {
             <div className="relative" ref={langMenuRef}>
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm font-medium text-slate-700 transition-all hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+                className="inline-flex min-w-[5.5rem] items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm font-medium text-slate-700 transition-all hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
               >
                 <FiGlobe className="text-slate-400" />
-                <span className="uppercase">{currentLang}</span>
+                <span className="uppercase">{currentLanguage.label}</span>
                 <FiChevronDown className={`text-xs transition-transform duration-200 ${isLangOpen ? 'rotate-180' : ''}`} />
               </button>
 
@@ -166,7 +167,7 @@ export default function Navbar() {
                           : 'text-slate-600 hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800'
                       }`}
                     >
-                      {lang.name}
+                      {lang.displayName}
                     </button>
                   ))}
                 </div>
@@ -183,9 +184,9 @@ export default function Navbar() {
           <div className="flex md:hidden items-center gap-3">
             <button
               onClick={() => switchLang(currentLang === 'az' ? 'en' : currentLang === 'en' ? 'ru' : 'az')}
-              className="rounded-xl border border-slate-200 p-2.5 text-xs font-bold uppercase text-slate-600 dark:border-slate-800 dark:text-slate-400"
+              className="min-w-[4.5rem] rounded-xl border border-slate-200 px-3 py-2 text-xs font-bold uppercase text-slate-600 dark:border-slate-800 dark:text-slate-400"
             >
-              {currentLang}
+              {currentLanguage.label}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}

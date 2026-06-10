@@ -60,6 +60,149 @@
       "cardTitle2": "Tech-Led Support",
       "cardDesc2": "Combining legal requirements with technology standards for every project."
     },
+    "premium": {
+      "hero": {
+        "badge": "Premium advisory",
+        "title": "Legal strategy for market-leading teams.",
+        "description": "We help businesses launch, scale and stay compliant with legal frameworks built for fast-moving growth.",
+        "cta": {
+          "primary": "Book a consultation",
+          "secondary": "Explore capabilities"
+        },
+        "proofs": {
+          "trust": {
+            "tag": "Trusted by leaders",
+            "title": "Legal planning with business clarity",
+            "desc": "Structured programs that align your legal roadmap with market and regulatory goals."
+          },
+          "alignment": {
+            "tag": "Governance aligned",
+            "title": "Risk controls that support growth",
+            "desc": "Practical compliance and contract guidance for faster decision-making."
+          }
+        },
+        "panelTitle": "Core strategic focus",
+        "panelItems": {
+          "regulatory": {
+            "label": "Regulatory readiness",
+            "detail": "Clear benchmarks for approvals, licensing and market entry."
+          },
+          "governance": {
+            "label": "Governance design",
+            "detail": "Practical policies and workflows built for executive teams."
+          },
+          "digital": {
+            "label": "Digital operations",
+            "detail": "Contracts and data controls for modern technology products."
+          }
+        }
+      },
+      "trust": {
+        "badge": "Proven performance",
+        "title": "Delivering measurable outcomes for fast-growing businesses.",
+        "description": "Our work focuses on commercial clarity, contract certainty and regulatory confidence.",
+        "metrics": {
+          "retainers": {
+            "label": "Ongoing retainers",
+            "value": "25+"
+          },
+          "launches": {
+            "label": "Market launches supported",
+            "value": "18"
+          },
+          "governance": {
+            "label": "Governance programs",
+            "value": "14"
+          },
+          "crossBorder": {
+            "label": "Cross-border engagements",
+            "value": "10"
+          }
+        }
+      },
+      "capabilities": {
+        "badge": "Focused expertise",
+        "title": "Practical legal services for regulated growth.",
+        "description": "From contracts to compliance and digital policies, we help teams move quickly without compromise.",
+        "cards": {
+          "regulatory": {
+            "title": "Regulatory Programs",
+            "description": "End-to-end support for licensing, approvals and ongoing compliance."
+          },
+          "governance": {
+            "title": "Governance & Contracts",
+            "description": "Policies, board materials and contract structures tuned to business strategy."
+          },
+          "digital": {
+            "title": "Digital Risk & Data",
+            "description": "Terms, privacy and operational guardrails for digital product delivery."
+          }
+        }
+      },
+      "impact": {
+        "badge": "Business impact",
+        "title": "Legal work that removes blockers and accelerates delivery.",
+        "description": "Our approach is designed to turn legal complexity into a clear execution plan.",
+        "cards": {
+          "clarity": {
+            "title": "Faster clarity",
+            "desc": "Reports and roadmaps that make compliance choices easy for leaders."
+          },
+          "alignment": {
+            "title": "Stakeholder alignment",
+            "desc": "A single legal narrative for founders, investors and operational teams."
+          },
+          "execution": {
+            "title": "Ready-to-run execution",
+            "desc": "Practical deliverables that move from advice to implementation."
+          }
+        },
+        "learnMore": "View full offering"
+      },
+      "caseStudy": {
+        "badge": "Featured outcome",
+        "title": "A technology company entered a regulated market with complete legal oversight.",
+        "description": "LBC created a compliance program, contract framework and launch plan that reduced risk and supported expansion.",
+        "points": [
+          "Designed a regulations-first launch roadmap for new markets.",
+          "Delivered contract and governance structures in four weeks.",
+          "Enabled rapid decision-making with an executive-ready compliance dashboard."
+        ],
+        "clientInsight": "Client insight",
+        "quote": "“LBC helped us move from compliance uncertainty to a launch-ready operating model in under six weeks.”",
+        "quoteAuthor": "— Chief Operating Officer, regional fintech platform",
+        "resultTag": "Result",
+        "resultTitle": "Launch compliance completed 40% faster than the client forecast."
+      },
+      "why": {
+        "badge": "Why LBC",
+        "title": "A boutique partner with global discipline.",
+        "description": "We combine legal precision, digital awareness and business judgment to support strategic decisions and market expansion.",
+        "items": {
+          "executive": {
+            "title": "Executive-grade advisory",
+            "description": "Legal insights delivered with the same rigor as senior consulting teams."
+          },
+          "speed": {
+            "title": "Fast, decisive delivery",
+            "description": "Practical implementation support for teams that need clarity before launch."
+          },
+          "crossBorder": {
+            "title": "Cross-border readiness",
+            "description": "Advice for regulatory, corporate and digital operations across markets."
+          },
+          "clientFocus": {
+            "title": "Premium client focus",
+            "description": "Built around your board priorities, not generic legal templates."
+          }
+        }
+      },
+      "cta": {
+        "badge": "Start with confidence",
+        "title": "Book a 15-minute advisory call with LBC.",
+        "button": "Schedule a consultation"
+      }
+    },
     "testimonials": {
       "title": "Client Feedback",
       "placeholder": "TestimonialsSlider component will appear here"

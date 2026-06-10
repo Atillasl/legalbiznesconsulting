@@ -1,3 +1,5 @@
+import { clientLogos } from '../assets'
+
 export const blogCategories = ['all', 'startup', 'cyber', 'corporate']
 
 export const blogPosts = [
@@ -8,7 +10,7 @@ export const blogPosts = [
     category: "startup",
     date: "05 İyun 2026",
     readTime: "5 dəq",
-    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80"
+    image: clientLogos[0]
   },
   {
     id: 2,
@@ -17,7 +19,7 @@ export const blogPosts = [
     category: "cyber",
     date: "28 May 2026",
     readTime: "7 dəq",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80"
+    image: clientLogos[1]
   },
   {
     id: 3,
@@ -26,6 +28,6 @@ export const blogPosts = [
     category: "corporate",
     date: "14 May 2026",
     readTime: "4 dəq",
-    image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=600&q=80"
+    image: clientLogos[2]
   }
 ]

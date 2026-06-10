@@ -1,5 +1,6 @@
 import { FiArrowRight, FiShield, FiCheckCircle } from 'react-icons/fi'
 import { useTranslation } from '../../context/LanguageProvider' // hook-un yerləşdiyi yerə uyğun
+import { techImages } from '../../assets'
 
 export default function HeroSection() {
   const { t } = useTranslation()
@@ -12,8 +13,8 @@ export default function HeroSection() {
       <div className="absolute bottom-10 right-10 -z-10 h-48 w-48 rounded-full bg-slate-100 blur-[60px] dark:bg-slate-900/50" />
 
       {/* 2. MAIN CONTENT GRID */}
-      <div className="mx-auto max-w-4xl animate-fade-in space-y-6 text-left">
-        
+      <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
+        <div className="space-y-6 lg:pr-8">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 rounded-full bg-[#00969A]/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-[#00969A] uppercase dark:bg-[#00969A]/20">
           <FiShield className="animate-pulse" /> Legal Business Consulting
@@ -58,6 +59,12 @@ export default function HeroSection() {
           </a>
         </div>
 
+        </div>
+
+        {/* Large illustrative image for hero on wide screens */}
+        <div className="hidden lg:flex items-center justify-center">
+          <img src={techImages[1]} alt="hero-illustration" className="w-full max-w-2xl rounded-2xl object-cover shadow-xl" loading="lazy" />
+        </div>
       </div>
     </section>
   )

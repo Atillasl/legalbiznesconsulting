@@ -13,6 +13,11 @@ export default function ServiceCard({ service }) {
       <div className="absolute top-0 right-0 h-24 w-24 bg-[#00969A]/5 rounded-bl-full group-hover:bg-[#00969A]/10 transition-colors duration-300" />
 
       <div>
+        {service.image && (
+          <div className="mb-4">
+            <img src={service.image} alt={service.title} className="w-full h-40 object-cover rounded-lg" loading="lazy" />
+          </div>
+        )}
         {/* Kart Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#00969A]/10 text-2xl text-[#00969A] transition-colors group-hover:bg-[#00969A] group-hover:text-white dark:bg-[#00969A]/20">
