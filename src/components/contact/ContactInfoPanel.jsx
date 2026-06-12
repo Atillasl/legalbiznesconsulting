@@ -5,58 +5,74 @@ export default function ContactInfoPanel() {
   const { t } = useLanguage()
 
   return (
-    <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-100 bg-slate-50 p-8 shadow-sm dark:border-slate-900 dark:bg-slate-900">
-        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-6">{t('contact.info.title')}</h3>
+    <div className="space-y-4 antialiased">
+      {/* ƏSAS MƏLUMAT QUTUSU - Şüşə effekti və incə material dizaynı */}
+      <div className="rounded-2xl border border-slate-500/10 bg-white/40 p-6 backdrop-blur-md shadow-xl shadow-slate-500/[0.02] dark:bg-white/[0.01] sm:p-8">
+        
+        {/* PANEL BAŞLIĞI */}
+        <div className="border-b border-slate-500/5 pb-4 mb-6">
+          <h3 className="text-base font-medium tracking-tight text-slate-900 dark:text-white">
+            {t('contact.info.title')}
+          </h3>
+        </div>
 
+        {/* MƏLUMAT SİYAHISI */}
         <div className="space-y-6">
-          <div className="flex items-start gap-4">
-            <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#00969A]/10 text-[#00969A] dark:bg-[#00969A]/20">
-              <FiPhone size={18} />
+          
+          {/* TELEFON */}
+          <div className="group flex items-center gap-4">
+            {/* İkon qutusu hover anında zərifcə canlanır */}
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-500/5 bg-[#059aa2]/5 text-[#059aa2] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#059aa2] group-hover:text-white dark:bg-[#059aa2]/10">
+              <FiPhone size={15} />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wide">{t('contact.info.phone')}</h4>
-              <p className="text-sm font-semibold text-slate-800 dark:text-slate-200 mt-0.5">+994 77 347 79 59</p>
+              <h4 className="text-[9px] font-medium text-slate-400 uppercase tracking-[0.15em]">{t('contact.info.phone')}</h4>
+              <p className="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 tracking-wide">+994 77 347 79 59</p>
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
-            <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#00969A]/10 text-[#00969A] dark:bg-[#00969A]/20">
-              <FiMail size={18} />
+          {/* E-POÇT */}
+          <div className="group flex items-center gap-4">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-500/5 bg-[#059aa2]/5 text-[#059aa2] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#059aa2] group-hover:text-white dark:bg-[#059aa2]/10">
+              <FiMail size={15} />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wide">{t('contact.info.email')}</h4>
-              <p className="text-sm font-semibold text-slate-800 dark:text-slate-200 mt-0.5">info@legalbusiness.az</p>
+              <h4 className="text-[9px] font-medium text-slate-400 uppercase tracking-[0.15em]">{t('contact.info.email')}</h4>
+              <p className="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 tracking-wide">info@legalbusiness.az</p>
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
-            <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#00969A]/10 text-[#00969A] dark:bg-[#00969A]/20">
-              <FiMapPin size={18} />
+          {/* ÜNVAN */}
+          <div className="group flex items-start gap-4">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-500/5 bg-[#059aa2]/5 text-[#059aa2] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#059aa2] group-hover:text-white dark:bg-[#059aa2]/10 mt-0.5">
+              <FiMapPin size={15} />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wide">{t('contact.info.addressTitle')}</h4>
-              <p className="text-sm font-semibold text-slate-800 dark:text-slate-200 mt-0.5 leading-relaxed">{t('contact.info.address')}</p>
+              <h4 className="text-[9px] font-medium text-slate-400 uppercase tracking-[0.15em]">{t('contact.info.addressTitle')}</h4>
+              <p className="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 leading-relaxed tracking-wide">{t('contact.info.address')}</p>
             </div>
           </div>
 
-          <div className="flex items-start gap-4 border-t border-slate-50 pt-6 dark:border-slate-800/60">
-            <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#00969A]/10 text-[#00969A] dark:bg-[#00969A]/20">
-              <FiClock size={18} />
+          {/* İŞ SAATLARI */}
+          <div className="group flex items-start gap-4 border-t border-slate-500/5 pt-6 dark:border-slate-800/40">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-500/5 bg-[#059aa2]/5 text-[#059aa2] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#059aa2] group-hover:text-white dark:bg-[#059aa2]/10 mt-0.5">
+              <FiClock size={15} />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wide">{t('contact.info.hoursTitle')}</h4>
-              <p className="text-sm font-semibold text-slate-800 dark:text-slate-200 mt-0.5">{t('contact.info.hoursWeekdays')}</p>
-              <p className="text-xs text-slate-400 mt-0.5">{t('contact.info.hoursWeekend')}</p>
+              <h4 className="text-[9px] font-medium text-slate-400 uppercase tracking-[0.15em]">{t('contact.info.hoursTitle')}</h4>
+              <p className="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 tracking-wide">{t('contact.info.hoursWeekdays')}</p>
+              <p className="text-[11px] font-light text-slate-400 dark:text-slate-500 mt-0.5">{t('contact.info.hoursWeekend')}</p>
             </div>
           </div>
+
         </div>
       </div>
 
-      <div className="rounded-2xl bg-amber-50/60 border border-amber-100 p-4 dark:bg-amber-950/20 dark:border-amber-900/30">
-        <p className="flex gap-2 text-xs leading-relaxed text-amber-800 dark:text-amber-400">
-          <FiInfo className="shrink-0 mt-0.5" size={14} />
-          {t('contact.info.disclaimer')}
+      {/* DISCLAIMER (MƏLUMAT NOTU) - Narıncı bağıran rəng ləğv edildi, tam minimalist redaksiya üslubuna gətirildi */}
+      <div className="rounded-xl border border-slate-500/5 bg-slate-500/[0.02] p-4 dark:bg-white/[0.01]">
+        <p className="flex gap-2.5 text-[11px] font-light leading-relaxed text-slate-400 dark:text-slate-500">
+          <FiInfo className="shrink-0 mt-0.5 text-[#059aa2]/80" size={13} />
+          <span>{t('contact.info.disclaimer')}</span>
         </p>
       </div>
     </div>

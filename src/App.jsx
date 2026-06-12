@@ -4,9 +4,9 @@ import { useEffect } from 'react'
 // Context Providers
 import { LanguageProvider } from './context/LanguageContext'
 
-// Qlobal UI Komponentləri (Hər səhifədə sabit qalanlar)
+// Qlobal UI Komponentləri
 import Navbar from './components/layout/Navbar'
-import Footer from './components/layout/Footer'
+import Footer from './components/layout/Footer.jsx'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import ServiceDetail from './pages/ServiceDetail'
@@ -17,30 +17,26 @@ function AppRoutes() {
   const location = useLocation()
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#f4efe8] text-[#2d2624] transition-colors duration-200 ease-in-out dark:bg-[#1a1713] dark:text-[#f0ede9]">
+    /* Home.jsx daxilindəki krem və qəhvəyi fon rənglərini bura (bütün saytı bükən ana div-ə) köçürdük.
+      Beləcə, səhifələr arası keçiddə və ya Navbarın arxasında heç bir ağ/qara rəng qırılması qalmayacaq.
+    */
+    <div className="flex min-h-screen flex-col bg-[#f4efe8] text-[#2d2624] transition-all duration-300 dark:bg-[#1a1713] dark:text-[#f0ede9]">
+      
       {/* Həmişə yuxarıda sabit qalan Naviqasiya Paneli */}
       <Navbar />
 
-      {/* Dinamik Səhifə Marşrutları */}
-      <main className="flex-grow pt-20"> {/* pt-20 navbarın altında qalmamaq üçün padding verir */}
+      {/* MƏSƏLƏ BURADA İDİ: 'pt-20' klassını sildik! 
+        Artıq HeroSection və BlogHeader tam şəkildə Navbarın altına (arxasına) keçəcək 
+         və aradakı o lazımsız boşluq tamamilə yox olacaq.
+      */}
+      <main className="flex-grow"> 
         <div key={location.pathname} className="page-transition">
           <Routes>
-            {/* Əsas Səhifə (Hero, Ümumi Baxış və s.) */}
             <Route path="/" element={<Home />} />
-
-            {/* Xidmətlər Kataloqu */}
             <Route path="/services" element={<Services />} />
-
-            {/* Dinamik Xidmət Detalı (ID-yə əsasən kontent dəyişir) */}
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
-
-            {/* Bloq Səhifəsi (Multi-filtering sistemli) */}
             <Route path="/blog" element={<Blog />} />
-
-            {/* Əlaqə Səhifəsi (Form və İnteraktiv Xəritə ilə) */}
             <Route path="/contact" element={<Contact />} />
-
-            {/* 404 - Tapılmayan Səhifə Keçidi (İstəyə bağlı olaraq Home-a yönləndirmə) */}
             <Route path="*" element={<Home />} />
           </Routes>
         </div>
@@ -67,7 +63,6 @@ export default function App() {
   return (
     <LanguageProvider>
       <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-        {/* Səhifə keçidlərində yuxarı skrol funksiyası */}
         <ScrollToTop />
         <AppRoutes />
       </Router>

@@ -2,132 +2,107 @@
 import Button from '../components/ui/Button'
 import { useLanguage } from '../hooks/useLanguage'
 import { techImages } from '../assets'
-import { 
-  FiArrowLeft, FiCheckCircle, FiBriefcase, 
-  FiGlobe, FiSmartphone, FiCornerDownRight 
-} from 'react-icons/fi'
+import { FiArrowLeft, FiCheckCircle, FiBriefcase, FiGlobe, FiSmartphone, FiCornerDownRight } from 'react-icons/fi'
 
 export default function ServiceDetail() {
   const { serviceId } = useParams()
   const { t } = useLanguage()
 
-  // decorative image
   const bannerImage = techImages[1]
-
-  // Ä°konlar dildÉ™n asÄ±lÄ± olmadÄ±ÄŸÄ± Ã¼Ã§Ã¼n lokal map obyekti daxilindÉ™ saxlanÄ±lÄ±r
-  const serviceIcons = {
-    "corporate": <FiBriefcase />,
-    "contract": <FiBriefcase />,
-    "web-dev": <FiGlobe />,
-    "app-dev": <FiSmartphone />
-  }
-
-  // ÆgÉ™r gÉ™lÉ™n serviceId JSON daxilindÉ™ yoxdursa, korporativ bÃ¶lmÉ™ni default seÃ§irik
+  const serviceIcons = { "corporate": <FiBriefcase />, "contract": <FiBriefcase />, "web-dev": <FiGlobe />, "app-dev": <FiSmartphone /> }
   const activeId = t(`services.details.${serviceId}.title`) ? serviceId : 'corporate'
-
   const itemKey = `services.details.${activeId}`
   const benefits = t(`${itemKey}.benefits`) || []
   const processSteps = t(`${itemKey}.process`) || []
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-[#0f172a] transition-all dark:bg-[#020617] dark:text-[#f1f5f9]">
+    <div className="min-h-screen bg-[#fafafa] text-slate-900 transition-colors duration-500 dark:bg-[#020617] dark:text-[#f1f5f9]">
       
-      {/* HEADER BANNER */}
-      <section className="relative overflow-hidden bg-[#f8f4ee] py-12 border-b border-slate-100 dark:bg-slate-950 dark:border-slate-900">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center text-center">
-            <Link 
-              to="/" 
-              className="inline-flex items-center gap-2 text-xs font-bold text-[#00969A] hover:underline mb-4"
-            >
-              <FiArrowLeft size={14} /> {t('services.detailPage.backToHome')}
-            </Link>
-            <span className="text-[10px] font-extrabold tracking-widest text-[#00969A] uppercase bg-[#00969A]/10 px-3 py-1 rounded-full dark:bg-[#00969A]/20">
-              {t(`${itemKey}.category`)}
-            </span>
-            <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
-              {t(`${itemKey}.title`)}
-            </h1>
-            {/* Banner image under title */}
-            <div className="mt-6 w-full">
-              <img src={bannerImage} alt="service-banner" className="mx-auto w-full max-w-4xl rounded-2xl object-cover h-44" loading="lazy" />
-            </div>
+      {/* HEADER: Editorial Üslubu */}
+      <section className="relative pt-24 pb-16">
+        <div className="mx-auto max-w-5xl px-6">
+          <Link to="/" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#059aa2] hover:opacity-70 transition-opacity mb-8">
+            <FiArrowLeft size={12} /> {t('services.detailPage.backToHome')}
+          </Link>
+          
+          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#059aa2] bg-[#059aa2]/5 px-4 py-1.5 rounded-full">
+            {t(`${itemKey}.category`)}
+          </span>
+          
+          <h1 className="mt-8 text-4xl md:text-5xl font-light tracking-tight text-slate-900 dark:text-white">
+            {t(`${itemKey}.title`)}
+          </h1>
+
+          <div className="mt-12 overflow-hidden rounded-3xl border border-slate-500/10 shadow-2xl">
+            <img src={bannerImage} alt="service-banner" className="w-full h-80 object-cover hover:scale-105 transition-transform duration-700" loading="lazy" />
           </div>
         </div>
       </section>
 
-      {/* ÆSAS KONTENT */}
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-3 items-start">
+      {/* ƏSAS KONTENT: Grid Sistemi */}
+      <section className="mx-auto max-w-5xl px-6 py-12">
+        <div className="grid gap-12 lg:grid-cols-3 items-start">
           
-          {/* Sol TÉ™rÉ™f: GeniÅŸ Ä°zah vÉ™ ÃœstÃ¼nlÃ¼klÉ™r */}
-          <div className="md:col-span-2 space-y-10">
-            {/* TÉ™svir */}
-            <div className="rounded-3xl bg-slate-50 p-8 border border-slate-100 shadow-sm dark:bg-slate-900 dark:border-slate-800">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#00969A]/10 text-2xl text-[#00969A] mb-5 dark:bg-[#00969A]/20">
+          {/* Sol Panel: Məzmun */}
+          <div className="lg:col-span-2 space-y-8">
+            <div className="rounded-3xl border border-slate-500/10 bg-white/50 p-8 md:p-10 backdrop-blur-md dark:bg-white/[0.02]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#059aa2]/5 text-[#059aa2] mb-6">
                 {serviceIcons[activeId] || <FiBriefcase />}
               </div>
-              <h2 className="text-xl font-bold mb-4">{t('services.detailPage.aboutTitle')}</h2>
-              <p className="text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+              <h2 className="text-xl font-light mb-6">Service Overview</h2>
+              <p className="text-sm leading-relaxed text-slate-500 dark:text-slate-400 font-light">
                 {t(`${itemKey}.longDesc`)}
               </p>
             </div>
 
-            {/* ÃœstÃ¼nlÃ¼klÉ™r (Benefits) */}
-            <div className="rounded-3xl bg-slate-50 p-8 border border-slate-100 shadow-sm dark:bg-slate-900 dark:border-slate-800">
-              <h2 className="text-xl font-bold mb-6">{t('services.detailPage.benefitsTitle')}</h2>
+            <div className="rounded-3xl border border-slate-500/10 bg-white/50 p-8 md:p-10 backdrop-blur-md dark:bg-white/[0.02]">
+              <h2 className="text-xl font-light mb-8">Key Benefits</h2>
               <ul className="space-y-4">
-                {Array.isArray(benefits) && benefits.map((benefit, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
-                    <FiCheckCircle className="text-[#00969A] shrink-0 mt-0.5" size={18} />
-                    <span>{benefit}</span>
+                {benefits.map((benefit, idx) => (
+                  <li key={idx} className="flex items-start gap-4 text-sm text-slate-600 dark:text-slate-400">
+                    <FiCheckCircle className="text-[#059aa2] shrink-0 mt-0.5" size={16} />
+                    {benefit}
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
-          {/* SaÄŸ TÉ™rÉ™f: Ä°ÅŸ Prosesi vÉ™ SÃ¼rÉ™tli MÃ¼raciÉ™t */}
-          <div className="space-y-6">
-            {/* Ä°ÅŸ Prosesi (Step-by-Step) */}
-            <div className="rounded-3xl bg-slate-50 p-6 border border-slate-100 shadow-sm dark:bg-slate-900 dark:border-slate-800">
-              <h3 className="text-base font-bold mb-6 flex items-center gap-2">
-                <FiCornerDownRight className="text-[#00969A]" /> {t('services.detailPage.processTitle')}
+          {/* Sağ Panel: Proses və CTA */}
+          <div className="space-y-8">
+            {/* Proses */}
+            <div className="rounded-3xl border border-slate-500/10 bg-white/50 p-8 backdrop-blur-md dark:bg-white/[0.02]">
+              <h3 className="text-sm font-bold uppercase tracking-widest mb-8 flex items-center gap-2 text-slate-900 dark:text-white">
+                <FiCornerDownRight className="text-[#059aa2]" /> Process
               </h3>
-              <div className="space-y-6 relative before:absolute before:left-3.5 before:top-2 before:bottom-2 before:w-[1px] before:bg-slate-100 dark:before:bg-slate-800">
-                {Array.isArray(processSteps) && processSteps.map((p, idx) => (
+              <div className="space-y-8 relative before:absolute before:left-4 before:top-2 before:bottom-2 before:w-[1px] before:bg-[#059aa2]/10">
+                {processSteps.map((p, idx) => (
                   <div key={idx} className="flex gap-4 relative">
-                    <div className="h-7 w-7 rounded-full bg-[#00969A]/10 text-[#00969A] text-xs font-bold flex items-center justify-center shrink-0 z-10 dark:bg-[#00969A]/20">
+                    <div className="h-8 w-8 rounded-full bg-[#059aa2] text-white text-[10px] font-bold flex items-center justify-center shrink-0 z-10">
                       {p.step}
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-slate-900 dark:text-white">{p.title}</h4>
-                      <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">{p.desc}</p>
+                      <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">{p.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* CTA KartÄ± */}
-            <div className="rounded-3xl bg-gradient-to-br from-[#00969A] to-[#007A7E] p-6 text-white text-center shadow-lg shadow-[#00969A]/10">
-              <h3 className="text-base font-bold">{t('services.detailPage.ctaTitle')}</h3>
-              <p className="text-xs text-white/80 mt-2 leading-relaxed">
-                {t('services.detailPage.ctaDesc')}
-              </p>
-              <div className="mt-6">
-                <Link to="/contact">
-                  <Button variant="secondary" className="w-full py-3 text-xs font-bold text-[#007A7E] bg-white hover:bg-slate-50">
-                    {t('services.detailPage.ctaBtn')}
-                  </Button>
-                </Link>
-              </div>
+            {/* Premium CTA */}
+            <div className="rounded-3xl bg-[#059aa2] p-8 text-center text-white shadow-xl shadow-[#059aa2]/20">
+              <h3 className="text-lg font-light">Ready to start?</h3>
+              <p className="text-xs text-white/70 mt-3 mb-8 leading-relaxed">Let's discuss how we can help your business grow.</p>
+              <Link to="/contact">
+                <Button variant="secondary" className="w-full py-4 text-[10px] font-bold uppercase tracking-widest border-none">
+                  {t('services.detailPage.ctaBtn')}
+                </Button>
+              </Link>
             </div>
           </div>
-
         </div>
       </section>
-
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import { memo } from 'react'
 
 const INPUT_BASE_STYLES = `
-  w-full rounded-xl border px-4 py-3.5 text-sm transition-all duration-200 focus:outline-none
-  disabled:cursor-not-allowed disabled:opacity-60
+  w-full rounded-xl border px-4 py-3.5 text-sm transition-all duration-300 ease-out outline-none
+  disabled:cursor-not-allowed disabled:opacity-50
 `
 
 function Input({
@@ -19,17 +19,20 @@ function Input({
   className = '',
   ...props
 }) {
+  
+  // Premium Vurğular
   const validationStyles = error
-    ? 'border-red-500 bg-red-50/10 focus:border-red-500 focus:ring-1 focus:ring-red-500'
-    : 'border-slate-200 bg-slate-50/50 focus:border-[#00969A] focus:bg-white dark:border-slate-800 dark:bg-slate-900 dark:focus:border-[#00969A] dark:focus:bg-slate-950'
+    ? 'border-red-500/50 bg-red-500/[0.02] focus:ring-2 focus:ring-red-500/10'
+    : 'border-slate-500/10 bg-white/50 focus:border-[#059aa2] focus:bg-white focus:ring-4 focus:ring-[#059aa2]/5 dark:bg-slate-900/50 dark:border-slate-800'
 
   return (
-    <div className={`w-full space-y-2 ${className}`}>
+    <div className={`w-full space-y-2 group ${className}`}>
       {label && (
-        <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
-          {label} {required && <span className="text-red-500">*</span>}
+        <label className="block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500 transition-colors group-focus-within:text-[#059aa2]">
+          {label} {required && <span className="text-[#059aa2]">*</span>}
         </label>
       )}
+      
       {isTextarea ? (
         <textarea
           name={name}
@@ -38,7 +41,7 @@ function Input({
           placeholder={placeholder}
           required={required}
           rows={rows}
-          className={`${INPUT_BASE_STYLES} ${validationStyles} resize-none`}
+          className={`${INPUT_BASE_STYLES} ${validationStyles} resize-none dark:text-white`}
           {...props}
         />
       ) : (
@@ -49,11 +52,16 @@ function Input({
           onChange={onChange}
           placeholder={placeholder}
           required={required}
-          className={`${INPUT_BASE_STYLES} ${validationStyles}`}
+          className={`${INPUT_BASE_STYLES} ${validationStyles} dark:text-white`}
           {...props}
         />
       )}
-      {error && <p className="text-xs font-medium text-red-500 animate-fade-in">{error}</p>}
+      
+      {error && (
+        <p className="text-[10px] font-bold uppercase tracking-wider text-red-500 animate-in fade-in slide-in-from-top-1">
+          {error}
+        </p>
+      )}
     </div>
   )
 }

@@ -26,38 +26,36 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  // Navigation data with clean names (no "nav." prefix)
   const navigationItems = [
-    { name: t('nav.home'), href: '/', label: 'Home' },
-    { name: t('nav.services'), href: '/services', label: 'Services', dropdown: true },
-    { name: t('nav.blog'), href: '/blog', label: 'Blog' },
-    { name: t('nav.contact'), href: '/contact', label: 'Contact' },
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.services'), href: '/services', dropdown: true },
+    { name: t('nav.blog'), href: '/blog' },
+    { name: t('nav.contact'), href: '/contact' },
   ]
 
-  // Services dropdown menu
   const servicesMenu = [
-    { name: t('footer.services.corporate'), icon: <FiBriefcase className="text-lg" /> },
-    { name: t('footer.services.contract'), icon: <FiCode className="text-lg" /> },
-    { name: t('footer.services.property'), icon: <FiBriefcase className="text-lg" /> },
-    { name: t('footer.services.tax'), icon: <FiCode className="text-lg" /> },
-    { name: t('footer.tech.web'), icon: <FiCpu className="text-lg" /> },
-    { name: t('footer.tech.app'), icon: <FiCpu className="text-lg" /> },
+    { name: t('footer.services.corporate'), icon: <FiBriefcase className="text-base" /> },
+    { name: t('footer.services.contract'), icon: <FiCode className="text-base" /> },
+    { name: t('footer.services.property'), icon: <FiBriefcase className="text-base" /> },
+    { name: t('footer.services.tax'), icon: <FiCode className="text-base" /> },
+    { name: t('footer.tech.web'), icon: <FiCpu className="text-base" /> },
+    { name: t('footer.tech.app'), icon: <FiCpu className="text-base" /> },
   ]
 
   const languages = LANGUAGES
   const currentLanguage = languages.find((lang) => lang.code === currentLang) ?? languages[0]
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-slate-200/50 bg-[#f7f3ee]/90 backdrop-blur-md transition-all dark:border-slate-800/80 dark:bg-[#161412]/90">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <nav className="sticky top-0 z-50 w-full border-b border-slate-500/5 bg-white/70 backdrop-blur-md transition-all dark:border-slate-900/40 dark:bg-slate-950/70 antialiased">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           
           {/* LOGO SAHƏSİ */}
-          <Link to="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#00969A] text-white shadow-md shadow-[#00969A]/20">
-              <FiLayers className="text-xl" />
+          <Link to="/" className="flex items-center gap-2.5">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#059aa2] text-white shadow-lg shadow-[#059aa2]/10">
+              <FiLayers className="text-base" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+            <span className="text-base font-medium tracking-tight text-slate-900 dark:text-white">
               LBC
             </span>
           </Link>
@@ -75,48 +73,55 @@ export default function Navbar() {
                 >
                   <button
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
-                    className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                    className={`flex items-center gap-1 text-xs font-medium tracking-wide transition-colors ${
                       location.pathname === item.href
-                        ? 'text-[#0f766e] font-semibold'
-                        : 'text-slate-600 hover:text-[#0f766e] dark:text-slate-300 dark:hover:text-[#33d6c0]'
+                        ? 'text-[#059aa2] font-semibold'
+                        : 'text-slate-500 hover:text-[#059aa2] dark:text-slate-400 dark:hover:text-[#59c9ca]'
                     }`}
                   >
                     {item.name}
-                    <FiChevronDown className={`text-xs transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                    <FiChevronDown className={`text-xs transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
                   </button>
                   
+                  {/* BAĞLANMA PROBLEMİNİ HƏLL EDƏN HİSSƏ: mt-2 silindi, pt-5 əlavə edildi */}
                   {isServicesOpen && (
-                    <div className="absolute left-0 mt-2 w-60 origin-top-left rounded-3xl border border-slate-200 bg-slate-50 shadow-lg shadow-slate-200/50 dark:border-slate-800 dark:bg-slate-950 z-50">
-                      <div className="p-3">
-                        <div className="px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+                    <div className="absolute left-0 top-full w-64 pt-5 origin-top-left animate-fadeIn">
+                      {/* Əsl vizual qutu bura daxil edildi, kənarları lüks və incədir */}
+                      <div className="rounded-xl border border-slate-500/10 bg-white/95 p-3.5 shadow-xl backdrop-blur-md dark:border-slate-800/60 dark:bg-slate-950/95">
+                        <div className="text-[9px] font-medium uppercase tracking-[0.2em] text-slate-400 mb-2 px-2">
                           {t('footer.titles.legal')}
                         </div>
-                        {servicesMenu.slice(0, 4).map((service, idx) => (
-                          <Link
-                            key={idx}
-                            to="/services"
-                            onClick={() => setIsServicesOpen(false)}
-                            className="flex items-center gap-3 rounded-2xl px-3 py-2 text-sm text-slate-700 transition-colors hover:bg-slate-100 hover:text-[#0f766e] dark:text-slate-300 dark:hover:bg-slate-800"
-                          >
-                            {service.icon}
-                            {service.name}
-                          </Link>
-                        ))}
-                        <div className="border-t border-slate-200 px-3 py-2 mt-3 dark:border-slate-800">
-                          <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 mb-2">
-                            {t('footer.titles.tech')}
-                          </div>
-                          {servicesMenu.slice(4).map((service, idx) => (
+                        <div className="space-y-0.5">
+                          {servicesMenu.slice(0, 4).map((service, idx) => (
                             <Link
                               key={idx}
                               to="/services"
                               onClick={() => setIsServicesOpen(false)}
-                              className="flex items-center gap-3 rounded-2xl px-3 py-2 text-sm text-slate-700 transition-colors hover:bg-slate-100 hover:text-[#0f766e] dark:text-slate-300 dark:hover:bg-slate-800"
+                              className="flex items-center gap-3 rounded-lg px-2.5 py-1.5 text-xs text-slate-500 transition-colors hover:bg-[#059aa2]/5 hover:text-[#059aa2] dark:text-slate-400 dark:hover:bg-slate-900/60"
                             >
-                              {service.icon}
+                              <span className="text-[#059aa2]/80">{service.icon}</span>
                               {service.name}
                             </Link>
                           ))}
+                        </div>
+                        
+                        <div className="border-t border-slate-500/5 mt-3 pt-3 dark:border-slate-800/40">
+                          <div className="text-[9px] font-medium uppercase tracking-[0.2em] text-slate-400 mb-2 px-2">
+                            {t('footer.titles.tech')}
+                          </div>
+                          <div className="space-y-0.5">
+                            {servicesMenu.slice(4).map((service, idx) => (
+                              <Link
+                                key={idx}
+                                to="/services"
+                                onClick={() => setIsServicesOpen(false)}
+                                className="flex items-center gap-3 rounded-lg px-2.5 py-1.5 text-xs text-slate-500 transition-colors hover:bg-[#059aa2]/5 hover:text-[#059aa2] dark:text-slate-400 dark:hover:bg-slate-900/60"
+                              >
+                                <span className="text-[#059aa2]/80">{service.icon}</span>
+                                {service.name}
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -126,10 +131,10 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-xs font-medium tracking-wide transition-colors ${
                     location.pathname === item.href
-                      ? 'text-[#00969A] font-semibold'
-                      : 'text-slate-600 hover:text-[#00969A] dark:text-slate-300 dark:hover:text-[#00969A]'
+                      ? 'text-[#059aa2] font-semibold'
+                      : 'text-slate-500 hover:text-[#059aa2] dark:text-slate-400 dark:hover:text-[#59c9ca]'
                   }`}
                 >
                   {item.name}
@@ -140,82 +145,84 @@ export default function Navbar() {
 
           {/* DESKTOP SAĞ HİSSƏ */}
           <div className="hidden md:flex items-center gap-4">
-            
             {/* MULTI-LANGUAGE DROPDOWN */}
             <div className="relative" ref={langMenuRef}>
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
-                className="inline-flex min-w-[5.5rem] items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm font-medium text-slate-700 transition-all hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+                className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-slate-500/5 bg-slate-50/30 px-3 py-1.5 text-xs font-medium text-slate-500 transition-all hover:bg-slate-50 dark:border-slate-800/60 dark:bg-slate-900/30 dark:text-slate-400 dark:hover:bg-slate-900"
               >
-                <FiGlobe className="text-slate-400" />
-                <span className="uppercase">{currentLanguage.label}</span>
+                <FiGlobe className="text-slate-400 text-xs" />
+                <span className="uppercase tracking-wider text-[10px]">{currentLanguage.label}</span>
                 <FiChevronDown className={`text-xs transition-transform duration-200 ${isLangOpen ? 'rotate-180' : ''}`} />
               </button>
 
+              {/* Dil menyusuna da eyni şəkildə qoruyucu pt-4 və zərif animasiya verildi */}
               {isLangOpen && (
-                <div className="absolute right-0 mt-2 w-40 origin-top-right rounded-2xl border border-slate-100 bg-slate-50 p-1.5 shadow-xl dark:border-slate-800 dark:bg-slate-900">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        switchLang(lang.code)
-                        setIsLangOpen(false)
-                      }}
-                      className={`flex w-full items-center rounded-xl px-3 py-2 text-left text-sm transition-colors ${
-                        currentLang === lang.code
-                          ? 'bg-[#00969A]/10 font-semibold text-[#00969A] dark:bg-[#00969A]/20'
-                          : 'text-slate-600 hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800'
-                      }`}
-                    >
-                      {lang.displayName}
-                    </button>
-                  ))}
+                <div className="absolute right-0 top-full w-32 pt-4 origin-top-right animate-fadeIn">
+                  <div className="rounded-xl border border-slate-500/5 bg-white/95 p-1 shadow-xl backdrop-blur-md dark:border-slate-800/60 dark:bg-slate-950/95">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          switchLang(lang.code)
+                          setIsLangOpen(false)
+                        }}
+                        className={`flex w-full items-center rounded-lg px-2.5 py-1.5 text-left text-xs transition-colors ${
+                          currentLang === lang.code
+                            ? 'bg-[#059aa2]/10 font-medium text-[#059aa2] dark:bg-[#059aa2]/20'
+                            : 'text-slate-500 hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-900'
+                        }`}
+                      >
+                        {lang.displayName}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
 
-            {/* CTA MÜRACİƏT DÜYMƏSİ */}
-            <Link to="/contact" className="rounded-xl bg-[#00969A] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#007A7E]">
+            {/* CTA MÜRACİƏT DÜYMƏSİ - Daha zərif korporativ ölçü */}
+            <Link to="/contact" className="rounded-xl bg-[#059aa2] px-4 py-2 text-xs font-medium text-white shadow-lg shadow-[#059aa2]/5 transition-all hover:bg-[#047d82]">
               {t('nav.consultation')}
             </Link>
           </div>
 
           {/* MOBİL MENYU DÜYMƏSİ */}
-          <div className="flex md:hidden items-center gap-3">
+          <div className="flex md:hidden items-center gap-2">
             <button
               onClick={() => switchLang(currentLang === 'az' ? 'en' : currentLang === 'en' ? 'ru' : 'az')}
-              className="min-w-[4.5rem] rounded-xl border border-slate-200 px-3 py-2 text-xs font-bold uppercase text-slate-600 dark:border-slate-800 dark:text-slate-400"
+              className="rounded-xl border border-slate-500/5 px-2.5 py-1.5 text-[10px] font-medium uppercase text-slate-500 dark:border-slate-800 dark:text-slate-400"
             >
               {currentLanguage.label}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="rounded-xl border border-slate-200 p-2.5 text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:text-slate-400 dark:hover:bg-slate-800"
+              className="rounded-xl border border-slate-500/5 p-2 text-slate-500 dark:border-slate-800 dark:text-slate-400"
             >
-              {isOpen ? <FiX className="text-xl" /> : <FiMenu className="text-xl" />}
+              {isOpen ? <FiX className="text-base" /> : <FiMenu className="text-base" />}
             </button>
           </div>
 
         </div>
       </div>
 
-      {/* MOBİL RESPONSIVE PANEL */}
+      {/* MOBİL PANEL */}
       {isOpen && (
-        <div className="border-t border-slate-100 bg-[#f7f3ee] px-4 py-4 md:hidden dark:border-slate-800 dark:bg-slate-950 animate-fadeIn">
-          <div className="space-y-2">
+        <div className="border-t border-slate-500/5 bg-white/95 px-6 py-4 md:hidden backdrop-blur-md dark:border-slate-900 dark:bg-slate-950/95">
+          <div className="space-y-1">
             {navigationItems.map((item) => (
               <div key={item.href}>
                 {item.dropdown ? (
                   <>
                     <button
                       onClick={() => setIsServicesOpen(!isServicesOpen)}
-                      className="w-full text-left flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-[#00969A] dark:text-slate-300 dark:hover:bg-slate-900"
+                      className="w-full flex items-center justify-between rounded-xl px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300"
                     >
                       {item.name}
                       <FiChevronDown className={`transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
                     </button>
                     {isServicesOpen && (
-                      <div className="ml-4 mt-1 space-y-1">
+                      <div className="ml-3 space-y-0.5 border-l border-slate-500/5 pl-3 dark:border-slate-800/40">
                         {servicesMenu.map((service, idx) => (
                           <Link
                             key={idx}
@@ -224,7 +231,7 @@ export default function Navbar() {
                               setIsOpen(false)
                               setIsServicesOpen(false)
                             }}
-                            className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#00969A] dark:text-slate-400 dark:hover:bg-slate-900"
+                            className="flex items-center gap-2.5 rounded-lg px-3 py-1.5 text-xs text-slate-500 dark:text-slate-400"
                           >
                             {service.icon}
                             {service.name}
@@ -237,7 +244,7 @@ export default function Navbar() {
                   <Link
                     to={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block rounded-xl px-4 py-3 text-base font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-[#00969A] dark:text-slate-300 dark:hover:bg-slate-900"
+                    className="block rounded-xl px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300"
                   >
                     {item.name}
                   </Link>
@@ -245,11 +252,11 @@ export default function Navbar() {
               </div>
             ))}
           </div>
-          <div className="mt-4 border-t border-slate-100 pt-4 dark:border-slate-800">
+          <div className="mt-4 pt-4 border-t border-slate-500/5 dark:border-slate-900">
             <Link 
               to="/contact"
               onClick={() => setIsOpen(false)}
-              className="block w-full rounded-xl bg-[#00969A] py-3.5 text-center text-sm font-semibold text-white shadow-sm"
+              className="block w-full rounded-xl bg-[#059aa2] py-2.5 text-center text-xs font-medium text-white"
             >
               {t('nav.consultation')}
             </Link>

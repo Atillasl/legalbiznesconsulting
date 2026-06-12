@@ -8,12 +8,9 @@
   },
   "home": {
     "hero": {
-      "titleBefore": "Biznesiniz üçün",
-      "titleAccent1": "Etibarlı",
-      "titleMiddle": "və",
-      "titleAccent2": "Uzunmüddətli",
-      "titleAfter": "Hüquqi Müdafiə",
-      "description": "Məqsədimiz müştərilərimizə yalnız hüquqi xidmət göstərmək deyil, həm də onların biznes və şəxsi maraqlarının təhlükəsiz qorunmasını təmin etməkdir.",
+      "badge": "Strateji Hüquqi Tərəfdaş",
+      "title": "Hüquqi Dəqiqlik. Biznes İnkişafı.",
+      "subtitle": "Mürəkkəb hüquqi və rəqəmsal mühitlərdə biznesinizi qoruyan və böyüdən premium konsaltinq xidmətləri.",
       "cta": {
         "onlineApp": "Onlayn Müraciət",
         "ourServices": "Xidmətlərimiz"

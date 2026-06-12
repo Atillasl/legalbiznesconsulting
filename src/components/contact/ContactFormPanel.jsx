@@ -43,16 +43,36 @@ export default function ContactFormPanel() {
   }
 
   return (
-    <div className="rounded-3xl border border-slate-100 bg-slate-50 p-8 shadow-sm dark:border-slate-900 dark:bg-slate-900">
+    // Sərt fon ləğv edildi, incə minimalist kənarlıq və dumanlı material şüşə effekti gətirildi
+    <div className="relative overflow-hidden rounded-2xl border border-slate-500/10 bg-white/40 p-6 backdrop-blur-md shadow-xl shadow-slate-500/[0.02] dark:bg-white/[0.01] sm:p-8 antialiased">
+      
+      {/* BACKGROUND ABSTRACT GLOW - Formanın daxilindən sızan zərif işıq həlqəsi */}
+      <div className="absolute -bottom-24 -right-24 -z-10 h-48 w-48 rounded-full bg-[#059aa2]/5 blur-3xl pointer-events-none dark:bg-[#059aa2]/10" />
+
       {isSubmitted ? (
-        <div className="flex flex-col items-center justify-center text-center py-16 animate-fade-in space-y-4">
-          <FiCheckCircle className="text-emerald-500" size={56} />
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white">{t('contact.form.successTitle')}</h3>
-          <p className="text-sm text-slate-500 max-w-sm dark:text-slate-400">{t('contact.form.successDesc')}</p>
+        // Məktub uğurla göndərildikdə çıxan premium minimalist ekran
+        <div className="flex flex-col items-center justify-center text-center py-20 space-y-4 animate-fadeIn">
+          {/* Yaşıl bağıran rəng yerinə, brend rəngində zərif, incə xətti ikon */}
+          <FiCheckCircle className="text-[#059aa2] stroke-[1.1] animate-pulse" size={48} />
+          <div className="space-y-1.5">
+            <h3 className="text-lg font-medium tracking-tight text-slate-900 dark:text-white">
+              {t('contact.form.successTitle')}
+            </h3>
+            <p className="mx-auto max-w-xs text-xs font-light leading-relaxed text-slate-400 dark:text-slate-500">
+              {t('contact.form.successDesc')}
+            </p>
+          </div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{t('contact.form.title')}</h3>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          
+          {/* FORM TITLE - Ölçü qorundu, font hiyerarxiyası nəzakətli (font-medium) edildi */}
+          <div className="border-b border-slate-500/5 pb-4">
+            <h3 className="text-base font-medium tracking-tight text-slate-900 dark:text-white">
+              {t('contact.form.title')}
+            </h3>
+          </div>
+
           <div className="grid gap-4 sm:grid-cols-2">
             <Input
               label={t('contact.form.labels.name')}
@@ -99,14 +119,19 @@ export default function ContactFormPanel() {
             value={formData.message}
             onChange={handleChange}
             isTextarea
-            rows={5}
+            rows={4}
             placeholder={t('contact.form.placeholders.message')}
             required
             error={errors.message}
           />
 
+          {/* DÜYMƏ STRUKTURU - Tam korporativ lüks, zərif keçidli düymə */}
           <div className="pt-2">
-            <Button type="submit" variant="primary" className="w-full py-4">
+            <Button 
+              type="submit" 
+              variant="primary" 
+              className="w-full py-3.5 text-xs font-medium tracking-wide uppercase bg-[#059aa2] hover:bg-[#047d82] shadow-lg shadow-[#059aa2]/5 transition-all rounded-xl"
+            >
               {t('contact.form.submitBtn')}
             </Button>
           </div>

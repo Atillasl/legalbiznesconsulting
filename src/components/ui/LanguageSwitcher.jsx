@@ -11,44 +11,41 @@ function LanguageSwitcher() {
 
   useOutsideClick(dropdownRef, () => setIsOpen(false))
 
-  const toggleDropdown = useCallback(() => {
-    setIsOpen((prevState) => !prevState)
-  }, [])
+  const toggleDropdown = useCallback(() => setIsOpen((p) => !p), [])
 
-  const handleLanguageSelect = useCallback(
-    (langCode) => {
-      switchLang(langCode)
-      setIsOpen(false)
-    },
-    [switchLang]
-  )
+  const handleLanguageSelect = useCallback((langCode) => {
+    switchLang(langCode)
+    setIsOpen(false)
+  }, [switchLang])
 
   return (
-    <div className="relative inline-block text-left" ref={dropdownRef}>
+    <div className="relative" ref={dropdownRef}>
+      {/* TRIGGER BUTTON */}
       <button
         type="button"
         onClick={toggleDropdown}
-        className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-700 transition-all hover:bg-slate-50 focus:outline-none dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+        className="group flex items-center gap-2 rounded-full border border-slate-500/10 bg-white/50 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 transition-all duration-300 hover:border-[#059aa2]/30 hover:text-[#059aa2] backdrop-blur-md dark:bg-slate-900/50 dark:border-white/5"
       >
-        <FiGlobe className="text-[#00969A] text-sm" />
-        <span>{currentLang.toUpperCase()}</span>
+        <FiGlobe size={12} className="text-[#059aa2]" />
+        {currentLang.toUpperCase()}
         <FiChevronDown
-          className={`text-slate-400 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
-          size={14}
+          className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          size={12}
         />
       </button>
 
+      {/* DROPDOWN MENU - Şüşə effekti */}
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-24 origin-top-right rounded-xl border border-slate-100 bg-white p-1 shadow-xl ring-1 ring-black/5 focus:outline-none animate-fade-in dark:border-slate-800 dark:bg-slate-900">
-          <div className="py-1 space-y-0.5">
+        <div className="absolute right-0 top-full mt-3 w-32 origin-top-right overflow-hidden rounded-2xl border border-slate-500/10 bg-white/70 p-1.5 shadow-2xl shadow-slate-900/5 backdrop-blur-2xl animate-in fade-in zoom-in-95 duration-200 dark:bg-slate-900/80">
+          <div className="space-y-0.5">
             {LANGUAGES.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => handleLanguageSelect(lang.code)}
-                className={`flex w-full items-center justify-center rounded-lg px-3 py-2 text-xs font-semibold transition-colors ${
+                className={`flex w-full items-center justify-center rounded-xl px-4 py-2 text-[10px] font-bold uppercase tracking-widest transition-all duration-300 ${
                   currentLang === lang.code
-                    ? 'bg-[#00969A]/10 text-[#00969A] dark:bg-[#00969A]/20'
-                    : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white'
+                    ? 'bg-[#059aa2] text-white shadow-lg shadow-[#059aa2]/20'
+                    : 'text-slate-400 hover:bg-[#059aa2]/5 hover:text-[#059aa2]'
                 }`}
               >
                 {lang.label}
