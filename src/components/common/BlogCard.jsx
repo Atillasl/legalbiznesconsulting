@@ -3,9 +3,12 @@ import { useLanguage } from '../../hooks/useLanguage'
 import { FiCalendar, FiClock, FiArrowRight, FiTag } from 'react-icons/fi'
 
 export default function BlogCard({ post }) {
-  const { t } = useLanguage()
+  const { t, currentLang } = useLanguage()
 
   if (!post) return null
+
+  const title = typeof post.title === 'string' ? post.title : (post.title[currentLang] || post.title.az || '')
+  const excerpt = typeof post.excerpt === 'string' ? post.excerpt : (post.excerpt[currentLang] || post.excerpt.az || '')
 
   return (
     // Qutu dizaynı incəldildi, sərt kölgələr (shadow-sm) minimalist xətlərlə əvəzləndi
@@ -36,20 +39,20 @@ export default function BlogCard({ post }) {
               <FiCalendar size={11} className="text-[#059aa2]/70" /> {post.date}
             </span>
             <span className="flex items-center gap-1">
-              <FiClock size={11} className="text-[#059aa2]/70" /> {post.readTime} {t('blog.readTimeSuffix')}
+              <FiClock size={11} className="text-[#059aa2]/70" /> {post.readTime}
             </span>
           </div>
 
           {/* Başlıq - İdeal 'text-base' ölçüsü qorundu, font-bold yerinə professional font-medium istifadə olundu */}
           <h3 className="mt-3 text-base font-medium leading-snug tracking-tight text-slate-900 group-hover:text-[#059aa2] transition-colors duration-300 dark:text-white">
             <Link to={`/blog/${post.id}`}>
-              {post.title}
+              {title}
             </Link>
           </h3>
           
           {/* Qısa Xülasə - Oxunaqlı text-xs ölçüsündə, lakin font-light ilə daha zərif */}
           <p className="mt-2 text-xs leading-relaxed text-slate-500 line-clamp-3 font-light tracking-wide dark:text-slate-400">
-            {post.excerpt}
+            {excerpt}
           </p>
         </div>
 

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { FiCheckCircle, FiArrowUpRight } from 'react-icons/fi'
 import { useLanguage } from '../../hooks/useLanguage'
 
@@ -63,15 +64,15 @@ export default function ImpactSection() {
                   </div>
 
                   {/* Header info bar inside card */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-start gap-3 flex-1">
                       {/* Monoxrom İndeks nömrəsi */}
-                      <span className="font-mono text-xs font-medium text-slate-400 dark:text-slate-500">{item.number}</span>
-                      <h3 className="text-lg font-medium tracking-wide text-slate-900 dark:text-white transition-colors duration-300 group-hover:text-[#059aa2]">
+                      <span className="font-mono text-xs font-medium text-slate-400 dark:text-slate-500 mt-1 flex-shrink-0">{item.number}</span>
+                      <h3 className="text-sm font-medium tracking-tight text-slate-900 dark:text-white transition-colors duration-300 group-hover:text-[#059aa2] line-clamp-2">
                         {item.title}
                       </h3>
                     </div>
-                    <FiCheckCircle className="text-lg text-slate-400 transition-colors duration-300 group-hover:text-[#59c9ca] dark:text-slate-600" />
+                    <FiCheckCircle className="text-lg text-slate-400 transition-colors duration-300 group-hover:text-[#59c9ca] dark:text-slate-600 flex-shrink-0 mt-1" />
                   </div>
 
                   {/* Description */}
@@ -80,10 +81,10 @@ export default function ImpactSection() {
                   </p>
 
                   {/* Premium Action Trigger - Sağ aşağıda zərif link */}
-                  <div className="mt-5 flex items-center gap-1 text-[11px] font-medium uppercase tracking-wider text-slate-400 transition-all duration-300 group-hover:text-[#059aa2] dark:text-slate-500">
+                  <Link to="/services" className="mt-5 inline-flex items-center gap-1 text-[11px] font-medium uppercase tracking-wider text-slate-400 transition-all duration-300 hover:text-[#059aa2] dark:text-slate-500">
                     <span>{t('home.premium.impact.learnMore')}</span>
                     <FiArrowUpRight className="text-sm transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </div>
+                  </Link>
 
                   {/* Kartın sol kənarına incə rəng toxunuşu */}
                   <div className="absolute left-0 top-0 h-full w-[2px] bg-transparent transition-colors duration-300 group-hover:bg-[#059aa2]" />

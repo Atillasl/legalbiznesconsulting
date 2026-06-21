@@ -3,23 +3,43 @@ import { useLanguage } from '../hooks/useLanguage'
 import BlogHeader from '../components/blog/BlogHeader'
 import BlogFilters from '../components/blog/BlogFilters'
 import BlogPostsGrid from '../components/blog/BlogPostsGrid'
+import BlogPagination from '../components/blog/BlogPagination'
 import { blogCategories, blogPosts } from '../data/blogData'
 
 export default function Blog() {
-  const { t } = useLanguage()
+  const { t, currentLang } = useLanguage()
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
+  const [currentPage, setCurrentPage] = useState(1)
+  const postsPerPage = 6
 
   // useMemo istifadə edərək performansı optimallaşdırırıq
   const filteredPosts = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase()
     return blogPosts.filter((post) => {
+      const title = typeof post.title === 'string' ? post.title : (post.title[currentLang] || post.title.az || '')
+      const excerpt = typeof post.excerpt === 'string' ? post.excerpt : (post.excerpt[currentLang] || post.excerpt.az || '')
       const matchesSearch =
-        post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
+        query === '' ||
+        title.toLowerCase().includes(query) ||
+        excerpt.toLowerCase().includes(query)
       const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory
       return matchesSearch && matchesCategory
     })
-  }, [searchQuery, selectedCategory])
+  }, [searchQuery, selectedCategory, currentLang])
+
+  const handleSearchChange = (value) => {
+    setSearchQuery(value)
+    setCurrentPage(1)
+  }
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category)
+    setCurrentPage(1)
+  }
+
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / postsPerPage))
+  const currentPosts = filteredPosts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)
 
   return (
     <div className="min-h-screen bg-[#fafafa] dark:bg-[#020617] transition-colors duration-700">
@@ -39,16 +59,19 @@ export default function Blog() {
               categories={blogCategories}
               selectedCategory={selectedCategory}
               searchQuery={searchQuery}
-              onCategoryChange={setSelectedCategory}
-              onSearchChange={setSearchQuery}
+              onCategoryChange={handleCategoryChange}
+              onSearchChange={handleSearchChange}
               t={t}
             />
           </div>
         </div>
 
         {/* POSTLAR GRID */}
-        {filteredPosts.length > 0 ? (
-          <BlogPostsGrid posts={filteredPosts} t={t} />
+        {currentPosts.length > 0 ? (
+          <>
+            <BlogPostsGrid posts={currentPosts} t={t} />
+            <BlogPagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
+          </>
         ) : (
           <div className="text-center py-32">
             <h3 className="text-xl font-light text-slate-400">

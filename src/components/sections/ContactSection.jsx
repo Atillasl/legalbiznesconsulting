@@ -74,7 +74,7 @@ export default function ContactSection() {
               <div className="grid gap-6 sm:grid-cols-2">
                 {['name', 'email'].map((field) => (
                   <div key={field} className="space-y-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{t(`contact.form.${field}`)}</label>
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{t(`contact.form.labels.${field}`)}</label>
                     <input
                       type={field === 'email' ? 'email' : 'text'}
                       name={field}
@@ -88,7 +88,7 @@ export default function ContactSection() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{t('contact.form.subject')}</label>
+                <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{t('contact.form.labels.subject')}</label>
                 <input
                   type="text"
                   name="subject"
@@ -100,7 +100,7 @@ export default function ContactSection() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{t('contact.form.message')}</label>
+                <label className="text-[10px] font-bold uppercase tracking-widest text-slate-400">{t('contact.form.labels.message')}</label>
                 <textarea
                   name="message"
                   rows="5"
@@ -115,7 +115,7 @@ export default function ContactSection() {
                 type="submit"
                 className="inline-flex items-center gap-3 rounded-xl bg-[#00969A] px-8 py-4 text-xs font-bold text-white shadow-lg shadow-[#00969A]/20 hover:bg-[#007A7E] transition-all transform hover:-translate-y-0.5"
               >
-                {t('contact.form.submit')} <FiSend size={14} />
+                {t('contact.form.submitBtn')} <FiSend size={14} />
               </button>
             </form>
           </div>

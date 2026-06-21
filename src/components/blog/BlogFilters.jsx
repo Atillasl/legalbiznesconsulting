@@ -2,12 +2,12 @@ import { FiSearch } from 'react-icons/fi'
 
 export default function BlogFilters({ categories, selectedCategory, searchQuery, onCategoryChange, onSearchChange, t }) {
   return (
-    <section className="mx-auto max-w-7xl px-6 pt-16 sm:px-8">
+    <section className="mx-auto max-w-7xl px-6 sm:px-8">
       {/* Sərt border xətti tam minimalist mikroskopik xəttlə əvəzləndi */}
-      <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between border-b border-slate-500/10 pb-6 dark:border-slate-800/60">
+      <div className="flex flex-col gap-4 md:gap-6 md:flex-row md:items-center md:justify-between border-b border-slate-500/10 pb-4 md:pb-6 dark:border-slate-800/60">
         
         {/* CATEGORIES - Ultra-Minimalist Tab İnteqrasiyası */}
-        <div className="flex flex-wrap gap-x-6 gap-y-3">
+        <div className="flex flex-wrap gap-x-4 md:gap-x-6 gap-y-2 md:gap-y-3">
           {categories.map((cat) => {
             const isSelected = selectedCategory === cat
             return (
@@ -15,10 +15,10 @@ export default function BlogFilters({ categories, selectedCategory, searchQuery,
                 key={cat}
                 onClick={() => onCategoryChange(cat)}
                 // Sərt fon qutuları silindi; keçid tam zərif yazı rəngi və alt xətlə idarə olunur
-                className={`relative pb-2 text-xs font-medium tracking-wide transition-colors duration-300 ${
+                className={`relative pb-1.5 text-xs md:text-sm font-medium tracking-wide transition-colors duration-300 whitespace-nowrap ${
                   isSelected
                     ? 'text-[#059aa2] font-semibold'
-                    : 'text-slate-400 hover:text-slate-800 dark:text-slate-500 dark:hover:text-slate-200'
+                    : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'
                 }`}
               >
                 {t(`blog.categories.${cat}`)}
@@ -33,17 +33,16 @@ export default function BlogFilters({ categories, selectedCategory, searchQuery,
         </div>
 
         {/* SEARCH BAR - Minimalist Premium Input Sistem */}
-        <div className="relative w-full md:w-72 group">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-1 text-slate-400 transition-colors duration-300 group-focus-within:text-[#059aa2]">
-            <FiSearch className="text-base" />
+        <div className="relative w-full md:w-64 lg:w-80 group md:flex-grow-0">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2 md:pl-3 text-slate-400 transition-colors duration-300 group-focus-within:text-[#059aa2]">
+            <FiSearch className="text-sm md:text-base" />
           </div>
           <input
             type="text"
             placeholder={t('blog.searchPlaceholder')}
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            // Qalın kənarlıqlar ləğv edildi, tam şəffaf fonda zərif alt xətt (border-b) fəlsəfəsi tətbiq olundu
-            className="w-full border-b border-slate-500/10 bg-transparent py-2 pl-7 pr-2 text-xs font-light tracking-wide text-slate-900 transition-all placeholder-slate-400 focus:border-[#059aa2] focus:outline-none dark:text-white dark:placeholder-slate-600"
+            className="w-full border-b border-slate-500/15 bg-transparent py-2.5 md:py-3 pl-8 md:pl-10 pr-3 text-xs md:text-sm font-light tracking-wide text-slate-900 transition-all placeholder-slate-400 focus:border-[#059aa2] focus:outline-none dark:text-white dark:placeholder-slate-600"
           />
         </div>
 

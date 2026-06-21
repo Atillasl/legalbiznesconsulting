@@ -1,20 +1,43 @@
-import { useState } from 'react'
+import { useMemo } from 'react'
 import { useLanguage } from '../hooks/useLanguage'
 import { allServices, legalServices, itServices } from '../data/services'
-import ServiceTabs from '../components/services/ServiceTabs'
 import ServiceGrid from '../components/services/ServiceGrid'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
+import { categoryMap } from '../data/categories'
 
 export default function Services() {
   const { t } = useLanguage()
-  const [activeTab, setActiveTab] = useState('all')
+  const [searchParams, setSearchParams] = useSearchParams()
 
-  const filteredServices =
-    activeTab === 'all'
-      ? allServices
-      : activeTab === 'legal'
-      ? legalServices
-      : itServices
+  const activeTab = useMemo(() => {
+    const category = searchParams.get('category')
+    return category ? decodeURIComponent(category) : 'all'
+  }, [searchParams])
+
+  const setCategory = (tab) => {
+    if (tab === 'all') {
+      setSearchParams({}, { replace: true })
+      return
+    }
+
+    setSearchParams({ category: tab }, { replace: true })
+  }
+
+  // Compute available legal categories (preserve original label and slug key)
+  const legalCategories = useMemo(() => {
+    const map = new Map()
+    legalServices.forEach((s) => {
+      const key = categoryMap[s.category] || s.category
+      if (!map.has(key)) map.set(key, { key, label: s.category })
+    })
+    return Array.from(map.values())
+  }, [])
+
+  const filteredServices = useMemo(() => {
+    if (activeTab === 'all') return allServices
+    if (activeTab === 'tech') return itServices
+    return allServices.filter((s) => (categoryMap[s.category] || s.category) === activeTab)
+  }, [activeTab])
 
   return (
     <div className="min-h-screen bg-[#fafafa] text-slate-900 transition-colors duration-700 dark:bg-[#020617] dark:text-[#f1f5f9]">
@@ -34,11 +57,55 @@ export default function Services() {
         </div>
       </section>
 
-      {/* GRID: Bento-Grid ilə daha vizual */}
+      {/* Combined legal services list removed — individual services live in their own sections/pages */}
+
+      {/* LAYOUT: Left sidebar with categories, right side shows services for selected category */}
       <section className="mx-auto max-w-7xl px-6 pb-24">
-        <ServiceTabs activeTab={activeTab} onChange={setActiveTab} t={t} />
-        <div className="mt-12">
-           <ServiceGrid services={filteredServices} />
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <aside className="md:col-span-3">
+            <div className="sticky top-28 rounded-xl border border-slate-200/20 bg-white/40 p-4 backdrop-blur-md dark:bg-white/[0.02]">
+              <h4 className="text-sm font-semibold mb-4">{t('services.subtitle')}</h4>
+              <ul className="space-y-2">
+                <li>
+                  <button
+                    onClick={() => setCategory('all')}
+                    className={`w-full text-left rounded-lg px-3 py-2 text-sm ${activeTab === 'all' ? 'bg-[#059aa2] text-white' : 'text-slate-600 hover:bg-slate-50'}`}>
+                    {t('services.tabs.all')}
+                    <span className="ml-2 text-xs text-slate-400">({allServices.length})</span>
+                  </button>
+                </li>
+                {/* Tech/IT moved to bottom for prominence; rendered after legal categories */}
+                {legalCategories.map((c) => (
+                  <li key={c.key}>
+                    <button
+                      onClick={() => setCategory(c.key)}
+                      className={`w-full text-left rounded-lg px-3 py-3 text-base ${activeTab === c.key ? 'bg-[#059aa2] text-white' : 'text-slate-700 hover:bg-slate-50'}`}>
+                      {t(`services.categories.${c.key}`) || c.label}
+                      <span className="ml-3 text-sm text-slate-600">({allServices.filter(s => (categoryMap[s.category]||s.category)===c.key).length})</span>
+                    </button>
+                  </li>
+                ))}
+                {/* Tech/IT placed last and shown with larger readable text */}
+                <li>
+                  <button
+                    onClick={() => setCategory('tech')}
+                    className={`w-full text-left rounded-lg px-3 py-3 text-base ${activeTab === 'tech' ? 'bg-[#059aa2] text-white' : 'text-slate-700 hover:bg-slate-50'}`}>
+                    {t('services.tabs.tech')}
+                    <span className="ml-3 text-sm text-slate-600">({itServices.length})</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          <div className="md:col-span-9">
+            <div className="space-y-6">
+              <h2 className="text-2xl font-semibold">
+                {activeTab === 'all' ? t('services.title') : (t(`services.categories.${activeTab}`) || t('services.title'))}
+              </h2>
+              <ServiceGrid services={filteredServices} />
+            </div>
+          </div>
         </div>
       </section>
 

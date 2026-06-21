@@ -4,22 +4,15 @@ export const itServices = [
   {
     id: 'it-1',
     category: 'Web Development',
-    title: 'Veb Sayt və E-ticarət Həlləri',
-    description: 'Responsive veb saytlar və onlayn mağazalar üçün tam inkişaf xidmətləri.',
+    title: 'Veb saytların hazırlanması',
+    description: 'Responsive və SEO-friendly veb saytların hazırlanması və inteqrasiyası.',
     image: techImages[0]
   },
   {
     id: 'it-2',
     category: 'App Development',
-    title: 'Mobil və Veb Tətbiq İnkişafı',
-    description: 'iOS, Android və hibrid tətbiq layihələri üçün dizayn və inkişaf.',
+    title: 'Mobil tətbiqlərin hazırlanması',
+    description: 'iOS və Android üçün yerli və hibrid mobil tətbiqlərin dizayn və inkişafı.',
     image: techImages[1 % techImages.length]
-  },
-  {
-    id: 'it-3',
-    category: 'IT Consulting',
-    title: 'IT Konsaltinq və İnfrastruktur Dəstəyi',
-    description: 'Texnoloji strategiya, bulud inteqrasiyası və biznes avtomatlaşdırılması.',
-    image: techImages[0]
   },
 ]

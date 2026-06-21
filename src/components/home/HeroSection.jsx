@@ -1,4 +1,5 @@
 import { FiArrowRight, FiLayers, FiShield, FiCheck } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../../hooks/useLanguage'
 import t4Image from '../../assets/t4.png'
 
@@ -35,9 +36,9 @@ export default function HeroSection() {
 
             {/* Buttons - mt-10-dan mt-6-ya endirildi */}
             <div className="mt-6 flex flex-wrap gap-3.5">
-              <a href="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#059aa2] px-5 py-3 text-xs font-semibold uppercase tracking-wider transition duration-200 hover:bg-[#027f82] shadow-md shadow-[#059aa2]/10">
+              <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#059aa2] px-5 py-3 text-xs font-semibold uppercase tracking-wider transition duration-200 hover:bg-[#027f82] shadow-md shadow-[#059aa2]/10">
                 {t('home.premium.hero.cta.primary')} <FiArrowRight className="text-xs" />
-              </a>
+              </Link>
               <a href="#capabilities" className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm px-5 py-3 text-xs font-semibold uppercase tracking-wider transition duration-200 hover:border-white/30 hover:bg-white/10">
                 {t('home.premium.hero.cta.secondary')}
               </a>

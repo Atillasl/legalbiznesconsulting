@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../../hooks/useLanguage'
+import { categoryMap } from '../../data/categories'
 import { FiArrowRight } from 'react-icons/fi'
 
 export default function ServiceCard({ service }) {
   const { t } = useLanguage()
 
   if (!service) return null
+  const localizedTitle = t(`services.items.${service.id}.title`) || service.title
+  const localizedShort = t(`services.items.${service.id}.shortDesc`) || service.shortDesc
 
   return (
     // Sərt kənarlıqlar və kölgələr ləğv edildi, tam minimalist şüşə-material effekti tətbiq olundu
@@ -15,17 +18,7 @@ export default function ServiceCard({ service }) {
       <div className="absolute -right-12 -top-12 h-24 w-24 rounded-full bg-[#059aa2]/10 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
 
       <div>
-        {/* XİDMƏT ŞƏKLİ - Əgər şəkil varsa, tam korporativ jurnal standartında yerləşir */}
-        {service.image && (
-          <div className="mb-5 overflow-hidden rounded-xl border border-slate-500/5 h-40">
-            <img 
-              src={service.image} 
-              alt={service.title} 
-              className="w-full h-full object-cover filter grayscale-[20%] transition-transform duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0" 
-              loading="lazy" 
-            />
-          </div>
-        )}
+        {/* Image removed per request: services render without images */}
 
         {/* KART HEADER - İkon və Zərif Badge */}
         <div className="flex items-center justify-between mb-5">
@@ -43,17 +36,19 @@ export default function ServiceCard({ service }) {
 
         {/* KATEGORİYA - İncə və geniş aralıqlı şrift */}
         <span className="text-[9px] font-medium tracking-[0.2em] text-[#059aa2] uppercase block mb-1.5">
-          {service.category}
+          {(() => {
+            const key = categoryMap[service.category] || service.category
+            return t(`services.categories.${key}`) || service.category
+          })()}
         </span>
-
         {/* BAŞLIQ - Ölçü qorundu (text-lg), lakin font-medium ilə daha nəzakətli edildi */}
         <h3 className="text-lg font-medium tracking-tight text-slate-900 group-hover:text-[#059aa2] transition-colors duration-300 dark:text-white">
-          {service.title}
+          {localizedTitle}
         </h3>
 
         {/* QISA TƏSVİR - Oxunaqlı, lakin font-light ilə gözü yormayan mətn */}
-        <p className="mt-2.5 text-xs leading-relaxed text-slate-500 dark:text-slate-400 font-light tracking-wide line-clamp-3">
-          {service.shortDesc}
+        <p className="mt-2.5 text-xs leading-relaxed text-slate-500 dark:text-slate-400 font-light tracking-wide">
+          {localizedShort}
         </p>
       </div>
 

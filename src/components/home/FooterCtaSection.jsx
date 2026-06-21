@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../../hooks/useLanguage'
 import { FiArrowRight } from 'react-icons/fi'
 
@@ -24,14 +25,13 @@ export default function FooterCtaSection() {
 
         {/* BUTTON - Orijinal ağ düymə modern ox interaktivliyi ilə minimalistləşdirildi */}
         <div className="shrink-0">
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-4 text-xs font-semibold uppercase tracking-wider text-[#059aa2] shadow-xl shadow-slate-950/10 transition-all duration-300 hover:bg-slate-50 hover:scale-[1.02]"
           >
             <span>{t('home.premium.cta.button')}</span>
-            {/* Siçanı üzərinə gətirəndə zərifcə irəli sürüşən modern ox */}
             <FiArrowRight className="text-sm transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+          </Link>
         </div>
 
       </div>

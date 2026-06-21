@@ -224,12 +224,14 @@
     },
     "searchPlaceholder": "Search blog articles...",
     "readMore": "Read article",
+    "backToBlog": "Back to blog",
     "noResults": "No articles matched the selected filters."
   },
   "contact": {
     "badge": "Contact Us",
     "title": "Inquiry & Consultation",
     "subtitle": "Reach out directly for legal issues or digital transformation projects. Our team is ready to help.",
+    "successMessage": "Your message has been sent successfully.",
     "info": {
       "title": "Our Corporate Office",
       "phone": "Phone",
@@ -240,6 +242,33 @@
       "hoursWeekdays": "Monday - Friday: 09:00 - 18:00",
       "hoursWeekend": "Saturday and Sunday: Closed",
       "disclaimer": "Inquiries are handled confidentially and are not shared with third parties."
+    },
+    "form": {
+      "title": "Online Consultation Form",
+      "successTitle": "Inquiry Received!",
+      "successDesc": "Your message was successfully submitted. Our specialists will contact you shortly.",
+      "labels": {
+        "name": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "subject": "Subject",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "e.g. John Doe",
+        "email": "e.g. john@example.com",
+        "phone": "e.g. +994 50 000 00 00",
+        "subject": "e.g. Contract review",
+        "message": "Describe your request in detail..."
+      },
+      "submitBtn": "Send Request",
+      "submit": "Send Request",
+      "errors": {
+        "nameRequired": "Name and surname are required.",
+        "emailRequired": "Email address is required.",
+        "emailInvalid": "Please enter a valid email address.",
+        "messageRequired": "Message cannot be empty."
+      }
     }
   },
   "footer": {
@@ -277,9 +306,188 @@
       "legal": "Legal Consulting",
       "tech": "Technology & IT"
     },
+    "categories": {
+      "civil": "Civil Law",
+      "administrative": "Administrative Law",
+      "commercial": "Commercial",
+      "arbitration": "Arbitration",
+      "mediation": "Mediation",
+      "migration": "Migration",
+      "criminal": "Criminal Law",
+      "constitutional": "Constitutional",
+      "international": "International Law",
+      "expertise": "Legal Opinions",
+      "intl_assistance": "International Legal Assistance",
+      "web": "Web Development",
+      "app": "App Development"
+    },
     "ctaTitle": "Need custom solutions for your business?",
     "ctaDesc": "Don’t settle for standard packages. We can build a fully tailored legal or technical strategy for your company.",
     "ctaBtn": "Schedule a Consultation",
+    "detailPage": {
+      "backToServices": "Back to services",
+      "aboutTitle": "About this service",
+      "benefitsTitle": "Key benefits",
+      "processTitle": "Process",
+      "ctaTitle": "Need professional help?",
+      "ctaDesc": "Contact our specialists now to find a tailored solution for your project or issue.",
+      "ctaBtn": "Book consultation",
+      "noBenefits": "No benefits have been added for this service.",
+      "processDefault": [
+        "Consultation and requirements assessment",
+        "Legal strategy preparation",
+        "Document drafting and confirmation"
+      ]
+    },
+    "items": {
+      "civil-family": {
+        "title": "Family Law",
+        "shortDesc": "Divorce, maintenance, child rights and family relations legal advice and representation.",
+        "longDesc": "Experienced legal advice and representation in family courts and pre-litigation matters, including divorce, inheritance, maintenance and parental rights.",
+        "benefits": ["Court and pre-litigation guidance","Child rights protection","Mediation and settlement support"],
+        "process": ["Initial consultation","Legal strategy","Court or alternative resolution"]
+      },
+      "civil-property": {
+        "title": "Property Disputes",
+        "shortDesc": "Resolution of ownership, possession and land disputes with court representation.",
+        "longDesc": "Legal support for ownership disputes, possession rights and real estate conflicts, including notarial and court representation.",
+        "benefits": ["Documentation and proof support","Land dispute litigation","Negotiation for settlement"],
+        "process": ["Document analysis","Legal assessment","Court and enforcement procedures"]
+      },
+      "civil-contracts": {
+        "title": "Contract Disputes",
+        "shortDesc": "Breach of contract, enforcement and compensation claims.",
+        "longDesc": "Resolution and advisory services for disputes arising from purchase, service and employment contracts, including enforcement and arbitration.",
+        "benefits": ["Contract clause assessment","Enforcement claims","Arbitration and litigation representation"],
+        "process": ["Contract review","Claim drafting","Court or arbitration"]
+      },
+      "civil-delict": {
+        "title": "Tort / Damage Claims",
+        "shortDesc": "Claims related to material or non-material damage and compensation.",
+        "longDesc": "Preparation of claims for material and moral damages, arranging expert examinations and calculating compensation amounts.",
+        "benefits": ["Damage valuation and expert support","Establishing liability","Focused claim procedures"],
+        "process": ["Evidence collection","Expert examination","Claim and court stages"]
+      },
+      "civil-labor": {
+        "title": "Employment Disputes",
+        "shortDesc": "Resolution and representation in disputes between employers and employees.",
+        "longDesc": "Legal advice and court representation on employment contracts, dismissals, wage claims and collective agreements.",
+        "benefits": ["Employment claim preparation","Defense in dismissal cases","Collective agreement review"],
+        "process": ["Employment audit","Claim or settlement procedures","Court representation"]
+      },
+      "civil-tax": {
+        "title": "Tax Disputes",
+        "shortDesc": "Support during tax audits, appeals and court defense of tax claims.",
+        "longDesc": "Legal advisory and defense in tax audits, fines, compliance issues and appeal procedures, plus tax planning and structuring.",
+        "benefits": ["Minimizing tax risks","Appeal and court defense","Tax planning"],
+        "process": ["Document review","Preparing appeals","Court and administrative procedures"]
+      },
+      "civil-social": {
+        "title": "Social Security Disputes",
+        "shortDesc": "Legal advice on pensions, social assistance and insurance-related disputes.",
+        "longDesc": "Representation and resolution of pension, social assistance and insurance disputes with full legal support.",
+        "benefits": ["Support for pension claims","Resolving social assistance disputes","Protecting citizens' rights"],
+        "process": ["Collecting documents","Legal representation","Appeal and court procedures"]
+      },
+      "civil-sport": {
+        "title": "Sports Law Disputes",
+        "shortDesc": "Contract, transfer and disciplinary disputes in sports law.",
+        "longDesc": "Advice and representation for athletes, clubs and federations in contract, transfer and disciplinary matters.",
+        "benefits": ["Transfer and contract dispute support","Disciplinary defense","Commercial sports matters"],
+        "process": ["Contract review","Disciplinary procedures","Arbitration and court support"]
+      },
+      "civil-medical": {
+        "title": "Medical Law Disputes",
+        "shortDesc": "Claims related to medical liability, patient rights and expert examinations.",
+        "longDesc": "Legal evaluation of medical errors, arranging medical expert examinations and representing clients in court proceedings.",
+        "benefits": ["Organising medical expertise","Investigating liability","Legal defense and compensation claims"],
+        "process": ["Collecting medical records","Expert analysis","Claim and court procedures"]
+      },
+      "administrative": {
+        "title": "Administrative Disputes",
+        "shortDesc": "Defense in administrative claims, enforcement and compliance matters.",
+        "longDesc": "Preparation of claims against administrative acts, enforcement defense and legal support in dealings with public authorities.",
+        "benefits": ["Filing administrative claims","Enforcement defense","Guidance on obligations"],
+        "process": ["Initial analysis","Correspondence with authorities","Court and appeal processes"]
+      },
+      "commercial": {
+        "title": "Commercial Disputes",
+        "shortDesc": "Legal resolution of inter-company and corporate commercial disputes.",
+        "longDesc": "Dispute resolution for commercial contracts, property and corporate structure-related disputes via litigation and arbitration.",
+        "benefits": ["Corporate litigation","International contract disputes","Risk management"],
+        "process": ["Document and contract analysis","Preparing claims or arbitration","Implementing legal strategy"]
+      },
+      "arbitration": {
+        "title": "Arbitration Support",
+        "shortDesc": "Representation and advice in national and international arbitration.",
+        "longDesc": "Services covering arbitration agreements, claim preparation and enforcement of arbitral awards across jurisdictions.",
+        "benefits": ["Arbitration claim preparation","Legal defense","International arbitration experience"],
+        "process": ["Preparing agreements and claims","Evidence collection","Defense before arbitrators and enforcement"]
+      },
+      "mediation": {
+        "title": "Mediation & Alternative Dispute Resolution",
+        "shortDesc": "Mediation services and facilitation for out-of-court settlements.",
+        "longDesc": "Facilitating negotiations and drafting legally binding settlement agreements to resolve disputes outside the courts.",
+        "benefits": ["Quick out-of-court resolution","Confidentiality","Reduced costs"],
+        "process": ["Preparing mediation requests","Conducting sessions","Drafting and confirming agreements"]
+      },
+      "migration": {
+        "title": "Migration & Citizenship",
+        "shortDesc": "Legal assistance with visas, residence and work permits, and citizenship matters.",
+        "longDesc": "Advice and document preparation for visas, residence and work permits, citizenship and status changes.",
+        "benefits": ["Visa and permit support","Complete documentation","Appeals and representation"],
+        "process": ["Initial consultation","Application preparation","Support and follow-up"]
+      },
+      "criminal": {
+        "title": "Criminal Defense",
+        "shortDesc": "Defense at pre-trial, trial, appeal and cassation stages.",
+        "longDesc": "Full criminal defense from investigation through cassation, including early intervention and court representation.",
+        "benefits": ["Early intervention and investigation support","Court representation","Appeal and cassation assistance"],
+        "process": ["Evidence collection","Court defense","Appeal and cassation procedures"]
+      },
+      "constitutional": {
+        "title": "Constitutional Court Support",
+        "shortDesc": "Assistance with constitutional complaints and protection of rights.",
+        "longDesc": "Preparation and representation of constitutional complaints and strategic legal analysis for Constitutional Court matters.",
+        "benefits": ["Preparing constitutional complaints","Strategic legal analysis","Court representation"],
+        "process": ["Drafting complaints","Submitting documents","Court procedure and enforcement"]
+      },
+      "echr": {
+        "title": "ECHR Representation",
+        "shortDesc": "Applications to the European Court of Human Rights and enforcement support.",
+        "longDesc": "Preparation of ECHR applications, following the procedure and implementing judgments domestically.",
+        "benefits": ["Specialised ECHR applications","International evidence presentation","Judgment enforcement"],
+        "process": ["Domestic proceedings","Application preparation","Judgment enforcement"]
+      },
+      "legal-opinions": {
+        "title": "Legal Opinions & Expert Reports",
+        "shortDesc": "Legal analyses, opinions and expert reports tailored to business needs.",
+        "longDesc": "We prepare legal opinions and expert reports for companies and individuals, including risk assessments and recommendations.",
+        "benefits": ["Professional legal analysis","Expert report preparation","Risk mitigation"],
+        "process": ["Assignment intake","Legal analysis","Report delivery and consultation"]
+      },
+      "intl-assistance": {
+        "title": "International Legal Assistance",
+        "shortDesc": "Cross-border legal services via partner firms and networks.",
+        "longDesc": "Coordination and representation through international partner networks for legal matters abroad, including enforcement and cross-border coordination.",
+        "benefits": ["Global partner network","Support in international procedures","Enforcement assistance"],
+        "process": ["Assess request","Select partner","Coordinate and execute"]
+      },
+      "it-1": {
+        "title": "Web Development",
+        "shortDesc": "Responsive, SEO-friendly websites with modern integration and digital compliance.",
+        "longDesc": "We build web platforms optimized for performance, accessibility and business needs, with reliable hosting and security support.",
+        "benefits": ["Responsive design and SEO optimization","Modern integrations and secure delivery","Clear digital product strategy"],
+        "process": ["Requirement analysis","Design and development","Deployment and support"]
+      },
+      "it-2": {
+        "title": "App Development",
+        "shortDesc": "Native and hybrid mobile applications for iOS and Android with user-friendly design.",
+        "longDesc": "We create mobile apps that deliver consistent experiences across devices, with polished UI/UX and scalable architecture.",
+        "benefits": ["Cross-platform mobile experience","Rapid prototyping and testing","App store release support"],
+        "process": ["Requirements discovery","Development and QA","Launch and maintenance"]
+      }
+    },
     "readMore": "Read more"
   },
   "home_title": "Home",

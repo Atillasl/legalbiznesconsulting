@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useTranslation } from '../../context/LanguageProvider'
 import { 
@@ -79,7 +80,7 @@ export default function ServicesSection() {
                   {service.icon}
                 </div>
                 
-                <h3 className="text-sm font-medium text-slate-900 dark:text-white mb-3">
+                <h3 className="text-sm font-medium text-slate-900 dark:text-white mb-3 line-clamp-2">
                   {t(`${itemKey}.title`)}
                 </h3>
                 <p className="text-[11px] font-light text-slate-500 leading-relaxed mb-6">
@@ -95,9 +96,9 @@ export default function ServicesSection() {
                 </ul>
 
                 <div className="mt-8">
-                  <a href="#contact" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#059aa2] group-hover:translate-x-1 transition-transform">
+                  <Link to="/contact" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#059aa2] group-hover:translate-x-1 transition-transform">
                     {t('services.applyBtn')} <FiArrowRight size={12} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             )

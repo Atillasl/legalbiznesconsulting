@@ -1,8 +1,11 @@
-﻿import ContactInfoPanel from '../components/contact/ContactInfoPanel'
+﻿import { useLanguage } from '../hooks/useLanguage'
+import ContactInfoPanel from '../components/contact/ContactInfoPanel'
 import ContactFormPanel from '../components/contact/ContactFormPanel'
 import ContactMapSection from '../components/contact/ContactMapSection'
 
 export default function Contact() {
+  const { t } = useLanguage()
+
   return (
     <div className="min-h-screen bg-[#fafafa] text-slate-900 transition-colors duration-500 dark:bg-[#020617] dark:text-[#f1f5f9]">
       
@@ -13,13 +16,13 @@ export default function Contact() {
         
         <div className="mx-auto max-w-3xl px-6">
           <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#00969A] bg-[#00969A]/5 px-4 py-1.5 rounded-full">
-            Contact Us
+            {t('contact.badge')}
           </span>
           <h1 className="mt-8 text-4xl md:text-6xl font-light tracking-tight text-slate-900 dark:text-white">
-            Inquiry & <span className="italic">Consultation</span>
+            {t('contact.title')}
           </h1>
           <p className="mx-auto mt-6 max-w-lg text-sm font-light text-slate-500 dark:text-slate-400 leading-relaxed">
-            Reach out directly for legal issues or digital transformation projects. Our team is ready to provide the expertise you need.
+            {t('contact.subtitle')}
           </p>
         </div>
       </section>

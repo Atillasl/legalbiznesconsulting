@@ -221,6 +221,7 @@
     },
     "searchPlaceholder": "Məqalələrdə axtar...",
     "readMore": "Məqaləni oxu",
+    "backToBlog": "Bloqa qayıt",
     "noResults": "Seçilmiş kriteriyalara uyğun heç bir məqalə tapılmadı."
   },
   "contact": {
@@ -300,18 +301,40 @@
       "legal": "Hüquqi Konsaltinq",
       "tech": "Texnologiya və İT"
     },
+    "categories": {
+      "civil": "Mülki Hüquq",
+      "administrative": "İnzibati Hüquq",
+      "commercial": "Kommersiya",
+      "arbitration": "Arbitraj",
+      "mediation": "Mediasiya",
+      "migration": "Miqrasiya",
+      "criminal": "Cinayət Hüququ",
+      "constitutional": "Konstitusiya",
+      "international": "Beynəlxalq",
+      "expertise": "Ekspertiza",
+      "intl_assistance": "Beynəlxalq hüquqi yardım",
+      "web": "Veb İnkişafı",
+      "app": "Mobil Tətbiq İnkişafı"
+    },
     "ctaTitle": "Biznesiniz üçün xüsusi həllərə ehtiyacınız var?",
     "ctaDesc": "Standart paketlərlə kifayətlənməyin. Şirkətiniz üçün fərdi hüquqi və texnoloji strategiya hazırlaya bilərik.",
     "ctaBtn": "Konsultasiya alın",
     "readMore": "Ətraflı oxu",
     "detailPage": {
       "backToHome": "Əsas səhifəyə qayıt",
+      "backToServices": "Xidmətlərə qayıt",
       "aboutTitle": "Xidmət barədə ətraflı",
       "benefitsTitle": "Bu Xidmətin Sizə Qazandıracağı Üstünlüklər",
       "processTitle": "Proses Necə İşləyir?",
       "ctaTitle": "Peşəkar Yardım Lazımdır?",
       "ctaDesc": "Mütəxəssislərimizlə elə indi əlaqə saxlayaraq layihəniz və ya probleminiz üçün fərdi həll yolu tapın.",
-      "ctaBtn": "Ödənişsiz Konsultasiya Al"
+      "ctaBtn": "Ödənişsiz Konsultasiya Al",
+      "noBenefits": "Xidmət üçün əsas faydalar əlavə edilməyib.",
+      "processDefault": [
+        "Konsultasiya və tələblərin qiymətləndirilməsi",
+        "Hüquqi strategiyanın hazırlanması",
+        "Sənədlərin hazırlanması və təsdiqi"
+      ]
     },
     "details": {
       "corporate": {
@@ -325,6 +348,155 @@
         "process": [
           { "step": "01", "title": "İlkin Konsultasiya", "desc": "Biznesinizin strukturunu və ehtiyaclarını analiz edirik." }
         ]
+      }
+    },
+    "items": {
+      "civil-family": {
+        "title": "Ailə mübahisələri üzrə hüquqi yardım",
+        "shortDesc": "Boşanma, aliment, uşaq hüquqları və ailə münasibətləri üzrə məsləhət və müdafiə.",
+        "longDesc": "Ailə məhkəmələrində və məhkəmədən əvvəl aparılan mübahisələrdə təcrübəli hüquqi məsləhət və təmsilçilik.",
+        "benefits": ["İntensiv məhkəmə və qabaqcadan məsləhət","Uşaq hüquqları üzrə müdafiə","Razılaşma və vasitəçilik dəstəyi"],
+        "process": ["İlkin konsultasiya","Hüquqi strategiya","Məhkəmə və alternativ həllər"]
+      },
+      "civil-property": {
+        "title": "Əmlak mübahisələri üzrə hüquqi yardım",
+        "shortDesc": "Mülkiyyət, sərəncam və torpaq mübahisələrinin həlli.",
+        "longDesc": "Əmlakın mülkiyyəti, sərəncam hüquqları və daşınmaz əmlakla bağlı mübahisələrdə hüquqi dəstək və məhkəmə təmsilçiliyi.",
+        "benefits": ["Sənədləşmə və sübut yardımı","Torpaq məhkəmə təmsilçiliyi","Razılaşma üçün danışıqlar"],
+        "process": ["Sənədlərin toplanması","Hüquqi qiymətləndirmə","Məhkəmə və icra prosesləri"]
+      },
+      "civil-contracts": {
+        "title": "Müqavilələrdən irəli gələn mübahisələr",
+        "shortDesc": "Müqavilə pozuntuları, icra və təzminat iddiaları.",
+        "longDesc": "Satınalma, xidmət və əmək müqavilələri daxil olmaqla müqavilə münasibətlərində yaranan mübahisələrin həlli və məsləhət xidməti.",
+        "benefits": ["Müqavilə şərtlərinin qiymətləndirilməsi","İcra iddiaları","Arbitraj və məhkəmə müdafiəsi"],
+        "process": ["Müqavilə təhlili","İddianın hazırlanması","Məhkəmə və arbitraj"]
+      },
+      "civil-delict": {
+        "title": "Delikt (ziyan vurma) münasibətləri",
+        "shortDesc": "Ziyanla bağlı iddialar və kompensasiya məsələləri.",
+        "longDesc": "Maddi və mənəvi ziyanla bağlı iddiaların hazırlanması, ekspertiza və kompensasiya məbləğinin hesablanması üzrə xidmətlər.",
+        "benefits": ["Zərərin qiymətləndirilməsi","Təqsirin müəyyənləşdirilməsi","Hüquqi müdafiə"],
+        "process": ["Sübutların toplanması","Ekspertiza","İddia və məhkəmə mərhələləri"]
+      },
+      "civil-labor": {
+        "title": "Əmək mübahisələri",
+        "shortDesc": "İşçi və işəgötürən arasında yaranan mübahisələrin həlli.",
+        "longDesc": "Əmək müqavilələrinin şərtləri, işdən azad etmə və əmək haqqı iddiaları üzrə hüquqi məsləhət və təmsilçilik.",
+        "benefits": ["Əmək hüququ üzrə iddialar","Müdafiə və kompensasiya","Kollektiv müqavilə ekspertizası"],
+        "process": ["Əmək audit","İddia və tənzimləmə","Məhkəmə təmsilçiliyi"]
+      },
+      "civil-tax": {
+        "title": "Vergi mübahisələri üzrə hüquqi yardım",
+        "shortDesc": "Vergi yoxlamaları, apellyasiya və məhkəmə müdafiəsi.",
+        "longDesc": "Vergi auditləri, cərimələr və apellyasiya prosedurlarında hüquqi məsləhət və müdafiə.",
+        "benefits": ["Vergi risklərinin azaldılması","Apellyasiya müdafiəsi","Vergi planlaşdırma"],
+        "process": ["Sənədlərin təhlili","Apellyasiya hazırlığı","Məhkəmə və inzibati prosedurlar"]
+      },
+      "civil-social": {
+        "title": "Sosial təminat mübahisələri",
+        "shortDesc": "Pensiya, sosial yardım və sığorta iddiaları üzrə məsləhət.",
+        "longDesc": "Pensiya hüququ, sosial yardımlar və sığorta ilə bağlı hüquqi mübahisələrin həlli və nümayəndəlik.",
+        "benefits": ["Pensiya iddiaları","Sosial yardım mübahisələri","Hüquqi qorunma"],
+        "process": ["Sənədlərin toplanması","Hüquqi nümayəndəlik","Apellyasiya və məhkəmə"]
+      },
+      "civil-sport": {
+        "title": "İdman hüququ üzrə mübahisələr",
+        "shortDesc": "İdman müqavilələri, transfer və disiplinar işlər üzrə dəstək.",
+        "longDesc": "İdman müqavilələri, transfer və disiplin məsələlərində hüquqi məsləhət və təmsilçilik.",
+        "benefits": ["Transfer mübahisələri","Disiplinar müdafiə","Kommersiya məsələləri"],
+        "process": ["Müqavilə yoxlanışı","Disiplinar prosedurlar","Arbitraj və məhkəmə"]
+      },
+      "civil-medical": {
+        "title": "Tibb hüququ mübahisələri",
+        "shortDesc": "Tibbi məsuliyyət və xəstə hüquqları ilə bağlı iddialar.",
+        "longDesc": "Tibbi səhvlər və məsuliyyətlə bağlı iddiaların hüquqi qiymətləndirilməsi, ekspertiza və məhkəmə təmsilçiliyi.",
+        "benefits": ["Tibbi ekspertizalar","Məsuliyyət araşdırılması","Hüquqi müdafiə"],
+        "process": ["Sənədlərin toplanması","Ekspertiza","İddia və məhkəmə"]
+      },
+      "administrative": {
+        "title": "İnzibati mübahisələr üzrə hüquqi yardım",
+        "shortDesc": "Dövlət orqanları qarşısında iddialar və icra məsələləri üzrə müdafiə.",
+        "longDesc": "İnzibati aktların məhkəməyə verilməsi, məcburetmə və icra prosedurlarında hüquqi dəstək.",
+        "benefits": ["İnzibati şikayətlərin hazırlanması","İcra müdafiəsi","Hüquqi yazışmalar"],
+        "process": ["İlkin analiz","Dövlət orqanları ilə yazışma","Məhkəmə və apellyasiya"]
+      },
+      "commercial": {
+        "title": "Kommersiya mübahisələri üzrə hüquqi yardım",
+        "shortDesc": "Şirkətlərarası kommersiya mübahisələrinin həlli və arbitrajı.",
+        "longDesc": "Müəssisələr arasında kommersiya müqavilələri və korporativ mübahisələrin məhkəmə və arbitraj yolu ilə həlli.",
+        "benefits": ["Korporativ təmsilçilik","Beynəlxalq müqavilə mübahisələri","Risk idarəçiliyi"],
+        "process": ["Sənədlərin təhlili","İddia və arbitraj hazırlığı","Strategiyanın tətbiqi"]
+      },
+      "arbitration": {
+        "title": "Arbitraj prosesində hüquqi yardım",
+        "shortDesc": "Milli və beynəlxalq arbitrajda təmsilçilik.",
+        "longDesc": "Arbitraj müqavilələrinin icrası, iddiaların hazırlanması və qərarların tətbiqi üzrə xidmətlər.",
+        "benefits": ["Arbitraj iddialarının hazırlanması","Hüquqi müdafiə","Beynəlxalq təcrübə"],
+        "process": ["Müqavilə və iddianın hazırlanması","Dəlillərin toplanması","Hakimlər qarşısında müdafiə"]
+      },
+      "mediation": {
+        "title": "Mediasiya və məhkəmədənkənar həllər",
+        "shortDesc": "Mübahisələrin mediasiya yolu ilə həlli və danışıqların aparılması.",
+        "longDesc": "Mediasiya və fasilitasiya yolu ilə tərəflərin razılaşmasına kömək, razılaşma mətninin hüquqi tərtibi.",
+        "benefits": ["Sürətli məhkəmədənkənar həll","Məxfilik","Xərclərin azalması"],
+        "process": ["Mediasiya tələbinin hazırlanması","Seansların keçirilməsi","Razılaşmanın təsdiqi"]
+      },
+      "migration": {
+        "title": "Miqrasiya və vətəndaşlıq məsələləri",
+        "shortDesc": "Vizalar, yaşayış və iş icazələri üzrə hüquqi yardım.",
+        "longDesc": "Vizaların, yaşayış və iş icazələrinin alınması, vətəndaşlıq prosedurları və status dəyişikliklərində hüquqi məsləhət və sənəd hazırlanması.",
+        "benefits": ["Viza və icazə dəstəyi","Sənədləşmə","Apellyasiya və təmsilçilik"],
+        "process": ["Konsultasiya və sənəd yoxlanışı","Müraciətlərin hazırlanması","Dəstək və izləmə"]
+      },
+      "criminal": {
+        "title": "Cinayət işləri üzrə hüquqi yardım",
+        "shortDesc": "Məhkəməyədək və məhkəmə mərhələlərində müdafiə.",
+        "longDesc": "Cinayət işlərində istintaqdan kassasiyaya qədər müdafiə, istintaqla əməkdaşlıq və məhkəmə təmsilçiliyi.",
+        "benefits": ["Erkən müdaxilə","Məhkəmə təmsilçiliyi","Apellyasiya və kassasiya dəstəyi"],
+        "process": ["Sübut toplanması","Məhkəmə müdafiəsi","Apellyasiya və kassasiya"]
+      },
+      "constitutional": {
+        "title": "Konstitusiya Məhkəməsində hüquqi yardım",
+        "shortDesc": "Konstitusiya şikayətləri və vətəndaş hüquqları üzrə müraciətlər.",
+        "longDesc": "Konstitusiya pozuntuları ilə bağlı müraciətlərin hazırlanması və Konstitusiya Məhkəməsində təmsilçilik.",
+        "benefits": ["Konstitusiya müraciətlərinin hazırlanması","Strateji hüquqi analiz","Məhkəmə təmsilçiliyi"],
+        "process": ["Müraciətin hazırlanması","Sənədlərin təqdimatı","Məhkəmə proseduru"]
+      },
+      "echr": {
+        "title": "Avropa İnsan Hüquqları Məhkəməsində hüquqi yardım",
+        "shortDesc": "ECHR müraciətləri və icra dəstəyi.",
+        "longDesc": "Milli məhkəmələrdən sonra Avropa İnsan Hüquqları Məhkəməsinə müraciətlərin hazırlanması və icrası üzrə hüquqi dəstək.",
+        "benefits": ["ECHR müraciətlərinin hazırlanması","Beynəlxalq dəlil təqdimatı","Qərarların icrası"],
+        "process": ["Milli məhkəmə mərhələləri","Müraciətin hazırlanması","Qərarın icrası"]
+      },
+      "legal-opinions": {
+        "title": "Hüquqi rəylər və ekspertizalar",
+        "shortDesc": "Hüquqi analizlər, rəylər və ekspertizalar hazırlamaq.",
+        "longDesc": "Şirkətlər və şəxslər üçün hüquqi rəylər, ekspertizalar və risk qiymətləndirməsi təqdim olunur.",
+        "benefits": ["Peşəkar hüquqi analiz","Ekspertizaların hazırlanması","Risklərin azaldılması"],
+        "process": ["Tapşırığın qəbulu","Hüquqi analiz","Hesabat və təqdimat"]
+      },
+      "intl-assistance": {
+        "title": "Beynəlxalq hüquqi yardım və yerli tərəfdaşlar",
+        "shortDesc": "Xarici tərəfdaşlar vasitəsilə beynəlxalq hüquqi xidmətlər.",
+        "longDesc": "Xaricdə hüquqi məsələlərin idarə olunması üçün beynəlxalq tərəfdaş şəbəkəsi və koordinasiya xidmətləri.",
+        "benefits": ["Qlobal tərəfdaş şəbəkəsi","Beynəlxalq koordinasiya","Hüquqi icra dəstəyi"],
+        "process": ["Tələbin qiymətləndirilməsi","Partnyor seçimi","Koordinasiya və icra"]
+      },
+      "it-1": {
+        "title": "Veb saytların hazırlanması",
+        "shortDesc": "Responsive və SEO-friendly veb saytların hazırlanması və inteqrasiyası.",
+        "longDesc": "Müştəri təcrübəsinə fokuslanan, mobil və desktop üçün optimallaşdırılmış veb saytlar hazırlayırıq və kritik hüquqi/təhlükəsizlik standartlarına uyğunlaşdırırıq.",
+        "benefits": ["Modul və SEO-friendly dizayn","Rəqəmsal brend gücləndirməsi","Təhlükəsiz inteqrasiya və dəstək"],
+        "process": ["Tələblərin toplanması","Dizayn və inkişaf","Yayımlama və dəstək"]
+      },
+      "it-2": {
+        "title": "Mobil tətbiqlərin hazırlanması",
+        "shortDesc": "iOS və Android üçün yerli və hibrid mobil tətbiqlərin dizayn və inkişafı.",
+        "longDesc": "Çox platformalı mobil tətbiqlər hazırlayırıq, istifadəçi analizinə əsaslanan interfeys və əməliyyat dəyəri ilə yüksək performans təmin edirik.",
+        "benefits": ["Platformalararası mobil təcrübə","Sürətli prototipləşmə","App Store və Play Store dəstəyi"],
+        "process": ["Tələblərin analiz edilməsi","Prototip və inkişaf","Test və yayımlama"]
       }
     }
   }

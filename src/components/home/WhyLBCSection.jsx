@@ -68,8 +68,8 @@ export default function WhyLBCSection() {
                 </p>
               </div>
 
-              {/* Sol tərəfdə siçanı üzərinə gətirəndə canlanan mikroskopik indicator xətti */}
-              <div className="absolute left-0 top-0 h-full w-[1.5px] bg-transparent transition-colors duration-300 group-hover:bg-[#059aa2]" />
+              {/* Sol tərəfdə siçanı üzərinə gətirəndə zərif, yuvarlaq sol kənar glow effekti */}
+              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-transparent transition-all duration-500 group-hover:w-1 group-hover:bg-gradient-to-b group-hover:from-[#059aa2]/60 group-hover:via-[#059aa2]/30 group-hover:to-transparent rounded-l-xl pointer-events-none" />
             </div>
           ))}
         </div>

@@ -11,6 +11,7 @@ import Home from './pages/Home'
 import Services from './pages/Services'
 import ServiceDetail from './pages/ServiceDetail'
 import Blog from './pages/Blog'
+import BlogDetail from './pages/BlogDetail'
 import Contact from './pages/Contact'
 
 function AppRoutes() {
@@ -20,7 +21,7 @@ function AppRoutes() {
     /* Home.jsx daxilindəki krem və qəhvəyi fon rənglərini bura (bütün saytı bükən ana div-ə) köçürdük.
       Beləcə, səhifələr arası keçiddə və ya Navbarın arxasında heç bir ağ/qara rəng qırılması qalmayacaq.
     */
-    <div className="flex min-h-screen flex-col bg-[#f4efe8] text-[#2d2624] transition-all duration-300 dark:bg-[#1a1713] dark:text-[#f0ede9]">
+    <div className="flex min-h-screen flex-col overflow-x-hidden bg-[#f4efe8] text-[#2d2624] transition-all duration-300 dark:bg-[#1a1713] dark:text-[#f0ede9]">
       
       {/* Həmişə yuxarıda sabit qalan Naviqasiya Paneli */}
       <Navbar />
@@ -36,6 +37,7 @@ function AppRoutes() {
             <Route path="/services" element={<Services />} />
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:postId" element={<BlogDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Home />} />
           </Routes>

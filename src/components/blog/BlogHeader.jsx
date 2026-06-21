@@ -19,9 +19,9 @@ export default function BlogHeader() {
           {t('blog.badge')}
         </span>
 
-        {/* MAIN TITLE - 'font-light' redaksiya tərzi daxilində əsas sözlərin korporativ rənglə vurğulanması */}
+        {/* MAIN TITLE — use localized blog title for all languages */}
         <h1 className="text-3xl font-light tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-5xl lg:leading-[1.15]">
-          Biznesiniz üçün hüquqi <span className="font-semibold text-[#059aa2]">bələdçi və fikirlər</span>
+          {t('blog.title')}
         </h1>
 
         {/* DESCRIPTION - Kompakt ölçüdə, yüngül və oxunaqlı mətn */}

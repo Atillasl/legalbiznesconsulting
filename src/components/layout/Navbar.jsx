@@ -34,12 +34,12 @@ export default function Navbar() {
   ]
 
   const servicesMenu = [
-    { name: t('footer.services.corporate'), icon: <FiBriefcase className="text-base" /> },
-    { name: t('footer.services.contract'), icon: <FiCode className="text-base" /> },
-    { name: t('footer.services.property'), icon: <FiBriefcase className="text-base" /> },
-    { name: t('footer.services.tax'), icon: <FiCode className="text-base" /> },
-    { name: t('footer.tech.web'), icon: <FiCpu className="text-base" /> },
-    { name: t('footer.tech.app'), icon: <FiCpu className="text-base" /> },
+    { name: t('footer.services.corporate'), icon: <FiBriefcase className="text-base" />, to: { pathname: '/services', search: '?category=commercial' } },
+    { name: t('footer.services.contract'), icon: <FiCode className="text-base" />, to: { pathname: '/services', search: '?category=civil' } },
+    { name: t('footer.services.property'), icon: <FiBriefcase className="text-base" />, to: { pathname: '/services', search: '?category=civil' } },
+    { name: t('footer.services.tax'), icon: <FiCode className="text-base" />, to: { pathname: '/services', search: '?category=civil' } },
+    { name: t('footer.tech.web'), icon: <FiCpu className="text-base" />, to: { pathname: '/services', search: '?category=tech' } },
+    { name: t('footer.tech.app'), icon: <FiCpu className="text-base" />, to: { pathname: '/services', search: '?category=tech' } },
   ]
 
   const languages = LANGUAGES
@@ -95,7 +95,7 @@ export default function Navbar() {
                           {servicesMenu.slice(0, 4).map((service, idx) => (
                             <Link
                               key={idx}
-                              to="/services"
+                              to={service.to}
                               onClick={() => setIsServicesOpen(false)}
                               className="flex items-center gap-3 rounded-lg px-2.5 py-1.5 text-xs text-slate-500 transition-colors hover:bg-[#059aa2]/5 hover:text-[#059aa2] dark:text-slate-400 dark:hover:bg-slate-900/60"
                             >
@@ -113,7 +113,7 @@ export default function Navbar() {
                             {servicesMenu.slice(4).map((service, idx) => (
                               <Link
                                 key={idx}
-                                to="/services"
+                                to={service.to}
                                 onClick={() => setIsServicesOpen(false)}
                                 className="flex items-center gap-3 rounded-lg px-2.5 py-1.5 text-xs text-slate-500 transition-colors hover:bg-[#059aa2]/5 hover:text-[#059aa2] dark:text-slate-400 dark:hover:bg-slate-900/60"
                               >
@@ -226,7 +226,7 @@ export default function Navbar() {
                         {servicesMenu.map((service, idx) => (
                           <Link
                             key={idx}
-                            to="/services"
+                            to={service.to}
                             onClick={() => {
                               setIsOpen(false)
                               setIsServicesOpen(false)

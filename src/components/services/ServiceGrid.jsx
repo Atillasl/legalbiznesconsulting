@@ -2,18 +2,18 @@ import ServiceCard from '../common/ServiceCard'
 
 export default function ServiceGrid({ services }) {
   return (
-    // Grid strukturunu 'lg:grid-cols-3' edərək daha geniş və zərif nəfəs sahəsi yaradırıq
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 auto-rows-[280px]">
+    // Grid strukturunu avto hündürlüklə tənzimləyirik ki, xidmət kartları mətni qırpmadan göstərə bilsin
+    <div className="grid gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 auto-rows-min">
       {services.map((service, index) => (
         <div 
           key={service.id} 
-          className={`group relative transition-all duration-700 ease-out 
+          className={`group relative flex min-h-[360px] transition-all duration-700 ease-out 
             ${index % 3 === 0 ? 'lg:col-span-2' : 'lg:col-span-1'} 
             overflow-hidden rounded-3xl border border-slate-500/10 bg-white/40 p-1 backdrop-blur-md 
             hover:border-[#059aa2]/30 hover:shadow-2xl hover:shadow-[#059aa2]/5 dark:bg-white/[0.02]`}
         >
           {/* Kartın daxilindəki şəffaf material */}
-          <div className="h-full w-full rounded-[22px] bg-white/50 p-6 dark:bg-white/[0.03]">
+          <div className="flex h-full w-full rounded-[22px] bg-white/50 p-6 dark:bg-white/[0.03]">
             <ServiceCard service={service} />
           </div>
 
