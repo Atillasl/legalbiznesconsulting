@@ -19,14 +19,14 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative py-24 antialiased transition-colors duration-500 bg-[#fafafa] dark:bg-[#020617]">
+    <section id="contact" className="relative py-12 antialiased transition-colors duration-500 bg-white dark:bg-[#020617]">
       {/* Modern Arxa Fon Parıltısı */}
       <div className="absolute top-0 right-0 -z-10 h-[500px] w-[500px] bg-[#00969A]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* BÖLMƏ BAŞLIĞI */}
-        <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
+        <div className="text-center max-w-2xl mx-auto mb-10 space-y-4">
           <span className="text-[10px] font-bold tracking-[0.25em] text-[#00969A] uppercase bg-[#00969A]/5 px-4 py-1.5 rounded-full">
             {t('nav.contact')}
           </span>
@@ -38,7 +38,7 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid gap-16 lg:grid-cols-12 items-start">
+        <div className="grid gap-8 lg:grid-cols-12 items-start">
           
           {/* SOL PANEL: MƏLUMATLAR (Lüks Şüşə Effekti) */}
           <div className="lg:col-span-5 space-y-8">

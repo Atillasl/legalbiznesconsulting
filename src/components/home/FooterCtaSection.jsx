@@ -7,7 +7,7 @@ export default function FooterCtaSection() {
 
   return (
     // Orijinal parlaq firuzəyi fon və böyük padding qorundu
-    <section className="bg-[#059aa2] px-4 py-16 text-white sm:px-6 lg:px-8 antialiased">
+    <section className="bg-[#059aa2] px-4 py-10 text-white sm:px-6 lg:px-8 antialiased">
       {/* Orijinal böyük rounded-[2rem] qutu və yerləşmə strukturu saxlanıldı */}
       <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-[2rem] border border-white/10 bg-white/5 p-10 shadow-2xl shadow-slate-950/10 backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
         

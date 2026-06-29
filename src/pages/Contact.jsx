@@ -7,10 +7,10 @@ export default function Contact() {
   const { t } = useLanguage()
 
   return (
-    <div className="min-h-screen bg-[#fafafa] text-slate-900 transition-colors duration-500 dark:bg-[#020617] dark:text-[#f1f5f9]">
+    <div className="min-h-screen bg-white text-slate-900 transition-colors duration-500 dark:bg-[#020617] dark:text-[#f1f5f9]">
       
       {/* 1. HEADER: Minimalist və Geniş */}
-      <section className="relative py-32 text-center">
+      <section className="relative py-12 text-center">
         {/* Zərif işıq süzgəci */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#00969A]/5 via-transparent to-transparent" />
         
@@ -28,12 +28,12 @@ export default function Contact() {
       </section>
 
       {/* 2. MAIN CONTENT: Bento-Grid Estetikası */}
-      <section className="mx-auto max-w-7xl px-6 py-12">
+      <section className="mx-auto max-w-7xl px-6 py-10">
         <div className="grid gap-8 lg:grid-cols-12 items-start">
           
           {/* Sol Panel: Məlumatlar */}
           <div className="lg:col-span-4">
-            <div className="sticky top-24">
+            <div className="sticky top-20">
               <ContactInfoPanel />
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function Contact() {
       </section>
 
       {/* 3. MAP: Şəffaf və Şüşəvari */}
-      <section className="mx-auto max-w-7xl px-6 py-12 mb-20">
+      <section className="mx-auto max-w-7xl px-6 py-10 mb-8">
         <div className="overflow-hidden rounded-3xl border border-slate-500/10 bg-white/30 backdrop-blur-sm p-2 shadow-2xl shadow-slate-900/5">
           <ContactMapSection />
         </div>

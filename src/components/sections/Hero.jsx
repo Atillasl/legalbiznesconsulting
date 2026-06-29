@@ -11,7 +11,7 @@ export default function HeroSection() {
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#008080]/5 blur-[120px] rounded-full" />
 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
+        <div className="grid lg:grid-cols-12 gap-10 items-center">
           
           {/* Sol mətn hissəsi */}
           <div className="lg:col-span-7 space-y-10">

@@ -21,7 +21,7 @@ export default function CapabilitiesSection() {
   ]
 
   return (
-    <section id="capabilities" className="relative bg-slate-500/[0.03] border-y border-slate-500/5 px-6 py-24 lg:py-32 antialiased">
+    <section id="capabilities" className="relative bg-slate-500/[0.03] border-y border-slate-500/5 px-6 py-12 lg:py-12 antialiased">
       
       <div className="absolute left-0 top-0 h-[350px] w-[350px] rounded-full bg-[#059aa2]/5 blur-[120px] pointer-events-none dark:bg-[#059aa2]/10" />
 

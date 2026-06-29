@@ -28,12 +28,12 @@ export default function HighlightsSection() {
   ]
 
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 lg:py-32 antialiased relative overflow-hidden">
+    <section className="mx-auto max-w-7xl px-6 py-12 lg:py-12 antialiased relative overflow-hidden">
       
       {/* BREND DETALI: Arxa fonda süzülən zərif firuzəyi duman */}
       <div className="absolute left-[-10%] top-[30%] -z-10 h-[500px] w-[500px] rounded-full bg-[#059aa2]/5 blur-[130px] pointer-events-none" />
 
-      <div className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr] items-center">
+      <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-center">
         
         {/* SOL TƏRƏF: BAŞLIQ VƏ XÜSUSİYYƏTLƏR */}
         <div className="space-y-8">

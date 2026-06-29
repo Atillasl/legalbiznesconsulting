@@ -4,7 +4,7 @@ export default function BlogFilters({ categories, selectedCategory, searchQuery,
   return (
     <section className="mx-auto max-w-7xl px-6 sm:px-8">
       {/* Sərt border xətti tam minimalist mikroskopik xəttlə əvəzləndi */}
-      <div className="flex flex-col gap-4 md:gap-6 md:flex-row md:items-center md:justify-between border-b border-slate-500/10 pb-4 md:pb-6 dark:border-slate-800/60">
+      <div className="flex flex-col gap-4 md:gap-6 md:flex-row md:items-center md:justify-between">
         
         {/* CATEGORIES - Ultra-Minimalist Tab İnteqrasiyası */}
         <div className="flex flex-wrap gap-x-4 md:gap-x-6 gap-y-2 md:gap-y-3">
@@ -42,7 +42,7 @@ export default function BlogFilters({ categories, selectedCategory, searchQuery,
             placeholder={t('blog.searchPlaceholder')}
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full border-b border-slate-500/15 bg-transparent py-2.5 md:py-3 pl-8 md:pl-10 pr-3 text-xs md:text-sm font-light tracking-wide text-slate-900 transition-all placeholder-slate-400 focus:border-[#059aa2] focus:outline-none dark:text-white dark:placeholder-slate-600"
+            className="w-full border-none bg-slate-100/70 py-2.5 md:py-3 pl-8 md:pl-10 pr-3 text-xs md:text-sm font-light tracking-wide text-slate-900 transition-all placeholder-slate-400 focus:border-none focus:outline-none focus:ring-2 focus:ring-[#059aa2]/20 dark:bg-slate-900/70 dark:text-white dark:placeholder-slate-500"
           />
         </div>
 

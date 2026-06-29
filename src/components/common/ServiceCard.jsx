@@ -8,7 +8,7 @@ export default function ServiceCard({ service }) {
 
   if (!service) return null
   const localizedTitle = t(`services.items.${service.id}.title`) || service.title
-  const localizedShort = t(`services.items.${service.id}.shortDesc`) || service.shortDesc
+  const localizedShort = t(`services.items.${service.id}.shortDesc`) || service.shortDesc || service.description || ''
 
   return (
     // Sərt kənarlıqlar və kölgələr ləğv edildi, tam minimalist şüşə-material effekti tətbiq olundu

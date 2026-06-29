@@ -11,10 +11,10 @@ export default function About() {
   ]
 
   return (
-    <div className="antialiased bg-[#fafafa] dark:bg-[#020617] transition-colors duration-500">
+    <div className="antialiased bg-white dark:bg-[#020617] transition-colors duration-500">
       
       {/* 1. PAGE HEADER - Minimalist və Zen tərzdə */}
-      <section className="relative py-24 text-center border-b border-slate-500/5">
+      <section className="relative py-12 text-center border-b border-slate-500/5">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#059aa2]/5 via-transparent to-transparent" />
         <div className="mx-auto max-w-4xl px-6">
           <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#059aa2]">LBC KONSALTINQ</span>
@@ -28,8 +28,8 @@ export default function About() {
       </section>
 
       {/* 2. MAIN CONTENT - Asimmetrik Layout */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="grid gap-16 lg:grid-cols-12 items-start">
+      <section className="mx-auto max-w-7xl px-6 py-10">
+        <div className="grid gap-8 lg:grid-cols-12 items-start">
           
           <div className="lg:col-span-5 space-y-6">
             <div className="rounded-2xl border border-slate-500/10 bg-white/50 p-8 backdrop-blur-md dark:bg-white/[0.02]">
@@ -63,7 +63,7 @@ export default function About() {
       </section>
 
       {/* 3. MISSION & VISION - Kartların Modernizasiyası */}
-      <section className="mx-auto max-w-7xl px-6 pb-24">
+      <section className="mx-auto max-w-7xl px-6 pb-16">
         <div className="grid gap-6 md:grid-cols-2">
           {[
             { icon: <FiTarget />, title: t('about.mission.title'), desc: t('about.mission.desc') },
@@ -79,8 +79,8 @@ export default function About() {
       </section>
 
       {/* 4. CORE VALUES - Bento Grid */}
-      <section className="mx-auto max-w-7xl px-6 pb-24">
-        <div className="mb-16">
+      <section className="mx-auto max-w-7xl px-6 pb-16">
+        <div className="mb-12">
           <h2 className="text-2xl font-light text-slate-900 dark:text-white">{t('about.values.title')}</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-3">

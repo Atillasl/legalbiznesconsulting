@@ -25,13 +25,13 @@ export default function ImpactSection() {
 
   return (
     // Sərt bg-slate-950 silindi. Saytın ana krem/tünd fonu ilə əriyən, lüks kənarlıqlar əlavə edildi
-    <section className="relative border-b border-slate-500/5 bg-transparent px-6 py-24 lg:py-32 antialiased overflow-hidden">
+    <section className="relative border-b border-slate-500/5 bg-transparent px-6 py-12 lg:py-12 antialiased overflow-hidden">
       
       {/* Sağ tərəfdə arxada gizlənən incə, lüks bir neon işıq süzgəci */}
       <div className="absolute right-[-10%] bottom-[10%] h-[450px] w-[450px] rounded-full bg-[#59c9ca]/5 blur-[120px] pointer-events-none dark:bg-[#59c9ca]/8" />
 
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           
           {/* LEFT SIDE - Sticky Header Context */}
           <div className="lg:sticky lg:top-32 space-y-4">
@@ -56,11 +56,11 @@ export default function ImpactSection() {
               {cards.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="group relative rounded-2xl border border-slate-500/10 bg-white/40 p-6 backdrop-blur-md transition-all duration-500 hover:border-[#059aa2]/30 hover:bg-white/80 hover:shadow-xl hover:shadow-[#059aa2]/5 dark:bg-white/[0.01] dark:hover:bg-white/[0.03]"
+                  className="relative rounded-2xl border border-slate-500/10 bg-white/40 p-6 backdrop-blur-md dark:bg-white/[0.01]"
                 >
                   {/* Sol şaquli xətt üzərindəki dinamik birləşmə nöqtəsi (Bullet indicator) */}
-                  <div className="absolute left-[-31px] sm:left-[-39px] top-7 flex h-4 w-4 items-center justify-center rounded-full bg-[#f4efe8] dark:bg-[#1a1713] transition-all duration-300 group-hover:scale-125">
-                    <div className="h-2 w-2 rounded-full bg-slate-300 border border-transparent transition-all duration-300 group-hover:bg-[#059aa2] group-hover:ring-4 group-hover:ring-[#059aa2]/20 dark:bg-slate-700" />
+                  <div className="absolute left-[-31px] sm:left-[-39px] top-7 flex h-4 w-4 items-center justify-center rounded-full bg-[#f4efe8] dark:bg-[#1a1713]">
+                    <div className="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700" />
                   </div>
 
                   {/* Header info bar inside card */}
@@ -68,11 +68,11 @@ export default function ImpactSection() {
                     <div className="flex items-start gap-3 flex-1">
                       {/* Monoxrom İndeks nömrəsi */}
                       <span className="font-mono text-xs font-medium text-slate-400 dark:text-slate-500 mt-1 flex-shrink-0">{item.number}</span>
-                      <h3 className="text-sm font-medium tracking-tight text-slate-900 dark:text-white transition-colors duration-300 group-hover:text-[#059aa2] line-clamp-2">
+                      <h3 className="text-sm font-medium tracking-tight text-slate-900 dark:text-white line-clamp-2">
                         {item.title}
                       </h3>
                     </div>
-                    <FiCheckCircle className="text-lg text-slate-400 transition-colors duration-300 group-hover:text-[#59c9ca] dark:text-slate-600 flex-shrink-0 mt-1" />
+                    <FiCheckCircle className="text-lg text-slate-400 dark:text-slate-600 flex-shrink-0 mt-1" />
                   </div>
 
                   {/* Description */}
@@ -81,13 +81,13 @@ export default function ImpactSection() {
                   </p>
 
                   {/* Premium Action Trigger - Sağ aşağıda zərif link */}
-                  <Link to="/services" className="mt-5 inline-flex items-center gap-1 text-[11px] font-medium uppercase tracking-wider text-slate-400 transition-all duration-300 hover:text-[#059aa2] dark:text-slate-500">
+                  <Link to="/services" className="mt-5 inline-flex items-center gap-1 text-[11px] font-medium uppercase tracking-wider text-slate-400 dark:text-slate-500">
                     <span>{t('home.premium.impact.learnMore')}</span>
-                    <FiArrowUpRight className="text-sm transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <FiArrowUpRight className="text-sm" />
                   </Link>
 
                   {/* Kartın sol kənarına incə rəng toxunuşu */}
-                  <div className="absolute left-0 top-0 h-full w-[2px] bg-transparent transition-colors duration-300 group-hover:bg-[#059aa2]" />
+                  <div className="absolute left-0 top-0 h-full w-[2px] bg-transparent" />
                 </div>
               ))}
             </div>

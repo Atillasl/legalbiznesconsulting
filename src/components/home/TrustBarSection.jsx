@@ -33,13 +33,13 @@ export default function TrustBarSection() {
   ]
 
   return (
-    <section className="relative border-t border-slate-500/10 bg-transparent px-6 py-24 lg:py-32 antialiased overflow-hidden">
+    <section className="relative border-t border-slate-500/10 bg-transparent px-6 py-12 lg:py-12 antialiased overflow-hidden">
       
       {/* Sol tərəfdən gələn böyük korporativ işıq süzgəci (Gözü bura cəlb etmək üçün) */}
       <div className="absolute left-[-10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[#059aa2]/5 blur-[120px] pointer-events-none dark:bg-[#059aa2]/10" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="grid gap-16 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           
           {/* LEFT SIDE - Text Content */}
           <div className="space-y-4">
@@ -60,10 +60,9 @@ export default function TrustBarSection() {
             {metrics.map((item, idx) => (
               <div 
                 key={idx} 
-                className="group relative overflow-hidden rounded-2xl border border-slate-500/10 bg-gradient-to-b from-white/60 to-white/20 p-8 backdrop-blur-md transition-all duration-500 hover:-translate-y-1.5 hover:border-[#059aa2]/40 hover:shadow-2xl hover:shadow-[#059aa2]/5 dark:from-white/[0.03] dark:to-transparent"
+                className="relative overflow-hidden rounded-2xl border border-slate-500/10 bg-gradient-to-b from-white/60 to-white/20 p-8 backdrop-blur-md transition-all duration-500 dark:from-white/[0.03] dark:to-transparent"
               >
-                {/* Hover edəndə kartın küncündən sızan neon işıq şüası */}
-                <div className={`absolute -right-12 -top-12 h-24 w-24 rounded-full bg-gradient-to-br ${item.glow} blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100`} />
+                <div className={`absolute -right-12 -top-12 h-24 w-24 rounded-full bg-gradient-to-br ${item.glow} blur-xl opacity-0 transition-opacity duration-500`} />
                 
                 {/* İkon və İndikator sahəsi */}
                 <div className="flex items-center justify-between">

@@ -21,7 +21,7 @@ function AppRoutes() {
     /* Home.jsx daxilindəki krem və qəhvəyi fon rənglərini bura (bütün saytı bükən ana div-ə) köçürdük.
       Beləcə, səhifələr arası keçiddə və ya Navbarın arxasında heç bir ağ/qara rəng qırılması qalmayacaq.
     */
-    <div className="flex min-h-screen flex-col overflow-x-hidden bg-[#f4efe8] text-[#2d2624] transition-all duration-300 dark:bg-[#1a1713] dark:text-[#f0ede9]">
+    <div className="flex min-h-screen flex-col overflow-x-hidden bg-white text-slate-900 transition-all duration-300 dark:bg-[#1a1713] dark:text-[#f0ede9]">
       
       {/* Həmişə yuxarıda sabit qalan Naviqasiya Paneli */}
       <Navbar />

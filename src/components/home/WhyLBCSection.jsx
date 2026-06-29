@@ -29,7 +29,7 @@ export default function WhyLBCSection() {
 
   return (
     // İncə kənarlıq və fon tənzimləməsi ilə digər bölmələrlə vizual ahəng yaradır
-    <section className="relative border-t border-slate-500/5 bg-transparent px-6 py-20 lg:py-28 antialiased">
+    <section className="relative border-t border-slate-500/5 bg-transparent px-6 pt-8 pb-12 lg:pt-8 lg:pb-12 antialiased">
       <div className="mx-auto max-w-7xl">
         
         {/* HEADER - Minimalist və kompakt mərkəzləşdirilmiş struktur */}
@@ -46,21 +46,20 @@ export default function WhyLBCSection() {
         </div>
 
         {/* MINIMALIST GRID - Bərabər ölçülü, lakonik qutular */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, idx) => (
             <div 
               key={idx} 
-              // Şəffaf material effekti, incə rounded-xl künclər və kəskin ölçülər
-              className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-slate-500/10 bg-white/30 p-6 backdrop-blur-md transition-all duration-300 hover:border-[#059aa2]/30 hover:bg-white/60 dark:bg-white/[0.01] dark:hover:bg-white/[0.02]"
+              className="relative flex flex-col justify-between overflow-hidden rounded-xl border border-slate-500/10 bg-white/30 p-6 backdrop-blur-md dark:bg-white/[0.01]"
             >
               <div>
                 {/* Minimalist İkon - Heç bir böyük arka fon qutusu olmadan, sadəcə zərif təmiz ikon */}
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#059aa2]/5 text-[#059aa2] transition-transform duration-300 group-hover:scale-110">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#059aa2]/5 text-[#059aa2]">
                   {item.icon}
                 </div>
 
                 {/* Başlıq və Mətn - Font ölçüləri kiçildildi (Kompaktlıq üçün) */}
-                <h3 className="mt-5 text-sm font-medium tracking-wide text-slate-900 dark:text-white transition-colors duration-300 group-hover:text-[#059aa2]">
+                <h3 className="mt-5 text-sm font-medium tracking-wide text-slate-900 dark:text-white">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400 font-light">
@@ -68,8 +67,6 @@ export default function WhyLBCSection() {
                 </p>
               </div>
 
-              {/* Sol tərəfdə siçanı üzərinə gətirəndə zərif, yuvarlaq sol kənar glow effekti */}
-              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-transparent transition-all duration-500 group-hover:w-1 group-hover:bg-gradient-to-b group-hover:from-[#059aa2]/60 group-hover:via-[#059aa2]/30 group-hover:to-transparent rounded-l-xl pointer-events-none" />
             </div>
           ))}
         </div>

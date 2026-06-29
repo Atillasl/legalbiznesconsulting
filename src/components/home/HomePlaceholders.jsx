@@ -35,7 +35,7 @@ export default function HomePlaceholders() {
       </section>
 
       {/* SEKSİYA 2: KONTAKT VİZUAL YERLİYİ */}
-      <section className="mx-auto max-w-5xl px-6 py-20 lg:py-28">
+      <section className="mx-auto max-w-5xl px-6 py-10 lg:py-12">
         <div className="relative overflow-hidden rounded-xl border border-slate-500/10 bg-white/40 p-8 backdrop-blur-md shadow-xl shadow-slate-500/[0.02] dark:bg-white/[0.01] sm:p-12">
           
           {/* Arxa fonda sızan zərif firuzəyi işıq */}

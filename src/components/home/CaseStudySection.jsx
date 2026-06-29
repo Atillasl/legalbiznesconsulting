@@ -12,13 +12,13 @@ export default function CaseStudySection() {
   ]
 
   return (
-    <section className="relative border-b border-slate-500/5 bg-transparent px-6 py-24 lg:py-32 antialiased overflow-hidden">
+    <section className="relative border-b border-slate-500/5 bg-transparent px-6 py-12 lg:py-12 antialiased overflow-hidden">
       
       {/* Sol küncdən gələn incə, dərin brend işığı */}
       <div className="absolute left-[-5%] top-[30%] h-[500px] w-[500px] rounded-full bg-[#059aa2]/5 blur-[140px] pointer-events-none dark:bg-[#059aa2]/10" />
 
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-16 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           
           {/* LEFT SIDE - Editorial Text Content (Qutudan çıxarıldı, minimalist edildi) */}
           <div className="space-y-6">

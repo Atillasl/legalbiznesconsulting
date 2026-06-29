@@ -10,8 +10,8 @@ export default function BlogDetail() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-[#fafafa] dark:bg-[#020617] text-slate-900 dark:text-[#f1f5f9] transition-colors duration-500">
-        <div className="mx-auto max-w-4xl px-6 py-24 text-center">
+      <div className="min-h-screen bg-white dark:bg-[#020617] text-slate-900 dark:text-[#f1f5f9] transition-colors duration-500">
+        <div className="mx-auto max-w-4xl px-6 py-10 text-center">
           <h1 className="text-3xl font-semibold text-slate-900 dark:text-white">Məqalə tapılmadı</h1>
           <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
             Bu məqalə mövcud deyil və ya səhv ünvanla daxil olmusunuz.
@@ -32,9 +32,13 @@ export default function BlogDetail() {
     ? post.content
     : (post.content?.[currentLang] || post.content?.az || [])
 
+  const currentIndex = blogPosts.findIndex((article) => String(article.id) === postId)
+  const previousPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null
+  const nextPost = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null
+
   return (
-    <div className="min-h-screen bg-[#fafafa] dark:bg-[#020617] text-slate-900 dark:text-[#f1f5f9] transition-colors duration-500">
-      <section className="relative pt-24 pb-10">
+    <div className="min-h-screen bg-white dark:bg-[#020617] text-slate-900 dark:text-[#f1f5f9] transition-colors duration-500">
+      <section className="relative pt-20 pb-10">
         <div className="mx-auto max-w-5xl px-6">
           <Link
             to="/blog"
@@ -43,7 +47,7 @@ export default function BlogDetail() {
             <FiArrowLeft size={14} /> {t('blog.backToBlog') || 'Bloqa qayıt'}
           </Link>
 
-          <div className="mt-8 space-y-8">
+          <div className="mt-6 space-y-6">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div className="space-y-4">
                 <span className="inline-flex items-center gap-2 rounded-full bg-[#059aa2]/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#059aa2]">
@@ -77,6 +81,28 @@ export default function BlogDetail() {
               {paragraph}
             </p>
           ))}
+        </div>
+
+        <div className="mt-14 grid gap-4 sm:grid-cols-2">
+          {previousPost && (
+            <Link
+              to={`/blog/${previousPost.id}`}
+              className="rounded-3xl border border-slate-200 bg-white/90 p-6 text-left transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950/80 dark:hover:bg-slate-900"
+            >
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Əvvəlki məqalə</p>
+              <h3 className="mt-3 text-base font-semibold text-slate-900 dark:text-white">{typeof previousPost.title === 'string' ? previousPost.title : previousPost.title[currentLang] || previousPost.title.az}</h3>
+            </Link>
+          )}
+
+          {nextPost && (
+            <Link
+              to={`/blog/${nextPost.id}`}
+              className="rounded-3xl border border-slate-200 bg-white/90 p-6 text-left transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950/80 dark:hover:bg-slate-900"
+            >
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Növbəti məqalə</p>
+              <h3 className="mt-3 text-base font-semibold text-slate-900 dark:text-white">{typeof nextPost.title === 'string' ? nextPost.title : nextPost.title[currentLang] || nextPost.title.az}</h3>
+            </Link>
+          )}
         </div>
       </main>
     </div>

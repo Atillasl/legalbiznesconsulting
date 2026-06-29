@@ -5,7 +5,7 @@ export default function BlogHeader() {
 
   return (
     // Sərt fonlar ləğv edildi, tam minimalist və lüks alt xətt tənzimləməsi
-    <section className="relative overflow-hidden bg-transparent py-20 text-center border-b border-slate-500/5 antialiased">
+    <section className="relative overflow-hidden bg-transparent py-12 text-center border-b border-slate-500/5 antialiased">
       
       {/* BACKGROUND LUXURY EFFECT - Arxada gizlənən iki fərqli dinamik brend işığı */}
       <div className="absolute top-1/2 left-1/3 -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#059aa2]/5 blur-[100px] pointer-events-none dark:bg-[#059aa2]/10" />

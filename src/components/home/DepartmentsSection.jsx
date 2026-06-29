@@ -21,7 +21,7 @@ export default function DepartmentsSection() {
 
   return (
     // Padding və şrift tənzimləmələri tam elit səviyyəyə gətirildi
-    <section className="mx-auto max-w-7xl px-6 py-20 lg:py-28 antialiased">
+    <section className="mx-auto max-w-7xl px-6 py-12 lg:py-12 antialiased">
       
       {/* BAŞLIQ BLOKU - Nəzakətli şrift hiyerarxiyası ilə ortalandı */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
@@ -38,7 +38,7 @@ export default function DepartmentsSection() {
       </div>
 
       {/* KARTLARIN TORU (GRID) - Boşluqlar zərifləşdirildi */}
-      <div className="mt-16 grid gap-6 sm:grid-cols-2">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2">
         {departments.map((item) => (
           <div 
             key={item.id} 

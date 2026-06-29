@@ -51,7 +51,7 @@ export default function ContactFormPanel() {
 
       {isSubmitted ? (
         // Məktub uğurla göndərildikdə çıxan premium minimalist ekran
-        <div className="flex flex-col items-center justify-center text-center py-20 space-y-4 animate-fadeIn">
+          <div className="flex flex-col items-center justify-center text-center py-10 space-y-4 animate-fadeIn">
           {/* Yaşıl bağıran rəng yerinə, brend rəngində zərif, incə xətti ikon */}
           <FiCheckCircle className="text-[#059aa2] stroke-[1.1] animate-pulse" size={48} />
           <div className="space-y-1.5">

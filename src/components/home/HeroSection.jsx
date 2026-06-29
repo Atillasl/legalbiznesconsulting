@@ -16,7 +16,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-[#059aa2]/5 mix-blend-color pointer-events-none" />
       <div className="absolute right-[-5%] top-[-5%] h-[600px] w-[600px] rounded-full bg-[#059aa2]/10 blur-[130px] pointer-events-none" />
       
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-12 lg:py-16">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-10 lg:py-12">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           
           {/* LEFT SIDE - Content */}

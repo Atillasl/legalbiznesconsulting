@@ -43,7 +43,7 @@ export default function ServiceDetail() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#fafafa] text-slate-900 transition-colors duration-500 dark:bg-[#020617] dark:text-[#f1f5f9]">
+    <div className="min-h-screen bg-white text-slate-900 transition-colors duration-500 dark:bg-[#020617] dark:text-[#f1f5f9]">
       <section className="relative pt-24 pb-16">
         <div className="mx-auto max-w-5xl px-6">
           <Link to="/services" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#059aa2] hover:opacity-70 transition-opacity mb-8">

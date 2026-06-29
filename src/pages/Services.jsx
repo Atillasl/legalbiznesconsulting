@@ -40,10 +40,10 @@ export default function Services() {
   }, [activeTab])
 
   return (
-    <div className="min-h-screen bg-[#fafafa] text-slate-900 transition-colors duration-700 dark:bg-[#020617] dark:text-[#f1f5f9]">
+    <div className="min-h-screen bg-white text-slate-900 transition-colors duration-700 dark:bg-[#020617] dark:text-[#f1f5f9]">
       
       {/* HEADER: Premium Minimalist */}
-      <section className="relative py-24 text-center">
+      <section className="relative py-12 text-center">
         <div className="mx-auto max-w-3xl px-6">
           <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#059aa2] bg-[#059aa2]/5 px-4 py-1.5 rounded-full">
             {t('services.subtitle')}
@@ -60,7 +60,7 @@ export default function Services() {
       {/* Combined legal services list removed — individual services live in their own sections/pages */}
 
       {/* LAYOUT: Left sidebar with categories, right side shows services for selected category */}
-      <section className="mx-auto max-w-7xl px-6 pb-24">
+      <section className="mx-auto max-w-7xl px-6 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           <aside className="md:col-span-3">
             <div className="sticky top-28 rounded-xl border border-slate-200/20 bg-white/40 p-4 backdrop-blur-md dark:bg-white/[0.02]">
@@ -110,7 +110,7 @@ export default function Services() {
       </section>
 
       {/* CTA: Şüşəvari (Glassmorphism) Fokus */}
-      <section className="mx-auto max-w-5xl px-6 pb-32">
+      <section className="mx-auto max-w-5xl px-6 pb-12">
         <div className="relative overflow-hidden rounded-3xl border border-slate-500/10 bg-white/40 p-12 text-center backdrop-blur-xl dark:bg-white/[0.02]">
           {/* İşıq effekti */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#059aa2]/10 via-transparent to-transparent pointer-events-none" />

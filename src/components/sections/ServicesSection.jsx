@@ -27,13 +27,13 @@ export default function ServicesSection() {
   const currentServices = activeTab === 'legal' ? legalServices : techServices
 
   return (
-    <section id="services" className="relative py-24 antialiased overflow-hidden">
+    <section id="services" className="relative py-12 antialiased overflow-hidden">
       {/* Arxa fon zərif işıq süzgəci */}
       <div className="absolute top-[20%] left-[-10%] -z-10 h-[500px] w-[500px] bg-[#059aa2]/5 blur-[150px] rounded-full" />
       
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.3em] uppercase text-[#059aa2]">
             <span className="h-1 w-1 rounded-full bg-[#059aa2]" />
             {t('services.badge')}
@@ -44,7 +44,7 @@ export default function ServicesSection() {
         </div>
 
         {/* PREMIUM TAB NAVIGATION */}
-        <div className="flex justify-center mb-16">
+        <div className="flex justify-center mb-10">
           <div className="relative inline-flex rounded-xl bg-slate-200/20 p-1 backdrop-blur-xl border border-slate-500/10">
             {['legal', 'tech'].map((tab) => (
               <button

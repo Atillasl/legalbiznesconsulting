@@ -17,7 +17,7 @@ export default function ServiceTabs({ activeTab, onChange, t, categories = [] })
   const tabs = [...baseTabs, ...categoryTabs]
 
   return (
-    <div className="flex justify-center mb-16">
+    <div className="flex justify-center mb-10">
       <div className="relative inline-flex rounded-xl bg-slate-200/20 p-1 backdrop-blur-md border border-slate-500/10 shadow-xl shadow-slate-500/[0.03]">
         {tabs.map((tab) => (
           <button

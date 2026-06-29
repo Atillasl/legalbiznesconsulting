@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { useLanguage } from '../hooks/useLanguage'
 import BlogHeader from '../components/blog/BlogHeader'
 import BlogFilters from '../components/blog/BlogFilters'
@@ -12,6 +12,13 @@ export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [currentPage, setCurrentPage] = useState(1)
   const postsPerPage = 6
+  const blogGridRef = useRef(null)
+
+  useEffect(() => {
+    if (blogGridRef.current) {
+      blogGridRef.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
+    }
+  }, [currentPage])
 
   // useMemo istifadə edərək performansı optimallaşdırırıq
   const filteredPosts = useMemo(() => {
@@ -42,18 +49,18 @@ export default function Blog() {
   const currentPosts = filteredPosts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage)
 
   return (
-    <div className="min-h-screen bg-[#fafafa] dark:bg-[#020617] transition-colors duration-700">
+    <div className="min-h-screen bg-white dark:bg-[#020617] transition-colors duration-700">
       
       {/* Məzmunun nəfəs alması üçün konteyner */}
-      <main className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+      <main className="mx-auto max-w-7xl px-6 lg:px-8 py-10">
         
         {/* HEADER BÖLMƏSİ */}
-        <div className="mb-20">
+        <div className="mb-10">
           <BlogHeader />
         </div>
 
         {/* FİLTRLƏR - Şüşə effekti ilə */}
-        <div className="sticky top-24 z-30 mb-12">
+        <div className="sticky top-20 z-30 mb-10">
           <div className="rounded-2xl border border-slate-500/10 bg-white/60 p-4 backdrop-blur-xl dark:bg-slate-900/60 shadow-lg shadow-slate-900/5">
             <BlogFilters
               categories={blogCategories}
@@ -69,11 +76,13 @@ export default function Blog() {
         {/* POSTLAR GRID */}
         {currentPosts.length > 0 ? (
           <>
-            <BlogPostsGrid posts={currentPosts} t={t} />
+            <div ref={blogGridRef}>
+              <BlogPostsGrid posts={currentPosts} t={t} />
+            </div>
             <BlogPagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
           </>
         ) : (
-          <div className="text-center py-32">
+          <div className="text-center py-12">
             <h3 className="text-xl font-light text-slate-400">
               {t('blog.noResults') || 'Məqalə tapılmadı...'}
             </h3>
