@@ -1,12 +1,95 @@
+import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { FiArrowLeft, FiCalendar, FiClock, FiTag } from 'react-icons/fi'
 import { useLanguage } from '../hooks/useLanguage'
-import { blogPosts } from '../data/blogData'
+import { listPublicBlogPosts } from '../lib/blogService'
+
+function decodeHtmlEntities(value) {
+  if (typeof window === 'undefined') return value
+  const textarea = document.createElement('textarea')
+  textarea.innerHTML = value
+  return textarea.value
+}
+
+function resolveLocalizedContent(content, lang) {
+  if (Array.isArray(content)) return content.filter(Boolean)
+
+  const byLang = Array.isArray(content?.[lang]) ? content[lang].filter(Boolean) : []
+  if (byLang.length) return byLang
+
+  const az = Array.isArray(content?.az) ? content.az.filter(Boolean) : []
+  if (az.length) return az
+
+  const en = Array.isArray(content?.en) ? content.en.filter(Boolean) : []
+  if (en.length) return en
+
+  const ru = Array.isArray(content?.ru) ? content.ru.filter(Boolean) : []
+  return ru
+}
+
+function normalizeParagraphHtml(value) {
+  const text = String(value || '').trim()
+  if (!text) return ''
+
+  if (/<\/?[a-z][\s\S]*>/i.test(text)) {
+    return text
+  }
+
+  if (/&lt;\/?[a-z][\s\S]*&gt;/i.test(text)) {
+    const decoded = decodeHtmlEntities(text)
+    return /<\/?[a-z][\s\S]*>/i.test(decoded) ? decoded : `<p>${decoded}</p>`
+  }
+
+  return `<p>${text}</p>`
+}
 
 export default function BlogDetail() {
   const { postId } = useParams()
   const { t, currentLang } = useLanguage()
-  const post = blogPosts.find((article) => String(article.id) === postId)
+  const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let active = true
+
+    listPublicBlogPosts()
+      .then((items) => {
+        if (active) setPosts(items)
+      })
+      .catch(() => {
+        if (active) setPosts([])
+      })
+      .finally(() => {
+        if (active) setLoading(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  const post = useMemo(
+    () => posts.find((article) => String(article.id) === postId),
+    [posts, postId],
+  )
+
+  const currentIndex = useMemo(
+    () => posts.findIndex((article) => String(article.id) === postId),
+    [posts, postId],
+  )
+
+  const previousPost = currentIndex > 0 ? posts[currentIndex - 1] : null
+  const nextPost = currentIndex >= 0 && currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white dark:bg-[#020617] text-slate-900 dark:text-[#f1f5f9] transition-colors duration-500">
+        <div className="mx-auto max-w-4xl px-6 py-10 text-center">
+          <h1 className="text-3xl font-semibold text-slate-900 dark:text-white">Yuklenir...</h1>
+        </div>
+      </div>
+    )
+  }
 
   if (!post) {
     return (
@@ -28,13 +111,7 @@ export default function BlogDetail() {
   }
 
   const localizedTitle = typeof post.title === 'string' ? post.title : (post.title[currentLang] || post.title.az || '')
-  const localizedContent = Array.isArray(post.content)
-    ? post.content
-    : (post.content?.[currentLang] || post.content?.az || [])
-
-  const currentIndex = blogPosts.findIndex((article) => String(article.id) === postId)
-  const previousPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null
-  const nextPost = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null
+  const localizedContent = resolveLocalizedContent(post.content, currentLang)
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#020617] text-slate-900 dark:text-[#f1f5f9] transition-colors duration-500">
@@ -77,9 +154,11 @@ export default function BlogDetail() {
       <main className="mx-auto max-w-5xl px-6 pb-20">
         <div className="space-y-6 text-base leading-8 text-slate-700 dark:text-slate-300">
           {localizedContent.map((paragraph, idx) => (
-            <p key={idx} className="last:mb-0">
-              {paragraph}
-            </p>
+            <div
+              key={idx}
+              className="last:mb-0"
+              dangerouslySetInnerHTML={{ __html: normalizeParagraphHtml(paragraph) }}
+            />
           ))}
         </div>
 

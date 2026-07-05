@@ -4,15 +4,36 @@ import BlogHeader from '../components/blog/BlogHeader'
 import BlogFilters from '../components/blog/BlogFilters'
 import BlogPostsGrid from '../components/blog/BlogPostsGrid'
 import BlogPagination from '../components/blog/BlogPagination'
-import { blogCategories, blogPosts } from '../data/blogData'
+import { listPublicBlogPosts } from '../lib/blogService'
 
 export default function Blog() {
   const { t, currentLang } = useLanguage()
+  const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState(true)
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [currentPage, setCurrentPage] = useState(1)
   const postsPerPage = 6
   const blogGridRef = useRef(null)
+
+  useEffect(() => {
+    let active = true
+
+    listPublicBlogPosts()
+      .then((items) => {
+        if (active) setPosts(items)
+      })
+      .catch(() => {
+        if (active) setPosts([])
+      })
+      .finally(() => {
+        if (active) setLoading(false)
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
 
   useEffect(() => {
     if (blogGridRef.current) {
@@ -23,7 +44,7 @@ export default function Blog() {
   // useMemo istifadə edərək performansı optimallaşdırırıq
   const filteredPosts = useMemo(() => {
     const query = searchQuery.trim().toLowerCase()
-    return blogPosts.filter((post) => {
+    return posts.filter((post) => {
       const title = typeof post.title === 'string' ? post.title : (post.title[currentLang] || post.title.az || '')
       const excerpt = typeof post.excerpt === 'string' ? post.excerpt : (post.excerpt[currentLang] || post.excerpt.az || '')
       const matchesSearch =
@@ -33,7 +54,12 @@ export default function Blog() {
       const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory
       return matchesSearch && matchesCategory
     })
-  }, [searchQuery, selectedCategory, currentLang])
+  }, [searchQuery, selectedCategory, currentLang, posts])
+
+  const blogCategories = useMemo(() => {
+    const nextCategories = Array.from(new Set(posts.map((post) => post.category).filter(Boolean)))
+    return ['all', ...nextCategories]
+  }, [posts])
 
   const handleSearchChange = (value) => {
     setSearchQuery(value)
@@ -74,7 +100,11 @@ export default function Blog() {
         </div>
 
         {/* POSTLAR GRID */}
-        {currentPosts.length > 0 ? (
+        {loading ? (
+          <div className="text-center py-12">
+            <h3 className="text-xl font-light text-slate-400">Yuklenir...</h3>
+          </div>
+        ) : currentPosts.length > 0 ? (
           <>
             <div ref={blogGridRef}>
               <BlogPostsGrid posts={currentPosts} t={t} />

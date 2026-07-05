@@ -1,16 +1,50 @@
-import { useState } from 'react'
-import { useLanguage } from '../../context/LanguageContext'
+import { useEffect, useState } from 'react'
+import { useLanguage } from '../../hooks/useLanguage'
 import { FiPhone, FiMail, FiMapPin, FiClock, FiSend } from 'react-icons/fi'
+import { getPublicContactSettings, submitContactMessage } from '../../lib/contactService'
 
 export default function ContactSection() {
   const { t } = useLanguage()
   
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
+  const [contact, setContact] = useState(null)
+  const [isLoadingContact, setIsLoadingContact] = useState(true)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    let active = true
+
+    getPublicContactSettings()
+      .then((settings) => {
+        if (active) {
+          setContact(settings)
+          setIsLoadingContact(false)
+        }
+      })
+      .catch(() => {
+        if (active) {
+          setContact(null)
+          setIsLoadingContact(false)
+        }
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    alert(t('contact.successMessage'))
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    setIsSubmitting(true)
+    try {
+      await submitContactMessage(formData)
+      setIsSubmitted(true)
+      setFormData({ name: '', email: '', subject: '', message: '' })
+      setTimeout(() => setIsSubmitted(false), 3000)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e) => {
@@ -49,10 +83,17 @@ export default function ContactSection() {
 
               <div className="space-y-8">
                 {[
-                  { icon: <FiPhone />, label: t('contact.phone'), val: '+994 (50) 000-0000' },
-                  { icon: <FiMail />, label: t('contact.email'), val: 'info@legalbiznes.az' },
-                  { icon: <FiMapPin />, label: t('contact.addressTitle'), val: 'Bakı şəhəri, Nərimanov rayonu' },
-                  { icon: <FiClock />, label: t('contact.workHours'), val: '09:00 - 18:00 (B.E - C.)' }
+                  { icon: <FiPhone />, label: t('contact.phone'), val: contact?.mobile || '-' },
+                  { icon: <FiMail />, label: t('contact.email'), val: contact?.email || '-' },
+                  { icon: <FiMapPin />, label: t('contact.addressTitle'), val: contact?.address || '-' },
+                  {
+                    icon: <FiClock />,
+                    label: t('contact.workHours'),
+                    val:
+                      contact?.hoursWeekdays && contact?.hoursWeekend
+                        ? `${contact.hoursWeekdays} / ${contact.hoursWeekend}`
+                        : contact?.hoursWeekdays || contact?.hoursWeekend || '-',
+                  },
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-5 group">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#00969A]/5 text-[#00969A] transition-colors group-hover:bg-[#00969A]/10">
@@ -60,7 +101,11 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{item.label}</h4>
-                      <p className="mt-1 text-sm font-medium text-slate-700 dark:text-slate-200">{item.val}</p>
+                      {isLoadingContact ? (
+                        <div className="mt-1 h-3 w-36 animate-pulse rounded bg-slate-200/80 dark:bg-slate-700/80" />
+                      ) : (
+                        <p className="mt-1 text-sm font-medium text-slate-700 dark:text-slate-200">{item.val}</p>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -113,10 +158,12 @@ export default function ContactSection() {
 
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className="inline-flex items-center gap-3 rounded-xl bg-[#00969A] px-8 py-4 text-xs font-bold text-white shadow-lg shadow-[#00969A]/20 hover:bg-[#007A7E] transition-all transform hover:-translate-y-0.5"
               >
-                {t('contact.form.submitBtn')} <FiSend size={14} />
+                {isSubmitting ? 'Göndərilir...' : t('contact.form.submitBtn')} <FiSend size={14} />
               </button>
+              {isSubmitted ? <p className="text-xs text-emerald-500">{t('contact.form.successTitle')}</p> : null}
             </form>
           </div>
 

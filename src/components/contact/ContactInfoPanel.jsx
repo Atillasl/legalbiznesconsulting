@@ -1,8 +1,34 @@
+import { useEffect, useState } from 'react'
 import { FiMail, FiPhone, FiMapPin, FiClock, FiInfo } from 'react-icons/fi'
 import { useLanguage } from '../../hooks/useLanguage'
+import { getPublicContactSettings } from '../../lib/contactService'
 
 export default function ContactInfoPanel() {
   const { t } = useLanguage()
+  const [contact, setContact] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    let active = true
+
+    getPublicContactSettings()
+      .then((settings) => {
+        if (active) {
+          setContact(settings)
+          setIsLoading(false)
+        }
+      })
+      .catch(() => {
+        if (active) {
+          setContact(null)
+          setIsLoading(false)
+        }
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
 
   return (
     <div className="space-y-4 antialiased">
@@ -27,7 +53,11 @@ export default function ContactInfoPanel() {
             </div>
             <div>
               <h4 className="text-[9px] font-medium text-slate-400 uppercase tracking-[0.15em]">{t('contact.info.phone')}</h4>
-              <p className="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 tracking-wide">+994 77 347 79 59</p>
+              {isLoading ? (
+                <div className="mt-1 h-3 w-36 animate-pulse rounded bg-slate-200/70 dark:bg-slate-700/70" />
+              ) : (
+                <p className="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 tracking-wide">{contact?.mobile || '-'}</p>
+              )}
             </div>
           </div>
 
@@ -38,7 +68,11 @@ export default function ContactInfoPanel() {
             </div>
             <div>
               <h4 className="text-[9px] font-medium text-slate-400 uppercase tracking-[0.15em]">{t('contact.info.email')}</h4>
-              <p className="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 tracking-wide">info@legalbusiness.az</p>
+              {isLoading ? (
+                <div className="mt-1 h-3 w-44 animate-pulse rounded bg-slate-200/70 dark:bg-slate-700/70" />
+              ) : (
+                <p className="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 tracking-wide">{contact?.email || '-'}</p>
+              )}
             </div>
           </div>
 
@@ -49,7 +83,14 @@ export default function ContactInfoPanel() {
             </div>
             <div>
               <h4 className="text-[9px] font-medium text-slate-400 uppercase tracking-[0.15em]">{t('contact.info.addressTitle')}</h4>
-              <p className="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 leading-relaxed tracking-wide">{t('contact.info.address')}</p>
+              {isLoading ? (
+                <div className="mt-1 space-y-1">
+                  <div className="h-3 w-52 animate-pulse rounded bg-slate-200/70 dark:bg-slate-700/70" />
+                  <div className="h-3 w-44 animate-pulse rounded bg-slate-200/70 dark:bg-slate-700/70" />
+                </div>
+              ) : (
+                <p className="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 leading-relaxed tracking-wide">{contact?.address || '-'}</p>
+              )}
             </div>
           </div>
 
@@ -60,8 +101,17 @@ export default function ContactInfoPanel() {
             </div>
             <div>
               <h4 className="text-[9px] font-medium text-slate-400 uppercase tracking-[0.15em]">{t('contact.info.hoursTitle')}</h4>
-              <p className="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 tracking-wide">{t('contact.info.hoursWeekdays')}</p>
-              <p className="text-[11px] font-light text-slate-400 dark:text-slate-500 mt-0.5">{t('contact.info.hoursWeekend')}</p>
+              {isLoading ? (
+                <div className="mt-1 space-y-1">
+                  <div className="h-3 w-40 animate-pulse rounded bg-slate-200/70 dark:bg-slate-700/70" />
+                  <div className="h-3 w-32 animate-pulse rounded bg-slate-200/70 dark:bg-slate-700/70" />
+                </div>
+              ) : (
+                <>
+                  <p className="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 tracking-wide">{contact?.hoursWeekdays || '-'}</p>
+                  <p className="text-[11px] font-light text-slate-400 dark:text-slate-500 mt-0.5">{contact?.hoursWeekend || '-'}</p>
+                </>
+              )}
             </div>
           </div>
 

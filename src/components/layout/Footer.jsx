@@ -1,10 +1,36 @@
+import { useEffect, useState } from 'react'
 import { useLanguage } from '../../hooks/useLanguage'
 import { Link } from 'react-router-dom'
 import { FiLayers, FiPhone, FiMail, FiMapPin } from 'react-icons/fi'
+import { getPublicContactSettings } from '../../lib/contactService'
 
 export default function Footer() {
   const { t } = useLanguage()
   const currentYear = new Date().getFullYear()
+  const [contact, setContact] = useState(null)
+  const [isLoadingContact, setIsLoadingContact] = useState(true)
+
+  useEffect(() => {
+    let active = true
+
+    getPublicContactSettings()
+      .then((settings) => {
+        if (active) {
+          setContact(settings)
+          setIsLoadingContact(false)
+        }
+      })
+      .catch(() => {
+        if (active) {
+          setContact(null)
+          setIsLoadingContact(false)
+        }
+      })
+
+    return () => {
+      active = false
+    }
+  }, [])
 
   const allServices = [
     { name: t('footer.services.corporate'), to: '/services/commercial' },
@@ -45,15 +71,27 @@ export default function Footer() {
             <div className="space-y-2 pt-2 text-sm font-light font-mono text-slate-700">
               <div className="flex items-center gap-2">
                 <FiPhone className="text-[#059aa2] text-sm" />
-                <span>+994 (50) 000-0000</span>
+                {isLoadingContact ? (
+                  <span className="h-3 w-28 animate-pulse rounded bg-slate-200/80" />
+                ) : (
+                  <span>{contact?.mobile || '-'}</span>
+                )}
               </div>
               <div className="flex items-center gap-2">
                 <FiMail className="text-[#059aa2] text-sm" />
-                <span>info@legalbiznes.az</span>
+                {isLoadingContact ? (
+                  <span className="h-3 w-36 animate-pulse rounded bg-slate-200/80" />
+                ) : (
+                  <span>{contact?.email || '-'}</span>
+                )}
               </div>
               <div className="flex items-center gap-2">
                 <FiMapPin className="text-[#059aa2] text-sm" />
-                <span>Baku, Narimanov r.</span>
+                {isLoadingContact ? (
+                  <span className="h-3 w-32 animate-pulse rounded bg-slate-200/80" />
+                ) : (
+                  <span>{contact?.address || '-'}</span>
+                )}
               </div>
             </div>
           </div>

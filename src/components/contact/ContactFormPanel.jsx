@@ -3,6 +3,7 @@ import Input from '../ui/Input'
 import Button from '../ui/Button'
 import { useLanguage } from '../../hooks/useLanguage'
 import { FiCheckCircle } from 'react-icons/fi'
+import { submitContactMessage } from '../../lib/contactService'
 
 export default function ContactFormPanel() {
   const { t } = useLanguage()
@@ -18,7 +19,7 @@ export default function ContactFormPanel() {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const newErrors = {}
 
@@ -35,6 +36,7 @@ export default function ContactFormPanel() {
       return
     }
 
+    await submitContactMessage(formData)
     setIsSubmitted(true)
     setTimeout(() => {
       setIsSubmitted(false)
