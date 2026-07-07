@@ -67,8 +67,8 @@ export default function DepartmentsSection() {
               </p>
             </div>
 
-            {/* HOVER PRO-DETAL: Kartın sol kənarından sızan zərif neon firuzəyi xətt */}
-            <div className="absolute left-0 top-0 h-full w-[1.5px] bg-transparent transition-colors duration-500 group-hover:bg-[#059aa2]" />
+            {/* HOVER PRO-DETAL: Kartın sol kənarından sızan zərif neon firuzəyi xətt - kənarlardan çıxmaması üçün yuxarı/aşağı padding */}
+            <div className="absolute left-0 top-2 bottom-2 w-[2px] rounded-l-full bg-transparent transition-colors duration-500 group-hover:bg-[#059aa2]" />
           </div>
         ))}
       </div>

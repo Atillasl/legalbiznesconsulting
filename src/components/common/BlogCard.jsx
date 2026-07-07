@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useLanguage } from '../../hooks/useLanguage'
 import { FiCalendar, FiClock, FiArrowRight, FiTag } from 'react-icons/fi'
 
 export default function BlogCard({ post }) {
   const { t, currentLang } = useLanguage()
+  const navigate = useNavigate()
 
   if (!post) return null
 
@@ -12,7 +13,11 @@ export default function BlogCard({ post }) {
 
   return (
     // Qutu dizaynı incəldildi, sərt kölgələr (shadow-sm) minimalist xətlərlə əvəzləndi
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-slate-500/10 bg-white/40 backdrop-blur-md transition-all duration-500 hover:border-[#059aa2]/30 hover:bg-white/80 hover:shadow-xl hover:shadow-[#059aa2]/5 dark:bg-white/[0.01] dark:hover:bg-white/[0.03]">
+    <article
+      onClick={() => navigate(`/blog/${post.id}`)}
+      role="button"
+      className="group cursor-pointer flex flex-col overflow-hidden rounded-2xl border border-slate-500/10 bg-white/40 backdrop-blur-md transition-all duration-500 hover:border-[#059aa2]/30 hover:bg-white/80 hover:shadow-xl hover:shadow-[#059aa2]/5 dark:bg-white/[0.01] dark:hover:bg-white/[0.03]"
+    >
       
       {/* 1. MƏQALƏ ŞƏKLİ & PREMIUM BADGE */}
       <div className="relative aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-slate-900">
@@ -45,7 +50,7 @@ export default function BlogCard({ post }) {
 
           {/* Başlıq - İdeal 'text-base' ölçüsü qorundu, font-bold yerinə professional font-medium istifadə olundu */}
           <h3 className="mt-3 text-base font-medium leading-snug tracking-tight text-slate-900 group-hover:text-[#059aa2] transition-colors duration-300 dark:text-white">
-            <Link to={`/blog/${post.id}`}>
+            <Link to={`/blog/${post.id}`} onClick={(e) => e.stopPropagation()}>
               {title}
             </Link>
           </h3>
@@ -58,9 +63,9 @@ export default function BlogCard({ post }) {
 
         {/* 3. KEÇİD LİNKİ - İncə border xətti və hərəkətli ox */}
         <div className="mt-6 border-t border-slate-500/5 pt-4 dark:border-slate-800/40">
-          <Link 
-            to={`/blog/${post.id}`} 
-            // Ox işarəsinin lüks sürüşmə effekti (group-hover:translate-x-1)
+          <Link
+            to={`/blog/${post.id}`}
+            onClick={(e) => e.stopPropagation()}
             className="inline-flex items-center gap-1.5 text-xs font-medium tracking-wide text-[#059aa2] transition-all duration-300"
           >
             <span className="relative pb-0.5 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-[#059aa2] after:transition-all after:duration-300 group-hover:after:w-full">

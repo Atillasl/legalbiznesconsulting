@@ -50,7 +50,7 @@ export default function Footer() {
 
   return (
     // Footer styling with Hero-like gradient background colors
-      <footer className="relative overflow-hidden border-t border-slate-200 bg-white text-slate-900 transition-all antialiased">
+      <footer className="relative overflow-hidden border-t border-slate-200 bg-white text-slate-900 transition-all antialiased dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200">
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-12 lg:px-8">
         
         {/* MAIN LAYOUT GRID - Şaquli uzanmanın qarşısını alan kompakt üfüqi düzülüş */}
@@ -101,7 +101,7 @@ export default function Footer() {
             
             {/* Xidmətlər Sütunu */}
             <div className="space-y-3">
-              <h3 className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-900">
+              <h3 className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-900 dark:text-slate-200">
                 {t('nav.services')}
               </h3>
               <ul className="space-y-2 text-sm font-light text-slate-700">
@@ -117,10 +117,10 @@ export default function Footer() {
 
             {/* Sürətli Keçidlər Sütunu */}
             <div className="space-y-3 lg:pr-4">
-              <h3 className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-900">
+              <h3 className="text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-900 dark:text-slate-200">
                 {t('footer.titles.links')}
               </h3>
-              <ul className="space-y-2 text-sm font-light text-slate-700">
+              <ul className="space-y-2 text-sm font-light text-slate-700 dark:text-slate-300">
                 {quickLinks.map((link, i) => (
                   <li key={i}>
                     <Link to={link.to} className="transition-colors duration-200 hover:text-slate-900 hover:underline">

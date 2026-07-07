@@ -36,12 +36,18 @@ export default function ContactFormPanel() {
       return
     }
 
-    await submitContactMessage(formData)
-    setIsSubmitted(true)
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
-    }, 5000)
+    try {
+      await submitContactMessage(formData)
+      setIsSubmitted(true)
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+      }, 5000)
+    } catch (err) {
+      // Daha yaxşı istifadəçi təcrübəsi üçün xətanı göstəririk
+      console.error('Contact submit error:', err)
+      setErrors((prev) => ({ ...prev, submit: t('contact.form.errors.submitFailed') || 'Göndərmə alınmadı, zəhmət olmasa yenidən cəhd edin.' }))
+    }
   }
 
   return (
@@ -137,6 +143,9 @@ export default function ContactFormPanel() {
               {t('contact.form.submitBtn')}
             </Button>
           </div>
+          {errors.submit && (
+            <p className="mt-3 text-sm text-red-600" role="status">{errors.submit}</p>
+          )}
         </form>
       )}
     </div>

@@ -23,7 +23,7 @@ export default function BlogPostsGrid({ posts, t }) {
   return (
     // Boşluqlar daha sıxlandı, lakin kartlar hələ də hava alır
     <section className="mx-auto max-w-7xl min-h-[600px] px-6 py-8 sm:px-8 antialiased">
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           // İdeal oxunurluq və premium effektlər `BlogCard`-ın daxilinə ötürülür
           <div
