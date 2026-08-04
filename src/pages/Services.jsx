@@ -39,6 +39,76 @@ export default function Services() {
     return allServices.filter((s) => (categoryMap[s.category] || s.category) === activeTab)
   }, [activeTab])
 
+  const practiceAreas = [
+    {
+      title: t('services.practiceAreas.corporate.title'),
+      items: [
+        t('services.practiceAreas.corporate.items.0'),
+        t('services.practiceAreas.corporate.items.1'),
+        t('services.practiceAreas.corporate.items.2')
+      ]
+    },
+    {
+      title: t('services.practiceAreas.contract.title'),
+      items: [
+        t('services.practiceAreas.contract.items.0'),
+        t('services.practiceAreas.contract.items.1'),
+        t('services.practiceAreas.contract.items.2')
+      ]
+    },
+    {
+      title: t('services.practiceAreas.disputes.title'),
+      items: [
+        t('services.practiceAreas.disputes.items.0'),
+        t('services.practiceAreas.disputes.items.1'),
+        t('services.practiceAreas.disputes.items.2')
+      ]
+    },
+    {
+      title: t('services.practiceAreas.realEstate.title'),
+      items: [
+        t('services.practiceAreas.realEstate.items.0'),
+        t('services.practiceAreas.realEstate.items.1'),
+        t('services.practiceAreas.realEstate.items.2')
+      ]
+    },
+    {
+      title: t('services.practiceAreas.regulatory.title'),
+      items: [
+        t('services.practiceAreas.regulatory.items.0'),
+        t('services.practiceAreas.regulatory.items.1'),
+        t('services.practiceAreas.regulatory.items.2')
+      ]
+    },
+    {
+      title: t('services.practiceAreas.employment.title'),
+      items: [
+        t('services.practiceAreas.employment.items.0'),
+        t('services.practiceAreas.employment.items.1'),
+        t('services.practiceAreas.employment.items.2')
+      ]
+    }
+  ]
+
+  const industries = [
+    t('services.industries.items.0'),
+    t('services.industries.items.1'),
+    t('services.industries.items.2'),
+    t('services.industries.items.3'),
+    t('services.industries.items.4'),
+    t('services.industries.items.5'),
+    t('services.industries.items.6'),
+    t('services.industries.items.7'),
+    t('services.industries.items.8'),
+    t('services.industries.items.9'),
+    t('services.industries.items.10'),
+    t('services.industries.items.11'),
+    t('services.industries.items.12'),
+    t('services.industries.items.13'),
+    t('services.industries.items.14'),
+    t('services.industries.items.15')
+  ]
+
   return (
     <div className="min-h-screen bg-white text-slate-900 transition-colors duration-700 dark:bg-[#020617] dark:text-[#f1f5f9]">
       
@@ -57,54 +127,106 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Combined legal services list removed — individual services live in their own sections/pages */}
-
-      {/* LAYOUT: Left sidebar with categories, right side shows services for selected category */}
-      <section className="mx-auto max-w-7xl px-6 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          <aside className="md:col-span-3">
-            <div className="sticky top-28 rounded-xl border border-slate-200/20 bg-white/40 p-4 backdrop-blur-md dark:bg-white/[0.02]">
-              <h4 className="text-sm font-semibold mb-4">{t('services.subtitle')}</h4>
-              <ul className="space-y-2">
-                <li>
-                  <button
-                    onClick={() => setCategory('all')}
-                    className={`w-full text-left rounded-lg px-3 py-2 text-sm ${activeTab === 'all' ? 'bg-[#059aa2] text-white' : 'text-slate-600 hover:bg-slate-50'}`}>
-                    {t('services.tabs.all')}
-                    <span className="ml-2 text-xs text-slate-400">({allServices.length})</span>
-                  </button>
-                </li>
-                {/* Tech/IT moved to bottom for prominence; rendered after legal categories */}
-                {legalCategories.map((c) => (
-                  <li key={c.key}>
-                    <button
-                      onClick={() => setCategory(c.key)}
-                      className={`w-full text-left rounded-lg px-3 py-3 text-base ${activeTab === c.key ? 'bg-[#059aa2] text-white' : 'text-slate-700 hover:bg-slate-50'}`}>
-                      {t(`services.categories.${c.key}`) || c.label}
-                      <span className="ml-3 text-sm text-slate-600">({allServices.filter(s => (categoryMap[s.category]||s.category)===c.key).length})</span>
-                    </button>
-                  </li>
-                ))}
-                {/* Tech/IT placed last and shown with larger readable text */}
-                <li>
-                  <button
-                    onClick={() => setCategory('tech')}
-                    className={`w-full text-left rounded-lg px-3 py-3 text-base ${activeTab === 'tech' ? 'bg-[#059aa2] text-white' : 'text-slate-700 hover:bg-slate-50'}`}>
-                    {t('services.tabs.tech')}
-                    <span className="ml-3 text-sm text-slate-600">({itServices.length})</span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </aside>
-
-          <div className="md:col-span-9">
-            <div className="space-y-6">
-              <h2 className="text-2xl font-semibold">
-                {activeTab === 'all' ? t('services.title') : (t(`services.categories.${activeTab}`) || t('services.title'))}
+      <section className="mx-auto max-w-7xl px-6 pb-8">
+        <div className="rounded-3xl border border-slate-500/10 bg-white/70 p-8 shadow-sm shadow-slate-200/50 backdrop-blur-xl dark:bg-white/[0.03] md:p-10">
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#059aa2]">
+                {t('services.practiceAreas.badge')}
+              </span>
+              <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
+                {t('services.practiceAreas.title')}
               </h2>
-              <ServiceGrid services={filteredServices} />
             </div>
+            <p className="max-w-xl text-sm font-light leading-relaxed text-slate-500 dark:text-slate-400">
+              {t('services.practiceAreas.description')}
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
+            {practiceAreas.map((area) => (
+              <div key={area.title} className="rounded-2xl border border-slate-200/70 bg-slate-50/70 p-5 transition hover:border-[#059aa2]/20 hover:bg-white dark:border-slate-800/60 dark:bg-slate-950/40">
+                <h3 className="text-sm font-semibold text-slate-900 dark:text-white">{area.title}</h3>
+                <ul className="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                  {area.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#059aa2]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-sm font-light text-slate-500 dark:text-slate-400">
+            {t('services.industries.description')}
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-10">
+        <div className="rounded-3xl border border-slate-500/10 bg-slate-950/95 p-8 text-white shadow-xl shadow-slate-900/10 md:p-10">
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#59c9ca]">
+                {t('services.industries.badge')}
+              </span>
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+                {t('services.industries.title')}
+              </h2>
+            </div>
+            <p className="max-w-xl text-sm font-light leading-relaxed text-slate-300">
+              {t('services.industries.description')}
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-2.5">
+            {industries.map((industry) => (
+              <span key={industry} className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200">
+                {industry}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-12">
+        <div className="rounded-3xl border border-slate-200/70 bg-white/70 p-5 shadow-sm shadow-slate-200/40 backdrop-blur-xl dark:border-slate-800/60 dark:bg-white/[0.03] md:p-6">
+          <div className="flex flex-wrap gap-2">
+            <button onClick={() => setCategory('all')} className={`rounded-full px-4 py-2 text-sm font-medium transition ${activeTab === 'all' ? 'bg-[#059aa2] text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-300'}`}>
+              {t('services.tabs.all')}
+              <span className="ml-2 text-xs opacity-70">({allServices.length})</span>
+            </button>
+            {legalCategories.map((c) => (
+              <button key={c.key} onClick={() => setCategory(c.key)} className={`rounded-full px-4 py-2 text-sm font-medium transition ${activeTab === c.key ? 'bg-[#059aa2] text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-300'}`}>
+                {t(`services.categories.${c.key}`) || c.label}
+                <span className="ml-2 text-xs opacity-70">({allServices.filter(s => (categoryMap[s.category]||s.category)===c.key).length})</span>
+              </button>
+            ))}
+            <button onClick={() => setCategory('tech')} className={`rounded-full px-4 py-2 text-sm font-medium transition ${activeTab === 'tech' ? 'bg-[#059aa2] text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-300'}`}>
+              {t('services.tabs.tech')}
+              <span className="ml-2 text-xs opacity-70">({itServices.length})</span>
+            </button>
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-slate-200/70 bg-slate-50/70 px-5 py-4 dark:border-slate-800/60 dark:bg-slate-950/40">
+            <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+              <div>
+                <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+                  {activeTab === 'all' ? t('services.title') : (t(`services.categories.${activeTab}`) || t('services.title'))}
+                </h2>
+                <p className="mt-1 text-sm font-light text-slate-500 dark:text-slate-400">
+                  {t('services.heroLead')}
+                </p>
+              </div>
+              <span className="inline-flex items-center rounded-full bg-[#059aa2]/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#059aa2]">
+                {filteredServices.length} {t('services.subtitle').toLowerCase()}
+              </span>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <ServiceGrid services={filteredServices} />
           </div>
         </div>
       </section>

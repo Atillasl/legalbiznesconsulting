@@ -7,17 +7,14 @@ export default function HeroSection() {
   const { t } = useLanguage()
 
   return (
-    // min-h-[80vh] və ya h-[85vh] tətbiq edərək ekranı vizual boğmaqdan xilas edirik
     <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-transparent text-white antialiased">
-      
-      {/* Background & Overlays */}
+      {/* Background */}
       <div className="absolute inset-0 bg-cover bg-center opacity-40 scale-105 pointer-events-none" style={{ backgroundImage: `url(${t4Image})` }} />
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/60 to-[#059aa2]/5 backdrop-blur-[1px] pointer-events-none" />
       <div className="absolute inset-0 bg-[#059aa2]/5 mix-blend-color pointer-events-none" />
       <div className="absolute right-[-5%] top-[-5%] h-[600px] w-[600px] rounded-full bg-[#059aa2]/10 blur-[130px] pointer-events-none" />
       
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-10 lg:py-12">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-10 lg:py-12 grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           
           {/* LEFT SIDE - Content */}
           <div className="flex flex-col justify-center">
@@ -67,7 +64,7 @@ export default function HeroSection() {
               </div>
               
               <div className="mt-4 space-y-4">
-                {['regulatory', 'governance', 'digital'].map((key) => (
+                {['corporate', 'disputes', 'crossBorder'].map((key) => (
                   <div key={key} className="border-b border-white/5 pb-4 last:border-none last:pb-0">
                     <div className="flex items-start justify-between gap-3">
                       <div>
@@ -83,9 +80,7 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-
         </div>
-      </div>
-    </section>
-  )
-}
+      </section>
+    )
+  }

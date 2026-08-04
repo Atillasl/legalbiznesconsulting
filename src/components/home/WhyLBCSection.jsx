@@ -1,4 +1,4 @@
-import { FiCheckCircle, FiClock, FiGlobe, FiShield } from 'react-icons/fi'
+import { FiBriefcase, FiCheckCircle, FiGlobe, FiMessageCircle, FiShield, FiUsers } from 'react-icons/fi'
 import { useLanguage } from '../../hooks/useLanguage'
 
 export default function WhyLBCSection() {
@@ -7,23 +7,33 @@ export default function WhyLBCSection() {
   const items = [
     {
       icon: <FiShield className="text-lg text-[#059aa2]" />,
-      title: t('home.premium.why.items.executive.title'),
-      description: t('home.premium.why.items.executive.description')
-    },
-    {
-      icon: <FiClock className="text-lg text-[#059aa2]" />,
-      title: t('home.premium.why.items.speed.title'),
-      description: t('home.premium.why.items.speed.description')
+      title: t('home.premium.why.items.experience.title'),
+      description: t('home.premium.why.items.experience.description')
     },
     {
       icon: <FiGlobe className="text-lg text-[#059aa2]" />,
-      title: t('home.premium.why.items.crossBorder.title'),
-      description: t('home.premium.why.items.crossBorder.description')
+      title: t('home.premium.why.items.international.title'),
+      description: t('home.premium.why.items.international.description')
+    },
+    {
+      icon: <FiMessageCircle className="text-lg text-[#059aa2]" />,
+      title: t('home.premium.why.items.multilingual.title'),
+      description: t('home.premium.why.items.multilingual.description')
+    },
+    {
+      icon: <FiUsers className="text-lg text-[#059aa2]" />,
+      title: t('home.premium.why.items.clients.title'),
+      description: t('home.premium.why.items.clients.description')
+    },
+    {
+      icon: <FiBriefcase className="text-lg text-[#059aa2]" />,
+      title: t('home.premium.why.items.litigation.title'),
+      description: t('home.premium.why.items.litigation.description')
     },
     {
       icon: <FiCheckCircle className="text-lg text-[#059aa2]" />,
-      title: t('home.premium.why.items.clientFocus.title'),
-      description: t('home.premium.why.items.clientFocus.description')
+      title: t('home.premium.why.items.solutions.title'),
+      description: t('home.premium.why.items.solutions.description')
     }
   ]
 
@@ -46,7 +56,7 @@ export default function WhyLBCSection() {
         </div>
 
         {/* MINIMALIST GRID - Bərabər ölçülü, lakonik qutular */}
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {items.map((item, idx) => (
             <div 
               key={idx} 

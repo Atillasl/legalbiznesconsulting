@@ -47,38 +47,38 @@
     },
     "premium": {
       "hero": {
-        "badge": "Premium məsləhət",
-        "title": "Bazar liderləri üçün hüquqi strategiya.",
-        "description": "Biz bizneslərə sürətli inkişaf üçün uyğunlaşmış hüquqi çərçivələr ilə bazara çıxmaq və uyğunluq əldə etməkdə yardım edirik.",
+        "badge": "Tam xidmətli hüquqi məsləhət",
+        "title": "Tam Xidmətli Hüquqi Konsaltinq",
+        "description": "Biz korporativ hüquq, məhkəmə mübahisələrinin həlli, müqavilələr, daşınmaz əmlak, investisiya, vergi, əmək, miqrasiya və tənzimləyici məsələlər üzrə geniş hüquqi xidmətlər təqdim edirik.",
         "cta": {
           "primary": "Konsultasiya sifariş et",
-          "secondary": "Bacarıqları araşdır"
+          "secondary": "Xidmətlərə bax"
         },
         "proofs": {
           "trust": {
-            "tag": "Liderlər tərəfindən seçilir",
-            "title": "Biznes aydınlığı ilə hüquqi planlama",
-            "desc": "Hüquqi yol xəritənizi bazar və tənzimləmə məqsədləri ilə uyğunlaşdıran strukturlaşdırılmış proqramlar."
+            "tag": "Beynəlxalq əhatə",
+            "title": "Ölkələrarası hüquqi dəstək",
+            "desc": "Müxtəlif yurisdiksiyalarda fəaliyyət göstərən müştərilər üçün praktik məsləhətlər."
           },
           "alignment": {
-            "tag": "Uyğunlaşma təmin olunur",
-            "title": "Böyüməni dəstəkləyən risk nəzarəti",
-            "desc": "Daha sürətli qərarvermə üçün praktik uyğunluq və müqavilə rəhbərliyi."
+            "tag": "Etibarlı məsləhət",
+            "title": "Biznes və fərdi müştərilər",
+            "desc": "Şirkətlər və şəxsi müştərilər üçün strategiyadan həyata keçirilməyə qədər aydın hüquqi dəstək."
           }
         },
-        "panelTitle": "Əsas strateji fokus",
+        "panelTitle": "Əsas hüquqi xidmətlər",
         "panelItems": {
-          "regulatory": {
-            "label": "Tənzimləmə hazırlığı",
-            "detail": "İcazə, lisenziya və bazara giriş üçün aydın meyarlar."
+          "corporate": {
+            "label": "Korporativ və kommersiya",
+            "detail": "M&A, idarəetmə, struktur dəyişiklikləri və kommersiya müqavilələri."
           },
-          "governance": {
-            "label": "İdarəetmə strukturu",
-            "detail": "İcra komandaları üçün hazırlanmış praktik siyasətlər və iş axınları."
+          "disputes": {
+            "label": "Məhkəmə və mübahisələrin həlli",
+            "detail": "Mürəkkəb mübahisələrdə strateji təmsilçilik və icra məsələləri."
           },
-          "digital": {
-            "label": "Rəqəmsal əməliyyatlar",
-            "detail": "Müasir texnoloji məhsullar üçün müqavilələr və məlumat nəzarəti."
+          "crossBorder": {
+            "label": "Ölkələrarası məsləhət",
+            "detail": "Investisiya, tənzimləmə və beynəlxalq hüquqi koordinasiya."
           }
         }
       },
@@ -160,25 +160,33 @@
         "resultTitle": "Bazar çıxışı uyğunluğu müştərinin proqnozundan 40% daha sürətli tamamlandı."
       },
       "why": {
-        "badge": "Niyə LBC",
-        "title": "Qlobal intizamlı butik tərəfdaş.",
-        "description": "Biz strateji qərarları və bazar genişlənməsini dəstəkləmək üçün hüquqi dəqiqlik, rəqəmsal informasiya və biznes analizini birləşdiririk.",
-        "items": {
-          "executive": {
-            "title": "İcra səviyyəli məsləhət",
-            "description": "Hüquqi anlayışlar peşəkar konsaltinq komandaları səviyyəsində təqdim olunur."
+        "badge": "Niyə biz?",
+        "title": "Müştərilər niyə bizi seçir",
+        "description": "Beynəlxalq standartlara, sürətli qərarlara və praktik nəticələrə əsaslanan tam xidmətli hüquqi tərəfdaş."
+        ,"items": {
+          "experience": {
+            "title": "20+ il təcrübə",
+            "description": "Mürəkkəb hüquqi və biznes məsələlərində illər boyu zəngin məsləhət təcrübəsi."
           },
-          "speed": {
-            "title": "Sürətli və qərarlı çatdırılma",
-            "description": "Uğurdan əvvəl aydınlıq tələb edən komandalar üçün praktik icra dəstəyi."
+          "international": {
+            "title": "Beynəlxalq hüquqi dəstək",
+            "description": "Müqavilələr, mübahisələr və tənzimləmə məsələlərində ölkələrarası məsləhət."
           },
-          "crossBorder": {
-            "title": "Ölkələrarası hazırlıq",
-            "description": "Bazarlar boyunca tənzimləmə, korporativ və rəqəmsal əməliyyatlar üçün məsləhətlər."
+          "multilingual": {
+            "title": "Çoxdilli komanda",
+            "description": "İngilis, azərbaycan və rus dillərində aydın kommunikasiya."
           },
-          "clientFocus": {
-            "title": "Premium müştəri diqqəti",
-            "description": "Standart hüquqi şablonlar deyil, idarə heyəti prioritetlərinə görə qurulur."
+          "clients": {
+            "title": "Biznes və Fərdi Müştərilər",
+            "description": "Şirkətlər üçün və şəxsi müştərilər üçün etibarlı dəstək."
+          },
+          "litigation": {
+            "title": "Məhkəmə və Mübahisələrin Həlli",
+            "description": "Mübahisələrdə, araşdırmalarda və icra məsələlərində praktik təmsilçilik."
+          },
+          "solutions": {
+            "title": "Sürətli və Praktik Hüquqi Həllər",
+            "description": "Hüquqi mürəkkəbliyi aydın növbəti addımlara çevirən operativ məsləhət."
           }
         }
       },
@@ -295,7 +303,8 @@
   "services": {
     "subtitle": "Xidmətlərimiz",
     "title": "Biznesiniz üçün Peşəkar Həllər",
-    "description": "Hüquqi və texnoloji dəstək ilə biznesinizi daha güclü və rəqabətli edirik.",
+    "description": "Biz şirkətlər, investorlar və şəxsi müştərilər üçün 20+ hüquqi sahədə tam xidmətli məsləhət göstəririk.",
+    "heroLead": "Biznes, mübahisə, əməliyyat və şəxsi məsələlərdə ən çox lazım olan hüquqi xidmətlərdə geniş dəstək göstəririk.",
     "tabs": {
       "all": "Hamısı",
       "legal": "Hüquqi Konsaltinq",
@@ -316,9 +325,84 @@
       "web": "Veb İnkişafı",
       "app": "Mobil Tətbiq İnkişafı"
     },
-    "ctaTitle": "Biznesiniz üçün xüsusi həllərə ehtiyacınız var?",
-    "ctaDesc": "Standart paketlərlə kifayətlənməyin. Şirkətiniz üçün fərdi hüquqi və texnoloji strategiya hazırlaya bilərik.",
-    "ctaBtn": "Konsultasiya alın",
+    "practiceAreas": {
+      "badge": "Praktika Sahələri",
+      "title": "Ən vacib hüquqi məsələlərə diqqət yetirən geniş əhatə",
+      "description": "Biz müştərilərimizə biznes, mübahisə, əməliyyat və şəxsi hüquqi məsələlərdə ən çox lazım olan sahələrdə dəstək göstəririk.",
+      "corporate": {
+        "title": "Korporativ və kommersiya hüququ",
+        "items": ["Şirkətin qeydiyyatı", "Korporativ idarəetmə", "Aktsiyadarlıq sazişləri", "M&A", "Birgə müəssisələr", "Korporativ restrukturizasiya"]
+      },
+      "contract": {
+        "title": "Müqavilə hüququ",
+        "items": ["Müqavilələrin hazırlanması", "Müqavilələrin nəzərdən keçirilməsi", "Danışıqlar", "Beynəlxalq müqavilələr", "Tikinti müqavilələri", "FIDIC", "İcarə müqavilələri"]
+      },
+      "disputes": {
+        "title": "Mübahisələrin həlli",
+        "items": ["Məhkəmə", "Arbitraj", "Mediasiya", "İcra"]
+      },
+      "realEstate": {
+        "title": "Daşınmaz əmlak",
+        "items": ["Satış-alış", "İcarə", "Due diligence", "Tikinti", "İnkişaf"]
+      },
+      "investment": {
+        "title": "Investisiya",
+        "items": ["Xarici investisiya", "Investisiya strukturu", "Hüquqi due diligence", "PPP layihələri"]
+      },
+      "regulatory": {
+        "title": "Tənzimləmə və uyğunluq",
+        "items": ["Lisenziya", "AML", "Uyğunluq", "Daxili araşdırmalar", "Riskin qiymətləndirilməsi"]
+      },
+      "employment": {
+        "title": "Əmək hüququ",
+        "items": ["Əmək müqavilələri", "İK siyasətləri", "Əmək mübahisələri"]
+      },
+      "tax": {
+        "title": "Vergi",
+        "items": ["Vergi məsləhəti", "Vergi mübahisələri", "Gömrük"]
+      },
+      "ip": {
+        "title": "İntellektual mülkiyyət",
+        "items": ["Ticarət nişanı", "Müəllif hüququ", "Lisenziya"]
+      },
+      "immigration": {
+        "title": "Miqrasiya",
+        "items": ["Yaşayış icazəsi", "İş icazəsi", "Vətəndaşlıq"]
+      },
+      "family": {
+        "title": "Ailə və şəxsi müştərilər",
+        "items": ["Ailə məsələləri", "Varislik", "Əmlak"]
+      },
+      "criminal": {
+        "title": "Cinayət hüququ dəstəyi",
+        "items": ["Cinayət müdafiəsi", "Ağ collar cinayət", "İqtisadi cinayətlər", "Korporativ araşdırmalar"]
+      },
+      "government": {
+        "title": "Dövlətlə əlaqələr",
+        "items": ["Dövlət təsdiqləri", "Tənzimləyici prosedurlar", "İctimai sektor dəstəyi"]
+      },
+      "sports": {
+        "title": "İdman hüququ",
+        "items": ["İdman müqavilələri və intizam məsələləri"]
+      },
+      "medical": {
+        "title": "Tibb hüququ",
+        "items": ["Tibbi məsuliyyət və xəstə hüquqları"]
+      },
+      "international": {
+        "title": "Beynəlxalq hüquqi xidmətlər",
+        "items": ["Ölkələrarası təmsilçilik və koordinasiya"]
+      }
+    },
+    "industries": {
+      "badge": "Sahələr",
+      "title": "Əsas sənaye sahələrində müştərilərə xidmət",
+      "description": "Hüquqi dəstəyimizi müştərilərimizin fəaliyyət göstərdiyi sahələrin real ehtiyaclarına uyğunlaşdırırıq.",
+      "items": ["Tikinti", "Daşınmaz əmlak", "Energetika", "Neft və qaz", "Sağlamlıq", "İstirahət", "Texnologiya", "Finans", "Sığorta", "Retail", "İstehsalat", "Telekommunikasiya", "Təhsil", "Nəqliyyat", "Dövlət", "Xarici investorlar"]
+    },
+    "ctaTitle": "Hüquqi yardım lazımdır?",
+    "ctaDesc": "Bugün konsultasiya üçün müraciət edin və məsələniz üçün hüquqi məsləhət alın.",
+    "ctaBtn": "Hüquqi məsləhət tələb et",
     "readMore": "Ətraflı oxu",
     "detailPage": {
       "backToHome": "Əsas səhifəyə qayıt",

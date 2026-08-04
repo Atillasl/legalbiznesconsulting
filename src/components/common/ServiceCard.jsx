@@ -12,53 +12,48 @@ export default function ServiceCard({ service }) {
 
   return (
     // Sərt kənarlıqlar və kölgələr ləğv edildi, tam minimalist şüşə-material effekti tətbiq olundu
-    <div className="group relative rounded-2xl border border-slate-500/10 bg-white/40 p-6 backdrop-blur-md transition-all duration-500 hover:border-[#059aa2]/30 hover:bg-white/80 hover:shadow-xl hover:shadow-[#059aa2]/5 dark:bg-white/[0.01] dark:hover:bg-white/[0.03] flex flex-col justify-between overflow-hidden">
-      
-      {/* HOVER GLOW - Siçanı kartın üzərinə gətirəndə sağ küncdən zərif sızan brend işığı */}
-      <div className="absolute -right-12 -top-12 h-24 w-24 rounded-full bg-[#059aa2]/10 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
+    <div className="group relative flex min-h-[220px] flex-col justify-between overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 p-6 shadow-sm shadow-slate-200/40 transition-all duration-300 hover:-translate-y-1 hover:border-[#059aa2]/30 hover:shadow-md dark:border-slate-800/60 dark:bg-slate-950/40 dark:shadow-none">
 
       <div>
         {/* Image removed per request: services render without images */}
 
         {/* KART HEADER - İkon və Zərif Badge */}
-        <div className="flex items-center justify-between mb-5">
-          {/* İkon qutusu artıq hover-da tam rəngə boyanmır, sadəcə zərifcə miqyası böyüyür */}
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-500/10 bg-white text-xl text-[#059aa2] shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:border-[#059aa2]/20 group-hover:bg-[#059aa2]/5 dark:bg-slate-900">
+        <div className="mb-5 flex items-center justify-between">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200/80 bg-white text-xl text-[#059aa2] shadow-sm transition-all duration-300 group-hover:scale-105 dark:border-slate-700/70 dark:bg-slate-900">
             {service.icon}
           </div>
           
           {service.badge && (
-            <span className="text-[9px] font-mono tracking-wider px-2 py-0.5 rounded border border-slate-500/10 bg-slate-50 text-slate-400 dark:bg-slate-900 dark:text-slate-500">
+            <span className="rounded-full border border-slate-200/70 bg-slate-50 px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.2em] text-slate-500 dark:border-slate-700/70 dark:bg-slate-900 dark:text-slate-400">
               {service.badge}
             </span>
           )}
         </div>
 
         {/* KATEGORİYA - İncə və geniş aralıqlı şrift */}
-        <span className="text-[9px] font-medium tracking-[0.2em] text-[#059aa2] uppercase block mb-1.5">
+        <span className="mb-1.5 block text-[9px] font-semibold uppercase tracking-[0.22em] text-[#059aa2]">
           {(() => {
             const key = categoryMap[service.category] || service.category
             return t(`services.categories.${key}`) || service.category
           })()}
         </span>
         {/* BAŞLIQ - Ölçü qorundu (text-lg), lakin font-medium ilə daha nəzakətli edildi */}
-        <h3 className="text-lg font-medium tracking-tight text-slate-900 group-hover:text-[#059aa2] transition-colors duration-300 dark:text-white">
+        <h3 className="text-lg font-medium tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-[#059aa2] dark:text-white">
           {localizedTitle}
         </h3>
 
         {/* QISA TƏSVİR - Oxunaqlı, lakin font-light ilə gözü yormayan mətn */}
-        <p className="mt-2.5 text-xs leading-relaxed text-slate-500 dark:text-slate-400 font-light tracking-wide">
+        <p className="mt-2.5 text-xs font-light leading-relaxed tracking-wide text-slate-500 dark:text-slate-400">
           {localizedShort}
         </p>
       </div>
 
       {/* KEÇİD LİNKİ - İncə keçid xətti və sürüşən modern ox */}
-      <div className="mt-6 border-t border-slate-500/5 pt-4 dark:border-slate-800/40">
+      <div className="mt-6 border-t border-slate-200/70 pt-4 dark:border-slate-800/60">
         <Link 
           to={`/services/${service.id}`}
           className="inline-flex items-center gap-1.5 text-xs font-medium tracking-wide text-[#059aa2] transition-all duration-300"
         >
-          {/* Hover anında yazının altından dolan ipək kimi xətt */}
           <span className="relative pb-0.5 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-[#059aa2] after:transition-all after:duration-300 group-hover:after:w-full">
             {t('services.readMore')}
           </span> 

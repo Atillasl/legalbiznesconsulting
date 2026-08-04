@@ -62,38 +62,38 @@
     },
     "premium": {
       "hero": {
-        "badge": "Premium advisory",
-        "title": "Legal strategy for market-leading teams.",
-        "description": "We help businesses launch, scale and stay compliant with legal frameworks built for fast-moving growth.",
+        "badge": "Full-service legal advisory",
+        "title": "Full-Service Legal Consulting",
+        "description": "We provide comprehensive legal services in corporate law, dispute resolution, contracts, real estate, investment, tax, employment, immigration and regulatory matters.",
         "cta": {
           "primary": "Book a consultation",
-          "secondary": "Explore capabilities"
+          "secondary": "Explore services"
         },
         "proofs": {
           "trust": {
-            "tag": "Trusted by leaders",
-            "title": "Legal planning with business clarity",
-            "desc": "Structured programs that align your legal roadmap with market and regulatory goals."
+            "tag": "International reach",
+            "title": "Cross-border legal support",
+            "desc": "Practical counsel for clients operating across jurisdictions and complex business environments."
           },
           "alignment": {
-            "tag": "Governance aligned",
-            "title": "Risk controls that support growth",
-            "desc": "Practical compliance and contract guidance for faster decision-making."
+            "tag": "Trusted counsel",
+            "title": "Business and individual clients",
+            "desc": "Clear legal guidance for companies and private clients, from strategy to execution."
           }
         },
-        "panelTitle": "Core strategic focus",
+        "panelTitle": "Core legal services",
         "panelItems": {
-          "regulatory": {
-            "label": "Regulatory readiness",
-            "detail": "Clear benchmarks for approvals, licensing and market entry."
+          "corporate": {
+            "label": "Corporate & commercial",
+            "detail": "M&A, governance, restructuring and commercial contracting."
           },
-          "governance": {
-            "label": "Governance design",
-            "detail": "Practical policies and workflows built for executive teams."
+          "disputes": {
+            "label": "Litigation & dispute resolution",
+            "detail": "Strategic representation in complex disputes and enforcement matters."
           },
-          "digital": {
-            "label": "Digital operations",
-            "detail": "Contracts and data controls for modern technology products."
+          "crossBorder": {
+            "label": "Cross-border advisory",
+            "detail": "Investment, regulatory and international legal coordination."
           }
         }
       },
@@ -175,25 +175,33 @@
         "resultTitle": "Launch compliance completed 40% faster than the client forecast."
       },
       "why": {
-        "badge": "Why LBC",
-        "title": "A boutique partner with global discipline.",
-        "description": "We combine legal precision, digital awareness and business judgment to support strategic decisions and market expansion.",
+        "badge": "Why us",
+        "title": "Why clients choose us",
+        "description": "A full-service legal partner built for international standards, fast decisions and practical outcomes.",
         "items": {
-          "executive": {
-            "title": "Executive-grade advisory",
-            "description": "Legal insights delivered with the same rigor as senior consulting teams."
+          "experience": {
+            "title": "20+ years experience",
+            "description": "Decades of advisory work across complex legal and business matters."
           },
-          "speed": {
-            "title": "Fast, decisive delivery",
-            "description": "Practical implementation support for teams that need clarity before launch."
+          "international": {
+            "title": "International legal support",
+            "description": "Cross-border counsel for transactions, disputes and regulatory matters."
           },
-          "crossBorder": {
-            "title": "Cross-border readiness",
-            "description": "Advice for regulatory, corporate and digital operations across markets."
+          "multilingual": {
+            "title": "Multilingual team",
+            "description": "Clear communication in English, Azerbaijani and Russian."
           },
-          "clientFocus": {
-            "title": "Premium client focus",
-            "description": "Built around your board priorities, not generic legal templates."
+          "clients": {
+            "title": "Business & Individual Clients",
+            "description": "Trusted support for companies and private clients alike."
+          },
+          "litigation": {
+            "title": "Litigation & Dispute Resolution",
+            "description": "Practical representation in disputes, investigations and enforcement."
+          },
+          "solutions": {
+            "title": "Fast and Practical Legal Solutions",
+            "description": "Responsive advice that turns legal complexity into clear next steps."
           }
         }
       },
@@ -300,7 +308,8 @@
   "services": {
     "subtitle": "Our Services",
     "title": "Professional Solutions for Your Business",
-    "description": "We strengthen your business with legal and digital support for every project.",
+    "description": "We strengthen your business with full-service legal support across 20+ practice areas for companies, investors and private clients.",
+    "heroLead": "Comprehensive legal counsel for the matters most often searched online and most frequently needed in practice.",
     "tabs": {
       "all": "All",
       "legal": "Legal Consulting",
@@ -321,9 +330,84 @@
       "web": "Web Development",
       "app": "App Development"
     },
-    "ctaTitle": "Need custom solutions for your business?",
-    "ctaDesc": "Don’t settle for standard packages. We can build a fully tailored legal or technical strategy for your company.",
-    "ctaBtn": "Schedule a Consultation",
+    "practiceAreas": {
+      "badge": "Practice Areas",
+      "title": "Focused legal coverage across the matters that matter most",
+      "description": "We support clients in the core legal disciplines most often needed in business, disputes, transactions and private matters.",
+      "corporate": {
+        "title": "Corporate & Commercial Law",
+        "items": ["Company registration", "Corporate governance", "Shareholders agreements", "M&A", "Joint ventures", "Corporate restructuring"]
+      },
+      "contract": {
+        "title": "Contract Law",
+        "items": ["Drafting contracts", "Contract review", "Negotiations", "International contracts", "Construction contracts", "FIDIC", "Procurement contracts"]
+      },
+      "disputes": {
+        "title": "Dispute Resolution",
+        "items": ["Litigation", "Arbitration", "Mediation", "Enforcement"]
+      },
+      "realEstate": {
+        "title": "Real Estate",
+        "items": ["Sale purchase", "Lease", "Due diligence", "Construction", "Development"]
+      },
+      "investment": {
+        "title": "Investment",
+        "items": ["Foreign investment", "Investment structuring", "Legal due diligence", "PPP projects"]
+      },
+      "regulatory": {
+        "title": "Regulatory & Compliance",
+        "items": ["Licensing", "AML", "Compliance", "Internal investigations", "Risk assessment"]
+      },
+      "employment": {
+        "title": "Employment",
+        "items": ["Employment contracts", "HR policies", "Labour disputes"]
+      },
+      "tax": {
+        "title": "Tax",
+        "items": ["Tax consulting", "Tax disputes", "Customs"]
+      },
+      "ip": {
+        "title": "Intellectual Property",
+        "items": ["Trademark", "Copyright", "Licensing"]
+      },
+      "immigration": {
+        "title": "Immigration",
+        "items": ["Residence permit", "Work permit", "Citizenship"]
+      },
+      "family": {
+        "title": "Family & Private Clients",
+        "items": ["Family matters", "Inheritance", "Property"]
+      },
+      "criminal": {
+        "title": "Criminal Law Support",
+        "items": ["Criminal defence", "White collar crime", "Economic crimes", "Corporate investigations"]
+      },
+      "government": {
+        "title": "Government Relations",
+        "items": ["Government approvals", "Regulatory procedures", "Public sector support"]
+      },
+      "sports": {
+        "title": "Sports Law",
+        "items": ["Sporting contracts and disciplinary matters"]
+      },
+      "medical": {
+        "title": "Medical Law",
+        "items": ["Medical liability and patient rights"]
+      },
+      "international": {
+        "title": "International Legal Services",
+        "items": ["Cross-border representation and coordination"]
+      }
+    },
+    "industries": {
+      "badge": "Industries",
+      "title": "Serving clients across key business sectors",
+      "description": "We tailor our legal support to the realities of the sectors our clients operate in.",
+      "items": ["Construction", "Real Estate", "Energy", "Oil & Gas", "Healthcare", "Hospitality", "Technology", "Finance", "Insurance", "Retail", "Manufacturing", "Telecommunications", "Education", "Transportation", "Government", "Foreign Investors"]
+    },
+    "ctaTitle": "Need Legal Assistance?",
+    "ctaDesc": "Book a consultation today or request legal advice for your matter.",
+    "ctaBtn": "Request Legal Advice",
     "detailPage": {
       "backToServices": "Back to services",
       "aboutTitle": "About this service",
